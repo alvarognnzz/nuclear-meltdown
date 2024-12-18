@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6e8b7dg6jye5"]
+
+[ext_resource type="Script" path="res://entities/character/character.gd" id="1_05rf8"]
+[ext_resource type="Script" path="res://entities/character/interaction/interaction_raycast.gd" id="2_bi062"]
+[ext_resource type="FontFile" uid="uid://chn4wysrv7ws7" path="res://common/fonts/3270-Regular.ttf" id="3_o765t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h18ij"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera")]
+script = ExtResource("1_05rf8")
+head = NodePath("Head")
+camera = NodePath("Head/Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_h18ij")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -1.8)
+script = ExtResource("2_bi062")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InteractionLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_o765t")
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
