@@ -1,2 +1,3 @@
 res://stages/world.tscn
 res://entities/character/character.tscn
+res://entities/character/canvas_layer.gd
