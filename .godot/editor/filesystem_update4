@@ -1,3 +1,7 @@
 res://stages/world.tscn
 res://entities/character/character.tscn
 res://entities/character/canvas_layer.gd
+res://stages/test_room/test_room.tscn
+res://entities/test_room/wall/wall.tscn
+res://entities/test_room/floor/floor.tscn
+res://stages/map/world.VoxelGI_data.res

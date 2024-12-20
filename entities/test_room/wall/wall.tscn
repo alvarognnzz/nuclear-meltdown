@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=4 uid="uid://chg2n3fskcm1a"]
+
+[ext_resource type="Texture2D" uid="uid://os2s8otf7xpp" path="res://common/models/tiles/wall/textures/color_128px.png" id="1_wpf2i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46dsc"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_wpf2i")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_woj52"]
+_surfaces = [{
+"aabb": AABB(-2, -1.5, -1.19209e-07, 4, 3, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAADAAEAAAACAAMA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("////vwAAwL8AAAC0////PwAAwL8AAAC0////vwAAwD8AAAA0////PwAAwD8AAAA0")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ynnsl"]
+resource_name = "wall_Plane_001"
+_surfaces = [{
+"aabb": AABB(-2, -1.5, -1.19209e-07, 4, 3, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAACAPwAAAAA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAADAAEAAAACAAMA"),
+"material": SubResource("StandardMaterial3D_46dsc"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("////vwAAwL8AAAC0////PwAAwL8AAAC0////vwAAwD8AAAA0////PwAAwD8AAAA0/3//f////7//f/9/////v/9//3////+//3//f////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_woj52")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_erku3"]
+points = PackedVector3Array(2, 1.5, 1.19209e-07, 2, -1.5, -1.19209e-07, -2, 1.5, 1.19209e-07, -2, -1.5, -1.19209e-07)
+
+[node name="wall" type="Node3D"]
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_ynnsl")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_erku3")

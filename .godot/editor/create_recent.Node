@@ -1,8 +1,12 @@
+SpotLight3D
+VoxelGI
+Node3D
+CollisionShape3D
+StaticBody3D
+LightmapGI
 MarginContainer
 Control
-StaticBody3D
 Label
-Node3D
 CanvasLayer
 CSGBox3D
 RayCast3D

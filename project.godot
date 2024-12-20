@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Interaction Template"
+config/name="Untitled Game"
 run/main_scene="res://stages/world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -18,10 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*res://common/autoload/event_bus.gd"
-
-[filesystem]
-
-import/blender/enabled=false
 
 [input]
 

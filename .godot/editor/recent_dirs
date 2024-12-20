@@ -1,2 +1,8 @@
+res://stages/map
+res://entities/test_room/floor
+res://entities/test_room/wall
+res://stages/test_room
+/home/alvarognnzz/Downloads/blender-4.3.2-linux-x64
+res://stages
 res://common/autoload
 res://entities/box
