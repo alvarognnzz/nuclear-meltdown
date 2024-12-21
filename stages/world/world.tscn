@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyeujf1r1rooy"]
+[gd_scene load_steps=10 format=3 uid="uid://dyeujf1r1rooy"]
 
-[ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_amynm"]
-[ext_resource type="PackedScene" uid="uid://b6e8b7dg6jye5" path="res://entities/character/character.tscn" id="1_gubjs"]
-[ext_resource type="Texture2D" uid="uid://ch6qkmvntarij" path="res://common/textures/prototyping/orange.png" id="3_2ye6k"]
-[ext_resource type="Script" path="res://entities/box/csg_box_3d.gd" id="4_4ba4j"]
+[ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_8o8ka"]
+[ext_resource type="PackedScene" uid="uid://b6e8b7dg6jye5" path="res://entities/character/character.tscn" id="2_a0x78"]
+[ext_resource type="Texture2D" uid="uid://ch6qkmvntarij" path="res://common/textures/prototyping/orange.png" id="3_bmoy1"]
+[ext_resource type="Script" path="res://entities/box/csg_box_3d.gd" id="4_h4pg2"]
+[ext_resource type="PackedScene" uid="uid://di70vdljquje2" path="res://stages/room/room.tscn" id="5_hr4s3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oeq14"]
 sky_top_color = Color(0.321569, 0.356863, 0.266667, 1)
@@ -23,7 +24,7 @@ sdfgi_use_occlusion = true
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u067u"]
-albedo_texture = ExtResource("3_2ye6k")
+albedo_texture = ExtResource("3_bmoy1")
 
 [node name="World" type="Node3D"]
 
@@ -36,15 +37,18 @@ light_energy = 0.2
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-material_override = ExtResource("1_amynm")
+material_override = ExtResource("1_8o8ka")
 use_collision = true
 size = Vector3(200, 0, 200)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_gubjs")]
+[node name="CharacterBody3D" parent="." groups=["character"] instance=ExtResource("2_a0x78")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5)
 material_override = SubResource("StandardMaterial3D_u067u")
 use_collision = true
-script = ExtResource("4_4ba4j")
+script = ExtResource("4_h4pg2")
+
+[node name="Room" parent="." instance=ExtResource("5_hr4s3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, -15.4)

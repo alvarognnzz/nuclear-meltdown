@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://di70vdljquje2"]
+
+[ext_resource type="PackedScene" uid="uid://drrg1k2xx6f5m" path="res://common/models/tiles/wall/wall.blend" id="1_ifdk0"]
+[ext_resource type="PackedScene" uid="uid://y3ceaw0om2ko" path="res://common/models/tiles/floor/floor.blend" id="2_ytmcx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_43fki"]
+size = Vector3(8, 1, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qcy5w"]
+size = Vector3(8, 4, 1)
+
+[node name="Room" type="Node3D"]
+
+[node name="wall" parent="." instance=ExtResource("1_ifdk0")]
+
+[node name="wall2" parent="." instance=ExtResource("1_ifdk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="wall3" parent="." instance=ExtResource("1_ifdk0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, 1.5)
+
+[node name="wall4" parent="." instance=ExtResource("1_ifdk0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, 5.5)
+
+[node name="wall5" parent="." instance=ExtResource("1_ifdk0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4, 0, 7)
+
+[node name="wall6" parent="." instance=ExtResource("1_ifdk0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.38419e-07, 0, 7)
+
+[node name="wall7" parent="." instance=ExtResource("1_ifdk0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 5.5)
+
+[node name="wall8" parent="." instance=ExtResource("1_ifdk0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 1.5)
+
+[node name="floor" parent="." instance=ExtResource("2_ytmcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6, 1.5)
+
+[node name="floor2" parent="." instance=ExtResource("2_ytmcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.6, 1.5)
+
+[node name="floor3" parent="." instance=ExtResource("2_ytmcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.6, 5.5)
+
+[node name="floor4" parent="." instance=ExtResource("2_ytmcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.6, 5.5)
+
+[node name="floor5" parent="." instance=ExtResource("2_ytmcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.5)
+
+[node name="floor6" parent="." instance=ExtResource("2_ytmcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 1.5)
+
+[node name="floor7" parent="." instance=ExtResource("2_ytmcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 5.5)
+
+[node name="floor8" parent="." instance=ExtResource("2_ytmcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 5.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.6, 3.5)
+shape = SubResource("BoxShape3D_43fki")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, 3.5)
+shape = SubResource("BoxShape3D_43fki")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+shape = SubResource("BoxShape3D_qcy5w")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.5, 0, 3.5)
+shape = SubResource("BoxShape3D_qcy5w")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, 7)
+shape = SubResource("BoxShape3D_qcy5w")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1.5, 0, 3.5)
+shape = SubResource("BoxShape3D_qcy5w")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2, 1.7, 3.5)

@@ -7,8 +7,8 @@ var progress_speed = 1
 var interaction: Dictionary = {
 	"key": "E",
 	"input": "interact",
-	"name": "Interact",
+	"name": "Move to room",
 }
 
 func interact() -> void:
-	print('interaction')
+	get_tree().get_first_node_in_group("character").global_position = Vector3(-2, 2.5, -12.3)

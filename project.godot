@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Untitled Game"
-run/main_scene="res://stages/world.tscn"
+run/main_scene="res://stages/world/world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

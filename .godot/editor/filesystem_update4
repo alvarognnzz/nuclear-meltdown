@@ -9,3 +9,5 @@ res://entities/box/csg_box_3d.gd
 res://entities/character/ui/progress_container.gd
 res://entities/character/character.gd
 res://entities/character/ui/debug_ui.tscn
+res://stages/room/room.tscn
+res://stages/world/world.tscn
