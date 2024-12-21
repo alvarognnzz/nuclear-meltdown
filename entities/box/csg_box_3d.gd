@@ -1,13 +1,14 @@
 extends CSGBox3D
 
-var interaction = {
+@export var interaction_type: Global.InteractionTypes = Global.InteractionTypes.PROGRESS
+
+var progress_speed = 1
+
+var interaction: Dictionary = {
 	"key": "E",
 	"input": "interact",
 	"name": "Interact",
 }
 
-func can_interact():
-	return true
-
-func interact():
-	print('interact')
+func interact() -> void:
+	print('interaction')

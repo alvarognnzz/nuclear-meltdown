@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
-# exported nodes
-@export var head: Node3D
-@export var camera: Camera3D
+@onready var head: Node3D = $Head
+@onready var camera: Camera3D = $Head/Camera3D
 
 # speed
 const speed := 5.0
