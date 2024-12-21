@@ -1,13 +1,7 @@
-res://entities/character/ui/interaction_ui.tscn
-res://entities/character/interaction/interaction_raycast.gd
-res://stages/world.tscn
-res://entities/test_room/wall/wall.tscn
-res://entities/test_room/floor/floor.tscn
-res://stages/test_room/test_room.tscn
+res://stages/world/world.tscn
+res://common/materials/diamond_plate.tres
 res://entities/character/character.tscn
-res://entities/box/csg_box_3d.gd
-res://entities/character/ui/progress_container.gd
-res://entities/character/character.gd
+res://entities/character/ui/interaction_ui.tscn
 res://entities/character/ui/debug_ui.tscn
 res://stages/room/room.tscn
-res://stages/world/world.tscn
+res://common/materials/metal_rust.tres

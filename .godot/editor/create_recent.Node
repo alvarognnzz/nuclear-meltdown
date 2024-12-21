@@ -1,8 +1,8 @@
+CollisionShape3D
+StaticBody3D
+Node3D
 SpotLight3D
 OmniLight3D
-StaticBody3D
-CollisionShape3D
-Node3D
 MarginContainer
 CenterContainer
 ProgressBar

@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyeujf1r1rooy"]
+[gd_scene load_steps=18 format=3 uid="uid://dyeujf1r1rooy"]
 
 [ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_8o8ka"]
 [ext_resource type="PackedScene" uid="uid://b6e8b7dg6jye5" path="res://entities/character/character.tscn" id="2_a0x78"]
 [ext_resource type="Texture2D" uid="uid://ch6qkmvntarij" path="res://common/textures/prototyping/orange.png" id="3_bmoy1"]
 [ext_resource type="Script" path="res://entities/box/csg_box_3d.gd" id="4_h4pg2"]
 [ext_resource type="PackedScene" uid="uid://di70vdljquje2" path="res://stages/room/room.tscn" id="5_hr4s3"]
+[ext_resource type="PackedScene" uid="uid://crlkljl3mtgad" path="res://common/models/entrance/entrance.blend" id="6_vtod6"]
+[ext_resource type="Material" uid="uid://brkv8rpfcoqo3" path="res://common/materials/yellow_stripes.tres" id="7_0i8ol"]
+[ext_resource type="Material" uid="uid://tgqwk4imo3ex" path="res://common/materials/diamond_plate.tres" id="7_i7gn0"]
+[ext_resource type="Material" uid="uid://dbc2eoo786k36" path="res://common/materials/black_metal.tres" id="7_rrp7v"]
+[ext_resource type="Material" uid="uid://b2km0l8khyy34" path="res://common/materials/metal_rust.tres" id="9_4o6l1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oeq14"]
 sky_top_color = Color(0.321569, 0.356863, 0.266667, 1)
@@ -26,17 +31,28 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u067u"]
 albedo_texture = ExtResource("3_bmoy1")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jdvms"]
+data = PackedVector3Array(-1.3458, -1.8748, 2, -3.9158, -3, 2, -1.8084, -1.7311, 2, 3.9157, -3, 2, 1.3456, -1.8748, 2, 1.8083, -1.7311, 2, 1.3456, -1.8748, 2, -3.9158, -3, 2, -1.3458, -1.8748, 2, -3.9158, -3, 2, 1.3456, -1.8748, 2, 3.9157, -3, 2, -3.9158, -3, 2, -2.0001, -1.3841, 2, -1.8084, -1.7311, 2, -3.9158, -3, 2, -2.0001, 0.6345, 2, -2.0001, -1.3841, 2, 1.9999, -1.3841, 2, 3.9157, -3, 2, 1.8083, -1.7311, 2, 1.9999, 0.6345, 2, 3.9157, -3, 2, 1.9999, -1.3841, 2, -3.9158, 3, 2, -2.0001, 0.6345, 2, -3.9158, -3, 2, -3.9158, 3, 2, -1.8084, 0.9815, 2, -2.0001, 0.6345, 2, 1.9999, 0.6345, 2, 3.9157, 3, 2, 3.9157, -3, 2, 1.8083, 0.9815, 2, 3.9157, 3, 2, 1.9999, 0.6345, 2, 3.9157, 3, 2, -1.8084, 0.9815, 2, -3.9158, 3, 2, 3.9157, 3, 2, -1.3458, 1.1252, 2, -1.8084, 0.9815, 2, 1.3456, 1.1252, 2, 3.9157, 3, 2, 1.8083, 0.9815, 2, 3.9157, 3, 2, 1.3456, 1.1252, 2, -1.3458, 1.1252, 2, -2.0001, -1.3841, -19.4108, -5, 3, -19.4108, -5, -3, -19.4108, 5, 3, -19.4108, 1.9999, -1.3841, -19.4108, 5, -3, -19.4108, 5, 3, -19.4108, 1.9999, 0.6345, -19.4108, 1.9999, -1.3841, -19.4108, -2.0001, 0.6345, -19.4108, -5, 3, -19.4108, -2.0001, -1.3841, -19.4108, -1.8084, 0.9815, -19.4108, -5, 3, -19.4108, -2.0001, 0.6345, -19.4108, 5, 3, -19.4108, 1.8083, 0.9815, -19.4108, 1.9999, 0.6345, -19.4108, 5, 3, -19.4108, 1.3456, 1.1252, -19.4108, 1.8083, 0.9815, -19.4108, -1.3458, 1.1252, -19.4108, -5, 3, -19.4108, -1.8084, 0.9815, -19.4108, 5, 3, -19.4108, -1.3458, 1.1252, -19.4108, 1.3456, 1.1252, -19.4108, -5, 3, -19.4108, -1.3458, 1.1252, -19.4108, 5, 3, -19.4108, -5, -3, -19.4108, -1.8084, -1.7311, -19.4108, -2.0001, -1.3841, -19.4108, -5, -3, -19.4108, -1.3458, -1.8748, -19.4108, -1.8084, -1.7311, -19.4108, 1.8083, -1.7311, -19.4108, 5, -3, -19.4108, 1.9999, -1.3841, -19.4108, -5, -3, -19.4108, 1.3456, -1.8748, -19.4108, -1.3458, -1.8748, -19.4108, 1.3456, -1.8748, -19.4108, 5, -3, -19.4108, 1.8083, -1.7311, -19.4108, 5, -3, -19.4108, 1.3456, -1.8748, -19.4108, -5, -3, -19.4108, 4.6823, 3, 1.6821, 5, 3, -19.4108, 5, 3, 0.9157, 5, 3, -19.4108, -5, 3, 0.9157, -5, 3, -19.4108, -5, 3, 0.9157, -3.9158, 3, 2, -4.6825, 3, 1.6821, -3.9158, 3, 2, 4.6823, 3, 1.6821, 3.9157, 3, 2, 4.6823, 3, 1.6821, -5, 3, 0.9157, 5, 3, -19.4108, -5, 3, 0.9157, 4.6823, 3, 1.6821, -3.9158, 3, 2, -5, -3, 0.9157, -5, 3, -19.4108, -5, 3, 0.9157, -5, -3, 0.9157, -5, -3, -19.4108, -5, 3, -19.4108, 5, -3, -19.4108, 5, 3, 0.9157, 5, 3, -19.4108, 5, -3, -19.4108, 5, -3, 0.9157, 5, 3, 0.9157, -3.9158, -3, 2, -4.6825, 3, 1.6821, -3.9158, 3, 2, -3.9158, -3, 2, -4.6825, -3, 1.6821, -4.6825, 3, 1.6821, -4.6825, -3, 1.6821, -5, 3, 0.9157, -4.6825, 3, 1.6821, -4.6825, -3, 1.6821, -5, -3, 0.9157, -5, 3, 0.9157, 3.9157, 3, 2, 4.6823, -3, 1.6821, 3.9157, -3, 2, 3.9157, 3, 2, 4.6823, 3, 1.6821, 4.6823, -3, 1.6821, 4.6823, 3, 1.6821, 5, -3, 0.9157, 4.6823, -3, 1.6821, 4.6823, 3, 1.6821, 5, 3, 0.9157, 5, -3, 0.9157, 5, -3, 0.9157, 3.9157, -3, 2, 4.6823, -3, 1.6821, 3.9157, -3, 2, -4.6825, -3, 1.6821, -3.9158, -3, 2, -4.6825, -3, 1.6821, -5, -3, -19.4108, -5, -3, 0.9157, -5, -3, -19.4108, 5, -3, 0.9157, 5, -3, -19.4108, 5, -3, 0.9157, -4.6825, -3, 1.6821, 3.9157, -3, 2, -4.6825, -3, 1.6821, 5, -3, 0.9157, -5, -3, -19.4108, 1.3456, 1.1252, 1.4776, -1.3458, 1.1252, -19.4108, -1.3458, 1.1252, 1.4776, 1.3456, 1.1252, 1.4776, 1.3456, 1.1252, -19.4108, -1.3458, 1.1252, -19.4108, -2.0001, 0.6345, 1.4776, -2.0001, -1.3841, -19.4108, -2.0001, -1.3841, 1.4776, -2.0001, 0.6345, 1.4776, -2.0001, 0.6345, -19.4108, -2.0001, -1.3841, -19.4108, -2.0001, -1.3841, 1.4776, -1.8084, -1.7311, -19.4108, -1.8084, -1.7311, 1.4776, -2.0001, -1.3841, 1.4776, -2.0001, -1.3841, -19.4108, -1.8084, -1.7311, -19.4108, -1.3458, 1.1252, 1.4776, -1.8084, 0.9815, -19.4108, -1.8084, 0.9815, 1.4776, -1.3458, 1.1252, 1.4776, -1.3458, 1.1252, -19.4108, -1.8084, 0.9815, -19.4108, -1.8084, 0.9815, 1.4776, -2.0001, 0.6345, -19.4108, -2.0001, 0.6345, 1.4776, -1.8084, 0.9815, 1.4776, -1.8084, 0.9815, -19.4108, -2.0001, 0.6345, -19.4108, 1.9999, -1.3841, 1.4776, 1.8083, -1.7311, -19.4108, 1.9999, -1.3841, -19.4108, 1.9999, -1.3841, 1.4776, 1.8083, -1.7311, 1.4776, 1.8083, -1.7311, -19.4108, 1.8083, 0.9815, 1.4776, 1.3456, 1.1252, -19.4108, 1.3456, 1.1252, 1.4776, 1.8083, 0.9815, 1.4776, 1.8083, 0.9815, -19.4108, 1.3456, 1.1252, -19.4108, 1.8083, 0.9815, 1.4776, 1.9999, 0.6345, -19.4108, 1.8083, 0.9815, -19.4108, 1.8083, 0.9815, 1.4776, 1.9999, 0.6345, 1.4776, 1.9999, 0.6345, -19.4108, -1.3458, -1.8748, -19.4108, 1.3456, -1.8748, 1.4776, -1.3458, -1.8748, 1.4776, -1.3458, -1.8748, -19.4108, 1.3456, -1.8748, -19.4108, 1.3456, -1.8748, 1.4776, 1.3456, -1.8748, -19.4108, 1.8083, -1.7311, 1.4776, 1.3456, -1.8748, 1.4776, 1.3456, -1.8748, -19.4108, 1.8083, -1.7311, -19.4108, 1.8083, -1.7311, 1.4776, -1.8084, -1.7311, -19.4108, -1.3458, -1.8748, 1.4776, -1.8084, -1.7311, 1.4776, -1.8084, -1.7311, -19.4108, -1.3458, -1.8748, -19.4108, -1.3458, -1.8748, 1.4776, 1.9999, -1.3841, -19.4108, 1.9999, 0.6345, 1.4776, 1.9999, -1.3841, 1.4776, 1.9999, -1.3841, -19.4108, 1.9999, 0.6345, -19.4108, 1.9999, 0.6345, 1.4776, 2, -1.384, 1.4777, 2, 0.6345, 2, 2, -1.384, 2, 2, -1.384, 1.4777, 2, 0.6345, 1.4777, 2, 0.6345, 2, -1.8084, -1.731, 1.4777, -1.3457, -1.8747, 2, -1.8084, -1.731, 2, -1.8084, -1.731, 1.4777, -1.3457, -1.8747, 1.4777, -1.3457, -1.8747, 2, 1.3456, -1.8747, 1.4777, 1.8083, -1.731, 2, 1.3456, -1.8747, 2, 1.3456, -1.8747, 1.4777, 1.8083, -1.731, 1.4777, 1.8083, -1.731, 2, -1.3457, -1.8747, 1.4777, 1.3456, -1.8747, 2, -1.3457, -1.8747, 2, -1.3457, -1.8747, 1.4777, 1.3456, -1.8747, 1.4777, 1.3456, -1.8747, 2, 1.8083, 0.9815, 2, 2, 0.6345, 1.4777, 1.8083, 0.9815, 1.4777, 1.8083, 0.9815, 2, 2, 0.6345, 2, 2, 0.6345, 1.4777, 1.8083, 0.9815, 2, 1.3456, 1.1253, 1.4777, 1.3456, 1.1253, 2, 1.8083, 0.9815, 2, 1.8083, 0.9815, 1.4777, 1.3456, 1.1253, 1.4777, 2, -1.384, 2, 1.8083, -1.731, 1.4777, 2, -1.384, 1.4777, 2, -1.384, 2, 1.8083, -1.731, 2, 1.8083, -1.731, 1.4777, -1.8084, 0.9815, 2, -2, 0.6345, 1.4777, -2, 0.6345, 2, -1.8084, 0.9815, 2, -1.8084, 0.9815, 1.4777, -2, 0.6345, 1.4777, -1.3457, 1.1253, 2, -1.8084, 0.9815, 1.4777, -1.8084, 0.9815, 2, -1.3457, 1.1253, 2, -1.3457, 1.1253, 1.4777, -1.8084, 0.9815, 1.4777, -2, -1.384, 2, -1.8084, -1.731, 1.4777, -1.8084, -1.731, 2, -2, -1.384, 2, -2, -1.384, 1.4777, -1.8084, -1.731, 1.4777, -2, 0.6345, 2, -2, -1.384, 1.4777, -2, -1.384, 2, -2, 0.6345, 2, -2, 0.6345, 1.4777, -2, -1.384, 1.4777, 1.3456, 1.1253, 2, -1.3457, 1.1253, 1.4777, -1.3457, 1.1253, 2, 1.3456, 1.1253, 2, 1.3456, 1.1253, 1.4777, -1.3457, 1.1253, 1.4777)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pucx1"]
+points = PackedVector3Array(1, -0.670608, 2.34492, -1, -0.670608, 2.34492, 1, -0.785089, 2.30953, 1, -0.148332, 0.674993, -1, -0.148332, 0.674993, -1, -0.785089, 2.30953, 1, -0.262974, 0.639123, 1, 0.866792, -2.5713, -1, 0.866792, -2.5713, -1, -0.262974, 0.639123, 1, 0.75215, -2.60668, -1, 0.75215, -2.60668)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1rld"]
+size = Vector3(0.101147, 2.09875, 1)
+
 [node name="World" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment"]
 environment = SubResource("Environment_yxgm1")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviroment"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="Floor" type="CSGBox3D" parent="."]
 material_override = ExtResource("1_8o8ka")
 use_collision = true
 size = Vector3(200, 0, 200)
@@ -44,11 +60,56 @@ size = Vector3(200, 0, 200)
 [node name="CharacterBody3D" parent="." groups=["character"] instance=ExtResource("2_a0x78")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="Room" type="Node3D" parent="."]
+
+[node name="RoomTransporter" type="CSGBox3D" parent="Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5)
 material_override = SubResource("StandardMaterial3D_u067u")
 use_collision = true
 script = ExtResource("4_h4pg2")
 
-[node name="Room" parent="." instance=ExtResource("5_hr4s3")]
+[node name="Room" parent="Room" instance=ExtResource("5_hr4s3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, -15.4)
+
+[node name="entrance" parent="." instance=ExtResource("6_vtod6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3, 9)
+
+[node name="Entrance" parent="entrance" index="0"]
+surface_material_override/0 = ExtResource("7_rrp7v")
+surface_material_override/1 = ExtResource("7_0i8ol")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="entrance/Entrance" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="entrance/Entrance/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_jdvms")
+
+[node name="Boolean" parent="entrance" index="1"]
+visible = false
+
+[node name="Border" parent="entrance" index="2"]
+surface_material_override/0 = ExtResource("7_rrp7v")
+surface_material_override/1 = ExtResource("7_0i8ol")
+
+[node name="Ramp" parent="entrance" index="3"]
+surface_material_override/0 = ExtResource("7_i7gn0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="entrance/Ramp" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="entrance/Ramp/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_pucx1")
+
+[node name="Railing" parent="entrance" index="4"]
+surface_material_override/0 = ExtResource("7_rrp7v")
+surface_material_override/1 = ExtResource("9_4o6l1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="entrance/Railing" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="entrance/Railing/StaticBody3D"]
+transform = Transform3D(1, 2.28651e-09, 6.22219e-09, -1.81377e-09, 0.997125, -0.0757791, -6.37663e-09, 0.0757791, 0.997125, -0.00655526, 0.438005, 1.4441)
+shape = SubResource("BoxShape3D_y1rld")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="entrance/Railing/StaticBody3D"]
+transform = Transform3D(1, 2.28649e-09, 6.2222e-09, -1.81375e-09, 0.997125, -0.0757791, -6.37663e-09, 0.0757791, 0.997125, -1.81445, 0.438005, 1.4441)
+shape = SubResource("BoxShape3D_y1rld")
+
+[editable path="entrance"]
