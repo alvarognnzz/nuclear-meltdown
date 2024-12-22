@@ -1,7 +1,10 @@
 res://stages/world/world.tscn
 res://common/materials/diamond_plate.tres
+res://common/materials/black_metal.tres
+res://common/materials/metal_rust.tres
 res://entities/character/character.tscn
 res://entities/character/ui/interaction_ui.tscn
 res://entities/character/ui/debug_ui.tscn
 res://stages/room/room.tscn
-res://common/materials/metal_rust.tres
+res://common/materials/metal_light.tres
+res://common/materials/striped_metal.tres
