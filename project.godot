@@ -20,6 +20,15 @@ config/icon="res://icon.svg"
 EventBus="*res://common/autoload/event_bus.gd"
 Global="*res://common/autoload/global.gd"
 
+[display]
+
+window/size/viewport_width=860
+window/size/viewport_height=520
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 forward={
@@ -60,4 +69,4 @@ common/physics_ticks_per_second=165
 
 [rendering]
 
-anti_aliasing/quality/msaa_3d=3
+anti_aliasing/quality/msaa_3d=1

@@ -1,4 +1,6 @@
 res://common/materials
+res://entities/button
+res://entities/elevator
 res://common/autoload
 res://entities/character/ui
 res://entities/box
