@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6e8b7dg6jye5"]
+[gd_scene load_steps=8 format=3 uid="uid://b6e8b7dg6jye5"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_05rf8"]
 [ext_resource type="Script" path="res://entities/character/interaction/interaction_raycast.gd" id="2_bi062"]
 [ext_resource type="Script" path="res://entities/character/ui/canvas_layer.gd" id="3_hs4ei"]
 [ext_resource type="PackedScene" uid="uid://bvtqn23kd743s" path="res://entities/character/ui/interaction_ui.tscn" id="4_5vn6p"]
 [ext_resource type="PackedScene" uid="uid://c1qapi6ed7dtm" path="res://entities/character/ui/debug_ui.tscn" id="5_ocfdl"]
+[ext_resource type="PackedScene" uid="uid://cxvaidam2nkre" path="res://entities/character/ui/stamina.tscn" id="6_j0xhq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h18ij"]
 
@@ -29,3 +30,6 @@ script = ExtResource("3_hs4ei")
 [node name="InteractionUI" parent="CanvasLayer" instance=ExtResource("4_5vn6p")]
 
 [node name="DebugUI" parent="CanvasLayer" instance=ExtResource("5_ocfdl")]
+
+[node name="Stamina" parent="CanvasLayer" node_paths=PackedStringArray("character") instance=ExtResource("6_j0xhq")]
+character = NodePath("../..")

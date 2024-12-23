@@ -2,27 +2,26 @@ extends CharacterBody3D
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
+@onready var sprinting_progress_bar: ProgressBar = $CanvasLayer/Stamina/MarginContainer/ProgressBar
 
-# speed
-const speed := 5.0
+const walking_speed := 5.0
+const sprinting_speed := 6.5
 
-# jumping
 const jump_velocity := 4.5
 
-# sensibility
 const mouse_sensibility := 0.1
 
-# game juice
 const lerp_speed := 10.0
 const fall_multiplier := 2.5
 
-# headbob
 const bob_frequency := 2.0
 const bob_amplitude := 0.04
 var bob: float = 0.0
 
-# gravity
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+var speed: float = walking_speed
+var can_sprint: bool = true
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -34,7 +33,9 @@ func _input(event: InputEvent) -> void:
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
-	print(Engine.get_frames_per_second())
+	print(speed)
+	handle_sprinting()
+	
 	handle_gravity(delta)
 
 	handle_jumping()
@@ -81,3 +82,9 @@ func headbob(time: float, freq, amp) -> Vector3:
 	pos.y = sin(time * freq) * amp
 	
 	return pos
+
+func handle_sprinting() -> void:
+	if can_sprint and Input.is_action_pressed("sprint"):
+		speed = sprinting_speed
+	else:
+		speed = walking_speed
