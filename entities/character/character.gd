@@ -33,7 +33,6 @@ func _input(event: InputEvent) -> void:
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
-	print(speed)
 	handle_sprinting()
 	
 	handle_gravity(delta)

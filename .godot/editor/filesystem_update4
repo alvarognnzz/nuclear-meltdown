@@ -1,4 +1,6 @@
-res://stages/world/world.tscn
+res://entities/character/ui/debug/debug_panel.tscn
+res://common/shaders/post_processing/outline.gdshader
+res://entities/character/posterization.gdshader
 res://common/materials/diamond_plate.tres
 res://common/materials/black_metal.tres
 res://common/materials/metal_rust.tres
@@ -6,10 +8,13 @@ res://common/materials/metal_light.tres
 res://common/materials/striped_metal.tres
 res://common/materials/yellow_metal_rust.tres
 res://common/materials/red_metal.tres
+res://entities/character/ui/debug/debug_panel.gd
+res://stages/world/world.tscn
 res://entities/character/character.tscn
-res://entities/character/ui/interaction_ui.tscn
-res://entities/character/ui/debug_ui.tscn
+res://entities/character/ui/interaction/interaction_ui.tscn
+res://entities/character/ui/debug/debug_ui.tscn
 res://stages/room/room.tscn
 res://entities/button/button.tscn
-res://entities/character/ui/stamina.tscn
+res://entities/character/ui/stamina/stamina.tscn
 res://entities/character/character.gd
+res://entities/character/ui/debug/debug_label.tres

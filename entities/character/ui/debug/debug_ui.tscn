@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1qapi6ed7dtm"]
+[gd_scene load_steps=5 format=3 uid="uid://c1qapi6ed7dtm"]
 
-[ext_resource type="FontFile" uid="uid://chn4wysrv7ws7" path="res://common/fonts/3270-Regular.ttf" id="1_h4asb"]
+[ext_resource type="FontFile" uid="uid://chn4wysrv7ws7" path="res://common/fonts/3270-Regular.ttf" id="1_k26c4"]
+[ext_resource type="PackedScene" uid="uid://bb5347mbg6usi" path="res://entities/character/ui/debug/debug_panel.tscn" id="2_cfv3g"]
+[ext_resource type="Script" path="res://entities/character/ui/debug/debug_panel.gd" id="3_iyyq4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7nc1v"]
 font_size = 18
@@ -21,11 +23,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
 [node name="VersionLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("1_h4asb")
+theme_override_fonts/font = ExtResource("1_k26c4")
 text = "prototype-v0.0"
 label_settings = SubResource("LabelSettings_7nc1v")
+
+[node name="DebugPanel" parent="MarginContainer" instance=ExtResource("2_cfv3g")]
+layout_mode = 2
+script = ExtResource("3_iyyq4")

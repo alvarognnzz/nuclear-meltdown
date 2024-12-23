@@ -1,13 +1,48 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6e8b7dg6jye5"]
+[gd_scene load_steps=14 format=3 uid="uid://b6e8b7dg6jye5"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_05rf8"]
 [ext_resource type="Script" path="res://entities/character/interaction/interaction_raycast.gd" id="2_bi062"]
+[ext_resource type="Shader" path="res://common/shaders/post_processing/outline.gdshader" id="3_5dvfs"]
 [ext_resource type="Script" path="res://entities/character/ui/canvas_layer.gd" id="3_hs4ei"]
-[ext_resource type="PackedScene" uid="uid://bvtqn23kd743s" path="res://entities/character/ui/interaction_ui.tscn" id="4_5vn6p"]
-[ext_resource type="PackedScene" uid="uid://c1qapi6ed7dtm" path="res://entities/character/ui/debug_ui.tscn" id="5_ocfdl"]
-[ext_resource type="PackedScene" uid="uid://cxvaidam2nkre" path="res://entities/character/ui/stamina.tscn" id="6_j0xhq"]
+[ext_resource type="Shader" path="res://entities/character/posterization.gdshader" id="4_1a1oc"]
+[ext_resource type="PackedScene" uid="uid://bvtqn23kd743s" path="res://entities/character/ui/interaction/interaction_ui.tscn" id="4_5vn6p"]
+[ext_resource type="PackedScene" uid="uid://c1qapi6ed7dtm" path="res://entities/character/ui/debug/debug_ui.tscn" id="5_ocfdl"]
+[ext_resource type="PackedScene" uid="uid://cxvaidam2nkre" path="res://entities/character/ui/stamina/stamina.tscn" id="6_j0xhq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h18ij"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_0s3vx"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6uokl"]
+render_priority = 0
+shader = ExtResource("3_5dvfs")
+shader_parameter/outlineColor = Color(0, 0, 0, 0.78)
+shader_parameter/depth_threshold = 0.025
+shader_parameter/normal_threshold = 0.5
+shader_parameter/normal_smoothing = 0.25
+shader_parameter/max_thickness = 1.3
+shader_parameter/min_thickness = 0.5
+shader_parameter/max_distance = 75.0
+shader_parameter/min_distance = 2.0
+shader_parameter/grazing_fresnel_power = 5.0
+shader_parameter/grazing_angle_mask_power = 1.0
+shader_parameter/grazing_angle_modulation_factor = 50.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_kqss0"]
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_unnq4"]
+render_priority = 0
+shader = ExtResource("4_1a1oc")
+shader_parameter/level1 = Color(0, 0, 0, 1)
+shader_parameter/level2 = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/level3 = Color(1, 1, 1, 1)
+shader_parameter/level4 = Color(1, 1, 1, 1)
+shader_parameter/threshold1 = 0.1
+shader_parameter/threshold2 = 0.4
+shader_parameter/threshold3 = 0.6
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_05rf8")
@@ -23,6 +58,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 [node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -1.8)
 script = ExtResource("2_bi062")
+
+[node name="OutlineShader" type="MeshInstance3D" parent="Head/Camera3D"]
+mesh = SubResource("QuadMesh_0s3vx")
+surface_material_override/0 = SubResource("ShaderMaterial_6uokl")
+
+[node name="PosterizationShader" type="MeshInstance3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+visible = false
+mesh = SubResource("QuadMesh_kqss0")
+surface_material_override/0 = SubResource("ShaderMaterial_unnq4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_hs4ei")
