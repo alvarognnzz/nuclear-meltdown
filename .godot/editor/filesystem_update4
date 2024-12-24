@@ -19,3 +19,6 @@ res://entities/character/ui/debug/debug_panel.tscn
 res://entities/character/character.gd
 res://entities/character/interaction/interaction_raycast.gd
 res://common/shaders/post_processing/psx.gdshader
+res://entities/character/ui/debug/debug_panel.gd
+res://common/autoload/debug.gd
+res://addons/console/console.gd

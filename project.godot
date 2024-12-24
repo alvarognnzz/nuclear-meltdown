@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Untitled Game"
+config/name="Nuclear Meltdown"
 run/main_scene="res://stages/world/world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 EventBus="*res://common/autoload/event_bus.gd"
 Global="*res://common/autoload/global.gd"
+Console="*res://addons/console/console.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/console/plugin.cfg")
 
 [input]
 

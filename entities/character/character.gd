@@ -23,6 +23,8 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed: float = walking_speed
 var can_sprint: bool = true
 
+var movement_enabled: bool = true
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -33,15 +35,16 @@ func _input(event: InputEvent) -> void:
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
-	handle_sprinting()
-	
-	handle_gravity(delta)
+	if movement_enabled:
+		handle_sprinting()
+		
+		handle_gravity(delta)
 
-	handle_jumping()
+		handle_jumping()
 
-	handle_movement(delta)
+		handle_movement(delta)
 
-	handle_headbob(delta)
+		handle_headbob(delta)
 
 	move_and_slide()
 

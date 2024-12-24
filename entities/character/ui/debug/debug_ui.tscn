@@ -37,3 +37,5 @@ label_settings = SubResource("LabelSettings_7nc1v")
 [node name="DebugPanel" parent="MarginContainer" instance=ExtResource("2_cfv3g")]
 layout_mode = 2
 script = ExtResource("3_iyyq4")
+
+[editable path="MarginContainer/DebugPanel"]
