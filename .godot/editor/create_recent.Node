@@ -1,3 +1,4 @@
+Camera3D
 Node3D
 OmniLight3D
 SpotLight3D
@@ -12,4 +13,3 @@ MeshInstance3D
 Timer
 ProgressBar
 Control
-AnimationPlayer

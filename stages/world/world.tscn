@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dyeujf1r1rooy"]
+[gd_scene load_steps=25 format=4 uid="uid://dyeujf1r1rooy"]
 
 [ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_8o8ka"]
 [ext_resource type="PackedScene" uid="uid://b6e8b7dg6jye5" path="res://entities/character/character.tscn" id="2_a0x78"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cb10ccpt7eb7d" path="res://stages/power_plant/textures/concrete/Concrete030_1K-JPG_Color.jpg" id="11_bhdxo"]
 [ext_resource type="Texture2D" uid="uid://bwt55ch2i2goy" path="res://stages/power_plant/textures/concrete/Concrete030_1K-JPG_NormalGL.jpg" id="12_nsxne"]
 [ext_resource type="Texture2D" uid="uid://cl6yq5aphtlrl" path="res://stages/power_plant/textures/concrete/Concrete030_1K-JPG_Roughness.jpg" id="13_j5jie"]
+[ext_resource type="Script" path="res://entities/character/free_look_camera.gd" id="14_5piuy"]
 [ext_resource type="PackedScene" uid="uid://bkcfpiexrw1sx" path="res://entities/button/button.tscn" id="15_gvujp"]
 [ext_resource type="Shader" path="res://common/shaders/post_processing/psx.gdshader" id="15_l5il3"]
 
@@ -162,5 +163,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xxxpx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="power_plant/Cylinder2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_lhnin")
+
+[node name="FreeLookCamera" type="Camera3D" parent="."]
+script = ExtResource("14_5piuy")
+sensitivity = 0.05
 
 [editable path="power_plant"]
