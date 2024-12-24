@@ -18,3 +18,4 @@ res://entities/character/ui/stamina/stamina.tscn
 res://entities/character/ui/debug/debug_panel.tscn
 res://stages/entrance/entrance.tscn
 res://entities/lamps/circular_flat/circular_flat_lamp.tscn
+res://entities/character/ui/debug/debug_panel.gd

@@ -1,0 +1,113 @@
+[gd_scene load_steps=20 format=3 uid="uid://dyeujf1r1rooy"]
+
+[ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_8o8ka"]
+[ext_resource type="PackedScene" uid="uid://b6e8b7dg6jye5" path="res://entities/character/character.tscn" id="2_a0x78"]
+[ext_resource type="Texture2D" uid="uid://ch6qkmvntarij" path="res://common/textures/prototyping/orange.png" id="3_bmoy1"]
+[ext_resource type="Script" path="res://entities/box/csg_box_3d.gd" id="4_h4pg2"]
+[ext_resource type="PackedScene" uid="uid://df1lwda447j8p" path="res://stages/entrance/entrance.tscn" id="5_ecndt"]
+[ext_resource type="PackedScene" uid="uid://di70vdljquje2" path="res://stages/room/room.tscn" id="5_hr4s3"]
+[ext_resource type="PackedScene" uid="uid://dnxqe2gxeyl5t" path="res://entities/elevator/elevator.tscn" id="6_rw66e"]
+[ext_resource type="PackedScene" uid="uid://lb2q3oimkbcv" path="res://stages/power_plant/power_plant.blend" id="10_hostj"]
+[ext_resource type="Texture2D" uid="uid://cb10ccpt7eb7d" path="res://stages/power_plant/textures/concrete/Concrete030_1K-JPG_Color.jpg" id="11_bhdxo"]
+[ext_resource type="Texture2D" uid="uid://bwt55ch2i2goy" path="res://stages/power_plant/textures/concrete/Concrete030_1K-JPG_NormalGL.jpg" id="12_nsxne"]
+[ext_resource type="Texture2D" uid="uid://cl6yq5aphtlrl" path="res://stages/power_plant/textures/concrete/Concrete030_1K-JPG_Roughness.jpg" id="13_j5jie"]
+[ext_resource type="PackedScene" uid="uid://bkcfpiexrw1sx" path="res://entities/button/button.tscn" id="15_gvujp"]
+[ext_resource type="Shader" path="res://common/shaders/post_processing/psx.gdshader" id="15_l5il3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oeq14"]
+sky_top_color = Color(0.321569, 0.356863, 0.266667, 1)
+sky_horizon_color = Color(0.375043, 0.448389, 0.362811, 1)
+ground_bottom_color = Color(0.376471, 0.447059, 0.364706, 1)
+ground_horizon_color = Color(0.376471, 0.447059, 0.364706, 1)
+
+[sub_resource type="Sky" id="Sky_tbgt4"]
+sky_material = SubResource("ProceduralSkyMaterial_oeq14")
+
+[sub_resource type="Environment" id="Environment_yxgm1"]
+background_mode = 2
+sky = SubResource("Sky_tbgt4")
+tonemap_mode = 2
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.376471, 0.447059, 0.364706, 1)
+fog_density = 0.008
+volumetric_fog_density = 0.03
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u067u"]
+albedo_texture = ExtResource("3_bmoy1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_80r2o"]
+shader = ExtResource("15_l5il3")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxxpx"]
+albedo_texture = ExtResource("11_bhdxo")
+roughness_texture = ExtResource("13_j5jie")
+normal_enabled = true
+normal_texture = ExtResource("12_nsxne")
+uv1_triplanar = true
+
+[node name="World" type="Node3D"]
+
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment"]
+environment = SubResource("Environment_yxgm1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviroment"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="."]
+material_override = ExtResource("1_8o8ka")
+use_collision = true
+size = Vector3(200, 0, 200)
+
+[node name="Room" type="Node3D" parent="."]
+
+[node name="RoomTransporter" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5)
+material_override = SubResource("StandardMaterial3D_u067u")
+use_collision = true
+script = ExtResource("4_h4pg2")
+
+[node name="Room" parent="Room" instance=ExtResource("5_hr4s3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, -15.4)
+
+[node name="Entrance" parent="." instance=ExtResource("5_ecndt")]
+
+[node name="Elevator" parent="." instance=ExtResource("6_rw66e")]
+
+[node name="Button" parent="." instance=ExtResource("15_gvujp")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.95604, 3.21, 24.8487)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_80r2o")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="CharacterBody3D" parent="SubViewportContainer/SubViewport" groups=["character"] instance=ExtResource("2_a0x78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="power_plant" parent="." instance=ExtResource("10_hostj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 15, 0)
+
+[node name="Cylinder" parent="power_plant" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xxxpx")
+
+[editable path="power_plant"]
