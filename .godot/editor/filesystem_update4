@@ -21,3 +21,4 @@ res://entities/lamps/circular_flat/circular_flat_lamp.tscn
 res://entities/character/ui/debug/debug_panel.gd
 res://entities/character/character.gd
 res://entities/character/free_look_camera.gd
+res://stages/world/free_look_camera.gd

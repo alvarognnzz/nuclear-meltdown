@@ -25,8 +25,12 @@ var can_sprint: bool = true
 
 var movement_enabled: bool = true
 
+var reset_global_position: Vector3
+
 func _ready() -> void:
+	reset_global_position = global_position
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Console.add_command("reset_position", reset_position)
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -90,3 +94,6 @@ func handle_sprinting() -> void:
 		speed = sprinting_speed
 	else:
 		speed = walking_speed
+
+func reset_position() -> void:
+	global_position = reset_global_position
