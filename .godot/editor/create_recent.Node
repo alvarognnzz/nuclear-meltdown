@@ -1,3 +1,5 @@
+SubViewport
+SubViewportContainer
 MarginContainer
 Label
 VBoxContainer
@@ -10,5 +12,3 @@ Control
 AnimationPlayer
 StaticBody3D
 OmniLight3D
-CollisionShape3D
-Node3D

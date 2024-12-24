@@ -1,8 +1,8 @@
 extends RayCast3D
 
-@onready var interaction_label: Label = $"../../../CanvasLayer/InteractionUI/InteractionLabel"
-@onready var progress_container: MarginContainer = $"../../../CanvasLayer/InteractionUI/ProgressContainer"
-@onready var progress_bar: ProgressBar = $"../../../CanvasLayer/InteractionUI/ProgressContainer/CenterContainer/ProgressBar"
+@export var interaction_label: Label
+@export var progress_container: MarginContainer
+@export var progress_bar: ProgressBar
 	
 func _physics_process(delta: float) -> void:
 	if is_colliding():

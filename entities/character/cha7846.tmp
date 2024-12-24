@@ -44,10 +44,8 @@ shader_parameter/threshold1 = 0.1
 shader_parameter/threshold2 = 0.4
 shader_parameter/threshold3 = 0.6
 
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera")]
+[node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_05rf8")
-head = NodePath("Head")
-camera = NodePath("Head/Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_h18ij")
@@ -55,20 +53,24 @@ shape = SubResource("CapsuleShape3D_h18ij")
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Head"]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D" node_paths=PackedStringArray("interaction_label", "progress_container", "progress_bar")]
+[node name="SubViewport" type="SubViewport" parent="Head/SubViewportContainer"]
+
+[node name="Camera3D" type="Camera3D" parent="Head/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="InteractionRaycast" type="RayCast3D" parent="Head/SubViewportContainer/SubViewport/Camera3D"]
 target_position = Vector3(0, 0, -1.8)
 script = ExtResource("2_bi062")
-interaction_label = NodePath("../../../CanvasLayer/InteractionUI/InteractionLabel")
-progress_container = NodePath("../../../CanvasLayer/InteractionUI/ProgressContainer")
-progress_bar = NodePath("../../../CanvasLayer/InteractionUI/ProgressContainer/CenterContainer/ProgressBar")
 
-[node name="OutlineShader" type="MeshInstance3D" parent="Head/Camera3D"]
+[node name="OutlineShader" type="MeshInstance3D" parent="Head/SubViewportContainer/SubViewport/Camera3D"]
 mesh = SubResource("QuadMesh_0s3vx")
 surface_material_override/0 = SubResource("ShaderMaterial_6uokl")
 
-[node name="PosterizationShader" type="MeshInstance3D" parent="Head/Camera3D"]
+[node name="PosterizationShader" type="MeshInstance3D" parent="Head/SubViewportContainer/SubViewport/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 visible = false
 mesh = SubResource("QuadMesh_kqss0")

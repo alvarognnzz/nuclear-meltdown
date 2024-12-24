@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@onready var head: Node3D = $Head
-@onready var camera: Camera3D = $Head/Camera3D
+@export var head: Node3D
+@export var camera: Camera3D
 @onready var sprinting_progress_bar: ProgressBar = $CanvasLayer/Stamina/MarginContainer/ProgressBar
 
 const walking_speed := 5.0
