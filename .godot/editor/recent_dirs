@@ -1,3 +1,7 @@
+res://common/materials
+res://entities/lamps/circular_flat
+res://entities/elevator
+res://stages/entrance
 res://common/autoload
 res://entities/character/ui/debug
 res://common/shaders/post_processing
@@ -5,8 +9,6 @@ res://addons
 res://entities/character/ui
 C:/Users/alvgo/Downloads
 C:/Users/alvgo/Desktop/inter
-res://common/materials
 res://entities/button
-res://entities/elevator
 res://entities/box
 res://stages

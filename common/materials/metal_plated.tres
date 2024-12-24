@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dy3dmb14qxgnk"]
+
+[ext_resource type="Texture2D" uid="uid://dvmv3eidmx8jg" path="res://entities/lamps/circular_flat/textures/metal_plates/MetalPlates001_1K-JPG_Color.jpg" id="1_ovmd3"]
+[ext_resource type="Texture2D" uid="uid://b8gegx3xcvf6j" path="res://entities/lamps/circular_flat/textures/metal_plates/MetalPlates001_1K-JPG_Metalness.jpg" id="2_achrk"]
+[ext_resource type="Texture2D" uid="uid://bnb4h4kw6kbom" path="res://entities/lamps/circular_flat/textures/metal_plates/MetalPlates001_1K-JPG_NormalGL.jpg" id="3_iwfsp"]
+[ext_resource type="Texture2D" uid="uid://b1p0ncs46vaiu" path="res://entities/lamps/circular_flat/textures/metal_plates/MetalPlates001_1K-JPG_Roughness.jpg" id="4_lbxhg"]
+
+[resource]
+albedo_texture = ExtResource("1_ovmd3")
+metallic = 1.0
+metallic_texture = ExtResource("2_achrk")
+roughness_texture = ExtResource("4_lbxhg")
+normal_enabled = true
+normal_texture = ExtResource("3_iwfsp")
+uv1_triplanar = true

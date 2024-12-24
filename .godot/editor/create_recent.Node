@@ -1,3 +1,6 @@
+Node3D
+OmniLight3D
+SpotLight3D
 SubViewport
 SubViewportContainer
 MarginContainer
@@ -10,5 +13,3 @@ Timer
 ProgressBar
 Control
 AnimationPlayer
-StaticBody3D
-OmniLight3D
