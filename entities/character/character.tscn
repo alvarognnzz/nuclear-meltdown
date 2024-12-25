@@ -44,6 +44,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
+[node name="PickingPivot" type="Node3D" parent="Head/Camera3D"]
+
 [node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D" node_paths=PackedStringArray("interaction_label", "progress_container", "progress_bar")]
 target_position = Vector3(0, 0, -1.8)
 script = ExtResource("2_bi062")
@@ -54,9 +56,6 @@ progress_bar = NodePath("../../../CanvasLayer/InteractionUI/ProgressContainer/Ce
 [node name="OutlineShader" type="MeshInstance3D" parent="Head/Camera3D"]
 mesh = SubResource("QuadMesh_0s3vx")
 surface_material_override/0 = SubResource("ShaderMaterial_6uokl")
-
-[node name="PickingPivot" type="Node3D" parent="Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_hs4ei")

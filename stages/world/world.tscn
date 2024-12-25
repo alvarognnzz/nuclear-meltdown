@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dyeujf1r1rooy"]
+[gd_scene load_steps=17 format=3 uid="uid://dyeujf1r1rooy"]
 
 [ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_8o8ka"]
 [ext_resource type="PackedScene" uid="uid://b6e8b7dg6jye5" path="res://entities/character/character.tscn" id="2_a0x78"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dnxqe2gxeyl5t" path="res://entities/elevator/elevator.tscn" id="6_rw66e"]
 [ext_resource type="PackedScene" uid="uid://dbu0888muj1e7" path="res://stages/power_plant/power_plants.tscn" id="9_u2ib2"]
 [ext_resource type="PackedScene" uid="uid://dvk53cue5dtjy" path="res://entities/pickable_object/pickable_object.tscn" id="10_docjd"]
+[ext_resource type="VoxelGIData" uid="uid://bp8dcdbuv7akv" path="res://stages/world/world.VoxelGI_data.res" id="11_l5sjy"]
 [ext_resource type="Shader" path="res://common/shaders/post_processing/psx.gdshader" id="15_l5il3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oeq14"]
@@ -24,12 +25,13 @@ sky_material = SubResource("ProceduralSkyMaterial_oeq14")
 background_mode = 2
 sky = SubResource("Sky_tbgt4")
 tonemap_mode = 2
-sdfgi_enabled = true
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
 sdfgi_use_occlusion = true
 glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.376471, 0.447059, 0.364706, 1)
-fog_density = 0.008
 volumetric_fog_density = 0.03
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_80r2o"]
@@ -52,6 +54,7 @@ environment = SubResource("Environment_yxgm1")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviroment"]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 light_energy = 0.2
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="Floor" type="CSGBox3D" parent="."]
@@ -96,3 +99,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.8
 
 [node name="PickableObject" parent="." instance=ExtResource("10_docjd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.3, -2)
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 12, 8.5)
+size = Vector3(73, 44, 87)
+data = ExtResource("11_l5sjy")

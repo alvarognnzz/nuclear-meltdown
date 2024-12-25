@@ -3,11 +3,13 @@ extends RayCast3D
 @export var interaction_label: Label
 @export var progress_container: MarginContainer
 @export var progress_bar: ProgressBar
-	
+
 func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var collider = get_collider()
-		if collider.has_method("interact"):
+		if collider.has_method("interact") and collider.has_method("can_interact") and not collider.can_interact():
+			hide_interaction_ui()
+		elif collider.has_method("interact"):
 			handle_interaction(collider)
 		else:
 			hide_interaction_ui()
@@ -29,17 +31,19 @@ func handle_interaction(collider: Node) -> void:
 
 func handle_instant_interaction(collider: Node) -> void:
 	if collider.has_method("can_interact") and not collider.can_interact():
+		hide_interaction_ui()
 		return
 
 	if Input.is_action_just_pressed("interact"):
 		collider.interact()
 
 func handle_progress_interaction(collider: Node) -> void:
-	progress_container.visible = true
-
 	if collider.has_method("can_interact") and not collider.can_interact():
 		reset_progress()
+		hide_interaction_ui()
 		return
+
+	progress_container.visible = true
 
 	if Input.is_action_pressed("interact"):
 		progress_bar.value += collider.progress_speed

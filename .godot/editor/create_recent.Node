@@ -1,5 +1,7 @@
-Node3D
+VoxelGI
 RigidBody3D
+StaticBody3D
+Node3D
 MeshInstance3D
 CSGBox3D
 Camera3D
@@ -11,4 +13,3 @@ MarginContainer
 Label
 VBoxContainer
 PanelContainer
-Panel
