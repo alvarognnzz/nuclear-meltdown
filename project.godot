@@ -14,12 +14,17 @@ config/name="Nuclear Meltdown"
 run/main_scene="res://stages/world/world.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+run/size/mode=0
 
 [autoload]
 
 EventBus="*res://common/autoload/event_bus.gd"
 Global="*res://common/autoload/global.gd"
 Console="*res://addons/console/console.gd"
+
+[display]
+
+window/size/mode=3
 
 [editor_plugins]
 

@@ -2,7 +2,8 @@ extends CharacterBody3D
 
 @export var head: Node3D
 @export var camera: Camera3D
-@onready var sprinting_progress_bar: ProgressBar = $CanvasLayer/Stamina/MarginContainer/ProgressBar
+@export var picking_pivot: Node3D
+@export var sprinting_progress_bar: ProgressBar
 
 const walking_speed := 5.0
 const sprinting_speed := 6.5

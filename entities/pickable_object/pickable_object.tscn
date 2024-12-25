@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvk53cue5dtjy"]
+
+[ext_resource type="Texture2D" uid="uid://c48xn8w4ngw25" path="res://common/textures/prototyping/purple.png" id="1_ioemf"]
+[ext_resource type="Script" path="res://entities/pickable_object/pickable_object.gd" id="1_k34es"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5cpvg"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhn66"]
+albedo_texture = ExtResource("1_ioemf")
+uv1_triplanar = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uvow7"]
+points = PackedVector3Array(0.3, 0.3, 0.3, 0.3, 0.3, -0.3, -0.3, 0.3, 0.3, 0.3, -0.3, 0.3, 0.3, -0.3, -0.3, -0.3, 0.3, -0.3, -0.3, -0.3, 0.3, -0.3, -0.3, -0.3)
+
+[node name="PickableObject" type="RigidBody3D"]
+script = ExtResource("1_k34es")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5cpvg")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_dhn66")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_uvow7")

@@ -1,3 +1,5 @@
+res://entities/pickable_object
+res://stages/power_plant
 res://common/materials
 res://entities/lamps/circular_flat
 res://entities/elevator

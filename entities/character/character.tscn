@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6e8b7dg6jye5"]
+[gd_scene load_steps=11 format=3 uid="uid://b6e8b7dg6jye5"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_05rf8"]
 [ext_resource type="Script" path="res://entities/character/interaction/interaction_raycast.gd" id="2_bi062"]
 [ext_resource type="Shader" path="res://common/shaders/post_processing/outline.gdshader" id="3_5dvfs"]
 [ext_resource type="Script" path="res://entities/character/ui/canvas_layer.gd" id="3_hs4ei"]
-[ext_resource type="Shader" path="res://entities/character/posterization.gdshader" id="4_1a1oc"]
 [ext_resource type="PackedScene" uid="uid://bvtqn23kd743s" path="res://entities/character/ui/interaction/interaction_ui.tscn" id="4_5vn6p"]
 [ext_resource type="PackedScene" uid="uid://c1qapi6ed7dtm" path="res://entities/character/ui/debug/debug_ui.tscn" id="5_ocfdl"]
 [ext_resource type="PackedScene" uid="uid://cxvaidam2nkre" path="res://entities/character/ui/stamina/stamina.tscn" id="6_j0xhq"]
@@ -30,24 +29,12 @@ shader_parameter/grazing_fresnel_power = 5.0
 shader_parameter/grazing_angle_mask_power = 1.0
 shader_parameter/grazing_angle_modulation_factor = 50.0
 
-[sub_resource type="QuadMesh" id="QuadMesh_kqss0"]
-size = Vector2(2, 2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_unnq4"]
-render_priority = 0
-shader = ExtResource("4_1a1oc")
-shader_parameter/level1 = Color(0, 0, 0, 1)
-shader_parameter/level2 = Color(0.5, 0.5, 0.5, 1)
-shader_parameter/level3 = Color(1, 1, 1, 1)
-shader_parameter/level4 = Color(1, 1, 1, 1)
-shader_parameter/threshold1 = 0.1
-shader_parameter/threshold2 = 0.4
-shader_parameter/threshold3 = 0.6
-
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera")]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "picking_pivot", "sprinting_progress_bar")]
 script = ExtResource("1_05rf8")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
+picking_pivot = NodePath("Head/Camera3D/PickingPivot")
+sprinting_progress_bar = NodePath("CanvasLayer/Stamina/MarginContainer/ProgressBar")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_h18ij")
@@ -68,11 +55,8 @@ progress_bar = NodePath("../../../CanvasLayer/InteractionUI/ProgressContainer/Ce
 mesh = SubResource("QuadMesh_0s3vx")
 surface_material_override/0 = SubResource("ShaderMaterial_6uokl")
 
-[node name="PosterizationShader" type="MeshInstance3D" parent="Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-visible = false
-mesh = SubResource("QuadMesh_kqss0")
-surface_material_override/0 = SubResource("ShaderMaterial_unnq4")
+[node name="PickingPivot" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_hs4ei")

@@ -11,7 +11,7 @@ var character: CharacterBody3D
 func _ready() -> void:
 	character = get_tree().get_first_node_in_group("character")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	variables = {
 		"variable1": {"name": "FPS", "value": Engine.get_frames_per_second()},
 		"variable2": {"name": "Speed", "value": character.speed},
@@ -31,9 +31,9 @@ func update_labels() -> void:
 		else:
 			create_label(entry.name, entry.value)
 
-func create_label(name: String, value: Variant) -> void:
+func create_label(label_name: String, value: Variant) -> void:
 	var label = Label.new()
-	label.name = name
-	label.text = name + ": " + str(value)
+	label.name = label_name
+	label.text = label_name + ": " + str(value)
 	label.label_settings = LABEL_SETTINGS
 	v_box_container.add_child(label)

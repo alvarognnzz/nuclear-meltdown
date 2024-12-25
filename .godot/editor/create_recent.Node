@@ -1,5 +1,8 @@
-Camera3D
 Node3D
+RigidBody3D
+MeshInstance3D
+CSGBox3D
+Camera3D
 OmniLight3D
 SpotLight3D
 SubViewport
@@ -9,6 +12,3 @@ Label
 VBoxContainer
 PanelContainer
 Panel
-MeshInstance3D
-Timer
-ProgressBar
