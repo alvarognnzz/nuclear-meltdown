@@ -4,7 +4,6 @@ res://entities/game_manager
 /home/alvarognnzz/Developer/Godot/Games/nuclear-meltdown/
 res://entities/lamps/red_danger
 res://stages/world
-res://entities/pickable_object
 res://stages/power_plant
 res://common/materials
 res://entities/lamps/circular_flat
@@ -15,6 +14,4 @@ res://entities/character/ui/debug
 res://common/shaders/post_processing
 res://addons
 res://entities/character/ui
-res://entities/button
-res://entities/box
 res://stages
