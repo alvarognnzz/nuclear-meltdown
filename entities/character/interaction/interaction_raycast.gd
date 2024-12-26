@@ -40,7 +40,7 @@ func handle_instant_interaction(collider: Node) -> void:
 		hide_interaction_ui()
 		return
 
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed(collider.input_action):
 		collider.interact()
 
 func handle_progress_interaction(collider: Node) -> void:
@@ -51,7 +51,7 @@ func handle_progress_interaction(collider: Node) -> void:
 
 	progress_container.visible = true
 
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_pressed(collider.input_action):
 		progress_bar.value += collider.progress_speed
 		if progress_bar.value >= progress_bar.max_value:
 			collider.interact()
@@ -65,8 +65,8 @@ func reset_progress() -> void:
 
 func display_interaction_label(collider: Node) -> void:
 	interaction_label.text = "[{key}] {name}".format({
-		"key": collider.interaction.key,
-		"name": collider.interaction.name
+		"key": collider.key,
+		"name": collider.action_name
 	})
 	interaction_label.visible = true
 

@@ -18,3 +18,11 @@ res://entities/pickable_object/pickable_object.tscn
 res://entities/lamps/red_danger/red_danger_lamp.tscn
 res://entities/canvas_layer/canvas_layer.tscn
 res://entities/pickable_object/pickable_object.gd
+res://entities/pickables/pickable.gd
+res://entities/pickables/pickable_object/pickable_object.tscn
+res://entities/pickables/pickable_object/pickable_object.gd
+res://entities/character/interaction/interaction_raycast.gd
+res://entities/box/csg_box_3d.gd
+res://entities/interactables/interactable.gd
+res://entities/interactables/box/csg_box_3d.gd
+res://entities/interactables/button/button.gd

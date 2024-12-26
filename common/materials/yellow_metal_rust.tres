@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bitgxvr6xspeo"]
 
-[ext_resource type="Texture2D" uid="uid://bia1fl00urems" path="res://entities/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Color.jpg" id="1_r4hv6"]
-[ext_resource type="Texture2D" uid="uid://diyd511jlw7k4" path="res://entities/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Metalness.jpg" id="2_6wynu"]
-[ext_resource type="Texture2D" uid="uid://bhrodmovtjhee" path="res://entities/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_NormalGL.jpg" id="3_1h8bs"]
-[ext_resource type="Texture2D" uid="uid://ctwwwuagx0cf7" path="res://entities/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Roughness.jpg" id="4_xbedf"]
+[ext_resource type="Texture2D" uid="uid://bia1fl00urems" path="res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Color.jpg" id="1_r4hv6"]
+[ext_resource type="Texture2D" uid="uid://diyd511jlw7k4" path="res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Metalness.jpg" id="2_6wynu"]
+[ext_resource type="Texture2D" uid="uid://bhrodmovtjhee" path="res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_NormalGL.jpg" id="3_1h8bs"]
+[ext_resource type="Texture2D" uid="uid://ctwwwuagx0cf7" path="res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Roughness.jpg" id="4_xbedf"]
 
 [resource]
 albedo_texture = ExtResource("1_r4hv6")
