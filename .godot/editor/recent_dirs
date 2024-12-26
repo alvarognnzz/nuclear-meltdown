@@ -1,3 +1,5 @@
+/home/alvarognnzz/Developer/Godot/Games/nuclear-meltdown/
+res://entities/lamps/red_danger
 res://stages/world
 res://entities/pickable_object
 res://stages/power_plant
@@ -10,8 +12,6 @@ res://entities/character/ui/debug
 res://common/shaders/post_processing
 res://addons
 res://entities/character/ui
-C:/Users/alvgo/Downloads
-C:/Users/alvgo/Desktop/inter
 res://entities/button
 res://entities/box
 res://stages

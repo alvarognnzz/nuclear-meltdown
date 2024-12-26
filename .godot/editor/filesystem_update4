@@ -1,4 +1,4 @@
-res://entities/character/character.tscn
+res://stages/world/world.tscn
 res://common/shaders/post_processing/outline.gdshader
 res://entities/character/ui/debug/debug_label.tres
 res://common/materials/black_metal.tres
@@ -10,9 +10,12 @@ res://common/materials/metal_light.tres
 res://common/materials/striped_metal.tres
 res://common/shaders/post_processing/psx.gdshader
 res://entities/character/posterization.gdshader
-res://entities/pickable_object/pickable_object.gd
-res://stages/world/world.tscn
+res://entities/lamps/red_danger/red_danger_lamp.tscn
 res://stages/entrance/entrance.tscn
+res://entities/character/character.tscn
 res://entities/lamps/circular_flat/circular_flat_lamp.tscn
 res://entities/character/ui/debug/debug_ui.tscn
 res://entities/pickable_object/pickable_object.tscn
+res://entities/pickable_object/pickable_object.gd
+res://version.txt
+res://entities/character/ui/debug/version_label.gd

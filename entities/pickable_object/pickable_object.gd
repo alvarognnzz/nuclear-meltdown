@@ -1,6 +1,8 @@
 extends RigidBody3D
 
 @export var interaction_type: Global.InteractionTypes = Global.InteractionTypes.INSTANT
+@export var in_character_position: Vector3 = Vector3.ZERO
+@export var in_character_rotation: Vector3 = Vector3.ZERO
 
 var progress_speed = 1
 var picked: bool = false
@@ -26,6 +28,8 @@ func _input(event: InputEvent) -> void:
 		var direction = (global_transform.origin - character.global_transform.origin).normalized()
 		var impulse = direction * 2
 		apply_central_impulse(impulse)
+		var adjusted_position = ensure_above_ground(global_transform.origin)
+		global_transform.origin = adjusted_position
 		reparent(previous_parent)
 
 func interact() -> void:
@@ -33,12 +37,18 @@ func interact() -> void:
 	picked = true
 	var picking_pivot = character.picking_pivot
 	reparent(picking_pivot)
+	position = in_character_position
+	rotation = in_character_rotation
 	freeze = true
 	collision_layer = 0
 	collision_mask = 0
 
 func can_interact() -> bool:
-	if picked:
-		return false
-	else:
-		return true
+	return not picked
+
+func ensure_above_ground(position: Vector3) -> Vector3:
+	var ground_y = 0
+	var safety_margin = 0.1
+	if position.y < ground_y + safety_margin:
+		position.y = ground_y + safety_margin
+	return position
