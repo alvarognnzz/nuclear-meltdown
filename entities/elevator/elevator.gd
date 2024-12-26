@@ -6,9 +6,9 @@ enum State {OPEN, CLOSED}
 var state: State = State.CLOSED
 
 func _ready() -> void:
-	EventBus.toogle_elevator_door.connect(toogle_elevator_door)
+	EventBus.toggle_elevator_door.connect(toggle_elevator_door)
 
-func toogle_elevator_door():
+func toggle_elevator_door():
 	if state == State.CLOSED:
 		state = State.OPEN
 		animation_player.play("open_door")

@@ -10,5 +10,5 @@ var interaction: Dictionary = {
 }
 
 func interact() -> void:
-	EventBus.toogle_elevator_door.emit()
+	EventBus.toggle_elevator_door.emit()
 	animation_player.play("push_button")

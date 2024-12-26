@@ -4,4 +4,4 @@ extends Node
 signal change_interaction_progress(value)
 
 # elevator_door
-signal toogle_elevator_door
+signal toggle_elevator_door

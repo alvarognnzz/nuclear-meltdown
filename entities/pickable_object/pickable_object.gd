@@ -1,5 +1,9 @@
 extends RigidBody3D
 
+@export var key: String
+@export var input_action: String
+@export var action_name: String
+
 @export var interaction_type: Global.InteractionTypes = Global.InteractionTypes.INSTANT
 @export var in_character_position: Vector3 = Vector3.ZERO
 @export var in_character_rotation: Vector3 = Vector3.ZERO
@@ -46,9 +50,9 @@ func interact() -> void:
 func can_interact() -> bool:
 	return not picked
 
-func ensure_above_ground(position: Vector3) -> Vector3:
-	var ground_y = 0
+func ensure_above_ground(new_position: Vector3) -> Vector3:
+	var ground_y = character.global_position.y - 0.5
 	var safety_margin = 0.1
-	if position.y < ground_y + safety_margin:
-		position.y = ground_y + safety_margin
-	return position
+	if new_position.y < ground_y + safety_margin:
+		new_position.y = ground_y + safety_margin
+	return new_position
