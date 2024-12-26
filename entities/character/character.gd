@@ -31,7 +31,7 @@ var reset_global_position: Vector3
 func _ready() -> void:
 	reset_global_position = global_position
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	Console.add_command("reset_position", reset_position)
+	Console.add_command("reset", reset_position)
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -61,7 +61,7 @@ func handle_gravity(delta: float):
 			velocity.y -= gravity * delta * fall_multiplier
 
 func handle_jumping():
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 
 func handle_movement(delta: float):

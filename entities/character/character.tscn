@@ -1,12 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6e8b7dg6jye5"]
+[gd_scene load_steps=7 format=3 uid="uid://b6e8b7dg6jye5"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_05rf8"]
 [ext_resource type="Script" path="res://entities/character/interaction/interaction_raycast.gd" id="2_bi062"]
 [ext_resource type="Shader" path="res://common/shaders/post_processing/outline.gdshader" id="3_5dvfs"]
-[ext_resource type="Script" path="res://entities/character/ui/canvas_layer.gd" id="3_hs4ei"]
-[ext_resource type="PackedScene" uid="uid://bvtqn23kd743s" path="res://entities/character/ui/interaction/interaction_ui.tscn" id="4_5vn6p"]
-[ext_resource type="PackedScene" uid="uid://c1qapi6ed7dtm" path="res://entities/character/ui/debug/debug_ui.tscn" id="5_ocfdl"]
-[ext_resource type="PackedScene" uid="uid://cxvaidam2nkre" path="res://entities/character/ui/stamina/stamina.tscn" id="6_j0xhq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h18ij"]
 
@@ -29,12 +25,11 @@ shader_parameter/grazing_fresnel_power = 5.0
 shader_parameter/grazing_angle_mask_power = 1.0
 shader_parameter/grazing_angle_modulation_factor = 50.0
 
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "picking_pivot", "sprinting_progress_bar")]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "picking_pivot") groups=["character"]]
 script = ExtResource("1_05rf8")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
 picking_pivot = NodePath("Head/Camera3D/PickingPivot")
-sprinting_progress_bar = NodePath("CanvasLayer/Stamina/MarginContainer/ProgressBar")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_h18ij")
@@ -46,23 +41,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
 [node name="PickingPivot" type="Node3D" parent="Head/Camera3D"]
 
-[node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D" node_paths=PackedStringArray("interaction_label", "progress_container", "progress_bar")]
+[node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -1.8)
 script = ExtResource("2_bi062")
-interaction_label = NodePath("../../../CanvasLayer/InteractionUI/InteractionLabel")
-progress_container = NodePath("../../../CanvasLayer/InteractionUI/ProgressContainer")
-progress_bar = NodePath("../../../CanvasLayer/InteractionUI/ProgressContainer/CenterContainer/ProgressBar")
 
 [node name="OutlineShader" type="MeshInstance3D" parent="Head/Camera3D"]
 mesh = SubResource("QuadMesh_0s3vx")
 surface_material_override/0 = SubResource("ShaderMaterial_6uokl")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("3_hs4ei")
-
-[node name="InteractionUI" parent="CanvasLayer" instance=ExtResource("4_5vn6p")]
-
-[node name="DebugUI" parent="CanvasLayer" instance=ExtResource("5_ocfdl")]
-
-[node name="Stamina" parent="CanvasLayer" node_paths=PackedStringArray("character") instance=ExtResource("6_j0xhq")]
-character = NodePath("../..")

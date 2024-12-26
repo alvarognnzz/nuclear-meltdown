@@ -4,36 +4,26 @@ extends PanelContainer
 
 const LABEL_SETTINGS = preload("res://entities/character/ui/debug/debug_label.tres")
 
-var variables: Dictionary
-
 var character: CharacterBody3D
+var labels = {}
 
 func _ready() -> void:
 	character = get_tree().get_first_node_in_group("character")
+	add_variable_label("FPS", self.get_fps)
 
 func _physics_process(_delta: float) -> void:
-	variables = {
-		"variable1": {"name": "FPS", "value": Engine.get_frames_per_second()},
-		"variable2": {"name": "Speed", "value": character.speed},
-	}
-
 	update_labels()
 
-func update_labels() -> void:
-	var current_labels = {}
-	for label in v_box_container.get_children():
-		current_labels[label.name] = label
-	
-	for key in variables.keys():
-		var entry = variables[key]
-		if current_labels.has(entry.name):
-			current_labels[entry.name].text = entry.name + ": " + str(entry.value)
-		else:
-			create_label(entry.name, entry.value)
-
-func create_label(label_name: String, value: Variant) -> void:
+func add_variable_label(label_name: String, getter: Callable) -> void:
 	var label = Label.new()
 	label.name = label_name
-	label.text = label_name + ": " + str(value)
 	label.label_settings = LABEL_SETTINGS
 	v_box_container.add_child(label)
+	labels[label_name] = {"label": label, "getter": getter}
+
+func update_labels() -> void:
+	for label_data in labels.values():
+		label_data["label"].text = label_data["getter"].call()
+
+func get_fps() -> String:
+	return "FPS: " + str(Engine.get_frames_per_second())

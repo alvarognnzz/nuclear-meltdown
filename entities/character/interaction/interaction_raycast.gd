@@ -1,8 +1,14 @@
 extends RayCast3D
 
-@export var interaction_label: Label
-@export var progress_container: MarginContainer
-@export var progress_bar: ProgressBar
+var interaction_label: Label
+var progress_container: MarginContainer
+var progress_bar: ProgressBar
+
+func _ready() -> void:
+	var canvas_layer = get_tree().get_first_node_in_group("canvas_layer")
+	interaction_label = canvas_layer.interaction_label
+	progress_container = canvas_layer.progress_container
+	progress_bar = canvas_layer.progress_bar
 
 func _physics_process(_delta: float) -> void:
 	if is_colliding():

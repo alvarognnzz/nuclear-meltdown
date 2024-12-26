@@ -2,9 +2,10 @@ extends Control
 
 @onready var progress_bar: ProgressBar = $MarginContainer/ProgressBar
 
-@export var character: CharacterBody3D
+var character: CharacterBody3D
 
 func _ready() -> void:
+	character = get_tree().get_first_node_in_group("character")
 	progress_bar.value = 100
 
 func _physics_process(delta: float) -> void:

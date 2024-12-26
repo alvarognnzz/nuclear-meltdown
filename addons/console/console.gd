@@ -315,29 +315,33 @@ func on_text_entered(new_text : String) -> void:
 		if console_commands.has(text_command):
 			var arguments := text_split.slice(1)
 			
-			# calc is a especial command that needs special treatment
+			# calc is a special command that needs special treatment
 			if text_command.match("calc"):
 				var expression := ""
 				for word in arguments:
 					expression += word
 				console_commands[text_command].function.callv([expression])
+				toggle_console()  # Cierra la consola después de ejecutar
 				return
 			
 			if arguments.size() < console_commands[text_command].required:
 				print_error("Too few arguments! Required < %d >" % console_commands[text_command].required)
+				toggle_console()  # Cierra la consola si hay un error
 				return
 			elif arguments.size() > console_commands[text_command].arguments.size():
 				print_error("Too many arguments! < %d > Max" % console_commands[text_command].arguments.size())
+				toggle_console()  # Cierra la consola si hay un error
 				return
 
-			# Functions fail to call if passed the incorrect number of arguments, so fill out with blank strings.
 			while (arguments.size() < console_commands[text_command].arguments.size()):
 				arguments.append("")
 
 			console_commands[text_command].function.callv(arguments)
+			toggle_console()  # Cierra la consola después de ejecutar el comando
 		else:
 			console_unknown_command.emit(text_command)
 			print_error("Command not found.")
+
 
 
 func on_line_edit_text_changed(new_text : String) -> void:
