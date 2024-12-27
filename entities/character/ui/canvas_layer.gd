@@ -7,3 +7,6 @@ extends CanvasLayer
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_toggle"):
 		visible = not visible
+
+func _ready() -> void:
+	propagate_call("set_mouse_filter", [Control.MOUSE_FILTER_IGNORE])
