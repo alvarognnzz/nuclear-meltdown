@@ -19,10 +19,8 @@ key = "E"
 input_action = "interact"
 action_name = "Pick object"
 in_character_position = Vector3(0.79, -0.375, -1.275)
-in_character_rotation = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-layers = 3
 mesh = SubResource("BoxMesh_5cpvg")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_d6o17")
