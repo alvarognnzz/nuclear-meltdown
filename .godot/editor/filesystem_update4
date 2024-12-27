@@ -1,4 +1,5 @@
 res://stages/world/world.tscn
+res://entities/character/ui/debug/debug_label.tres
 res://common/shaders/post_processing/outline.gdshader
 res://common/shaders/post_processing/psx.gdshader
 res://common/materials/black_metal.tres
@@ -8,7 +9,6 @@ res://common/materials/yellow_metal_rust.tres
 res://common/materials/red_metal.tres
 res://common/materials/metal_light.tres
 res://common/materials/striped_metal.tres
-res://entities/character/ui/debug/debug_label.tres
 res://entities/character/posterization.gdshader
 res://stages/entrance/entrance.tscn
 res://entities/lamps/circular_flat/circular_flat_lamp.tscn

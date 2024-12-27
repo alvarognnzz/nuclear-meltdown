@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6e8b7dg6jye5"]
+[gd_scene load_steps=8 format=3 uid="uid://b6e8b7dg6jye5"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_05rf8"]
 [ext_resource type="Script" path="res://entities/character/interaction/interaction_raycast.gd" id="2_bi062"]
 [ext_resource type="Shader" path="res://common/shaders/post_processing/outline.gdshader" id="3_5dvfs"]
+[ext_resource type="PackedScene" uid="uid://cnxn2fjnxalp3" path="res://entities/canvas_layer/canvas_layer.tscn" id="4_s20rg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h18ij"]
 
@@ -48,3 +49,5 @@ script = ExtResource("2_bi062")
 [node name="OutlineShader" type="MeshInstance3D" parent="Head/Camera3D"]
 mesh = SubResource("QuadMesh_0s3vx")
 surface_material_override/0 = SubResource("ShaderMaterial_6uokl")
+
+[node name="CanvasLayer" parent="." groups=["canvas_layer"] instance=ExtResource("4_s20rg")]
