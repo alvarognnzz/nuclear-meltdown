@@ -25,11 +25,12 @@ shader_parameter/grazing_fresnel_power = 5.0
 shader_parameter/grazing_angle_mask_power = 1.0
 shader_parameter/grazing_angle_modulation_factor = 50.0
 
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "picking_pivot") groups=["character"]]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "picking_pivot", "pickable_camera") groups=["character"]]
 script = ExtResource("1_05rf8")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
 picking_pivot = NodePath("Head/Camera3D/PickingPivot")
+pickable_camera = NodePath("SubViewportContainer/SubViewport/PickableCamera")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_h18ij")
@@ -65,6 +66,6 @@ handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+[node name="PickableCamera" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
-cull_mask = 2
+cull_mask = 3
