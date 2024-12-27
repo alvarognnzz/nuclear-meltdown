@@ -3,17 +3,16 @@ extends CharacterBody3D
 @export var head: Node3D
 @export var camera: Camera3D
 @export var picking_pivot: Node3D
-@export var sprinting_progress_bar: ProgressBar
 
 const walking_speed := 5.0
 const sprinting_speed := 6.5
 
 const jump_velocity := 4.5
+const fall_multiplier := 2.5
 
 const mouse_sensibility := 0.1
 
 const lerp_speed := 10.0
-const fall_multiplier := 2.5
 
 const bob_frequency := 2.0
 const bob_amplitude := 0.04

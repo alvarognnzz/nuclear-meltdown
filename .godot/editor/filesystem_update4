@@ -20,3 +20,9 @@ res://entities/character/ui/canvas_layer.gd
 res://entities/character/ui/interaction/interaction_ui.tscn
 res://entities/character/ui/stamina/stamina.tscn
 res://entities/character/ui/debug/debug_panel.tscn
+res://entities/character/character.gd
+res://entities/character/sub_viewport_container.gd
+res://entities/game_manager/game_manager.gd
+res://addons/console/console.gd
+res://common/autoload/event_bus.gd
+res://version.txt
