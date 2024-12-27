@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var head: Node3D
 @export var camera: Camera3D
 @export var picking_pivot: Node3D
+@onready var camera_3d: Camera3D = $SubViewportContainer/SubViewport/Camera3D
 
 const walking_speed := 5.0
 const sprinting_speed := 6.5
@@ -37,6 +38,9 @@ func _input(event: InputEvent) -> void:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensibility))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensibility))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(60))
+
+func _process(delta: float) -> void:
+	camera_3d.global_transform = camera.global_transform
 
 func _physics_process(delta: float) -> void:
 	if movement_enabled:

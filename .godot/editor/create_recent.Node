@@ -1,5 +1,8 @@
+Camera3D
 SubViewport
 SubViewportContainer
+Label
+CanvasLayer
 Node3D
 Node
 CollisionShape3D
@@ -9,6 +12,3 @@ SpotLight3D
 OmniLight3D
 AnimationPlayer
 VoxelGI
-MeshInstance3D
-CSGBox3D
-Camera3D

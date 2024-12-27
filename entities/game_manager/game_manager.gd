@@ -8,9 +8,12 @@ func _ready() -> void:
 func toggle_fullscreen() -> void:
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		var screen_size = DisplayServer.screen_get_size(0)
+		EventBus.resolution_changed.emit(screen_size.x, screen_size.y)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	EventBus.resolution_changed.emit(get_viewport().size.x, get_viewport().size.y)
+		var window_size = get_window().get_size()
+		EventBus.resolution_changed.emit(window_size.x, window_size.y)
 
 func toggle_vsync() -> void:
 	if DisplayServer.window_get_vsync_mode() == DisplayServer.VSYNC_DISABLED:
@@ -19,6 +22,11 @@ func toggle_vsync() -> void:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 
 func set_resolution(width: String, height: String) -> void:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		var window_size = get_window().get_size()
+		EventBus.resolution_changed.emit(window_size.x, window_size.y)
+	
 	var width_int = int(width)
 	var height_int = int(height)
 	get_window().set_size(Vector2i(width_int, height_int))

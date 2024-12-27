@@ -6,7 +6,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_5cpvg"]
 size = Vector3(0.6, 0.6, 0.6)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhn66"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6o17"]
 albedo_texture = ExtResource("1_ioemf")
 uv1_triplanar = true
 
@@ -22,9 +22,10 @@ in_character_position = Vector3(0.79, -0.375, -1.275)
 in_character_rotation = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 3
 mesh = SubResource("BoxMesh_5cpvg")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_dhn66")
+surface_material_override/0 = SubResource("StandardMaterial3D_d6o17")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_uvow7")
