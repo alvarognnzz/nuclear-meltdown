@@ -74,6 +74,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Floor" type="CSGBox3D" parent="."]
 material_override = ExtResource("1_8o8ka")
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 size = Vector3(200, 0, 200)
 
 [node name="Entrance" parent="." instance=ExtResource("5_ecndt")]
@@ -87,9 +89,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.3, -2)
 
 [node name="PickableObject2" parent="." instance=ExtResource("10_docjd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.3, 0)
-
-[node name="PickableObject3" parent="." instance=ExtResource("10_docjd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.3, 0)
 
 [node name="VoxelGI" type="VoxelGI" parent="."]

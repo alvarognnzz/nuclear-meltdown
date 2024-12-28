@@ -9,7 +9,6 @@ const walking_speed := 5.0
 const sprinting_speed := 6.5
 
 const jump_velocity := 4.5
-const fall_multiplier := 2.5
 
 const mouse_sensibility := 0.1
 
@@ -20,6 +19,7 @@ const bob_amplitude := 0.04
 var bob: float = 0.0
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+const fall_multiplier := 2.5
 
 var speed: float = walking_speed
 var can_sprint: bool = true

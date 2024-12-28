@@ -1,7 +1,7 @@
-res://stages/world/world.tscn
+res://entities/pickables/pickable_object/pickable_object.tscn
+res://entities/character/ui/debug/debug_label.tres
 res://common/shaders/post_processing/outline.gdshader
 res://common/shaders/post_processing/psx.gdshader
-res://entities/character/ui/debug/debug_label.tres
 res://common/materials/black_metal.tres
 res://common/materials/diamond_plate.tres
 res://common/materials/metal_rust.tres
@@ -10,9 +10,10 @@ res://common/materials/red_metal.tres
 res://common/materials/metal_light.tres
 res://common/materials/striped_metal.tres
 res://entities/character/posterization.gdshader
-res://entities/character/character.tscn
-res://entities/pickables/pickable_object/pickable_object.tscn
-res://stages/entrance/entrance.tscn
-res://entities/pickables/pickable_object/pickable_object.gd
 res://entities/pickables/pickable.gd
+res://stages/world/world.tscn
+res://entities/character/character.tscn
+res://stages/entrance/entrance.tscn
 res://entities/character/character.gd
+res://entities/interactables/button/button.tscn
+res://entities/elevator/elevator.tscn
