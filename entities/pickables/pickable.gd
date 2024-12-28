@@ -9,10 +9,19 @@ extends RigidBody3D
 @export var in_character_rotation: Vector3 = Vector3.ZERO
 
 var progress_speed = 1
-var picked: bool = false
+var picked: bool = false :
+	set(value):
+		picked = value
+		for mesh in meshes:
+			if picked:
+				mesh.set_layer_mask_value(2, true)
+			else:
+				mesh.set_layer_mask_value(2, false)
 
 var previous_parent
 var character: CharacterBody3D
+
+var meshes = []
 
 func _ready() -> void:
 	character = get_tree().get_first_node_in_group("character")
@@ -42,6 +51,9 @@ func interact() -> void:
 	collision_mask = 0
 
 func can_interact() -> bool:
+	if character.picking:
+		return false
+	
 	return not picked
 
 func ensure_above_ground(new_position: Vector3) -> Vector3:

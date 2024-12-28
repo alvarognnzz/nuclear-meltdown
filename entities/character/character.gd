@@ -28,6 +28,8 @@ var movement_enabled: bool = true
 
 var reset_global_position: Vector3
 
+var picking: bool = false
+
 func _ready() -> void:
 	reset_global_position = global_position
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

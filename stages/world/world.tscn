@@ -86,6 +86,12 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.8
 [node name="PickableObject" parent="." instance=ExtResource("10_docjd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.3, -2)
 
+[node name="PickableObject2" parent="." instance=ExtResource("10_docjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.3, 0)
+
+[node name="PickableObject3" parent="." instance=ExtResource("10_docjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.3, 0)
+
 [node name="VoxelGI" type="VoxelGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 12, 8.5)
 size = Vector3(73, 44, 87)
