@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://e7k12r3fvt5o"]
+
+[ext_resource type="PackedScene" uid="uid://c20la654djslg" path="res://entities/props/electrical_boxes/big/visuals/big_electrical_box.blend" id="1_2ef4s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yi0uq"]
+size = Vector3(0.861481, 3.01025, 1)
+
+[node name="BigElectricalBox" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010788, 0.687012, 0)
+shape = SubResource("BoxShape3D_yi0uq")
+
+[node name="big_electrical_box" parent="." instance=ExtResource("1_2ef4s")]

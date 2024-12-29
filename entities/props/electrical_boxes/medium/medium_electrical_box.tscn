@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbqxbptau1v13"]
+
+[ext_resource type="PackedScene" uid="uid://cyjb6nauve7es" path="res://entities/props/electrical_boxes/medium/visuals/medium_electrical_box.blend" id="1_s1cj0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nnc8y"]
+size = Vector3(0.884766, 1.64563, 1)
+
+[node name="MediumElectricalBox" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="medium_electrical_box" parent="." instance=ExtResource("1_s1cj0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217337, -0.282654, 0)
+shape = SubResource("BoxShape3D_nnc8y")
+
+[editable path="medium_electrical_box"]

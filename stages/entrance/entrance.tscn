@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://brkv8rpfcoqo3" path="res://common/materials/yellow_stripes.tres" id="2_c513o"]
 [ext_resource type="Material" uid="uid://tgqwk4imo3ex" path="res://common/materials/diamond_plate.tres" id="3_ukkdv"]
 [ext_resource type="Material" uid="uid://b2km0l8khyy34" path="res://common/materials/metal_rust.tres" id="4_3w12e"]
-[ext_resource type="PackedScene" uid="uid://djm8pnd7tkn3c" path="res://entities/lamps/circular_flat/circular_flat_lamp.tscn" id="5_5dfmb"]
+[ext_resource type="PackedScene" uid="uid://djm8pnd7tkn3c" path="res://entities/props/lamps/circular_flat/circular_flat_lamp.tscn" id="5_5dfmb"]
 [ext_resource type="PackedScene" uid="uid://bkcfpiexrw1sx" path="res://entities/interactables/button/button.tscn" id="6_bgee4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_njvtg"]

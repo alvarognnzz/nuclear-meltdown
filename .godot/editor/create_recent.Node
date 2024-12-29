@@ -1,14 +1,4 @@
+CollisionShape3D
 RigidBody3D
 StaticBody3D
-CharacterBody3D
-CollisionShape3D
-Camera3D
-SubViewport
-SubViewportContainer
-Label
-CanvasLayer
 Node3D
-Node
-SpotLight3D
-OmniLight3D
-AnimationPlayer

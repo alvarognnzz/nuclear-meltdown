@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=4 uid="uid://dxs4pt2g006lo"]
+
+[ext_resource type="PackedScene" uid="uid://2gfen7r543tu" path="res://entities/props/electrical_boxes/small/visuals/medium_electrical_box.blend" id="1_h6f87"]
+[ext_resource type="Material" uid="uid://boxo34l0aof6l" path="res://common/materials/electrical_danger.tres" id="2_cioaj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_twseh"]
+size = Vector3(2.01331, 1.61426, 0.468994)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_31jxi"]
+load_path = "res://.godot/imported/Sign009_1K-JPG_Color.jpg-8ccf8bf907a25759a46c650c31a6aa82.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qay22"]
+resource_name = "Sign009_1K-JPG_Color"
+transparency = 4
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_31jxi")
+roughness = 0.5
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gvk3b"]
+_surfaces = [{
+"aabb": AABB(-0.232317, -0.232317, 0, 0.464634, 0.464634, 1e-05),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAADAAEAAAACAAMA"),
+"name": "Sign009_1K-JPG_Color",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("i+Rtvozkbb4AAACAiORtPozkbb4AAACAi+RtvpDkbT4AAACAiORtPpDkbT4AAACA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mrf31"]
+resource_name = "medium_electrical_box_Sign009_1K-JPG_Color"
+_surfaces = [{
+"aabb": AABB(-0.232317, -0.232317, 0, 0.464634, 0.464634, 1e-05),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAIA/AACAPwAAAAAAAAAAAACAPwAAAAA="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAADAAEAAAACAAMA"),
+"material": SubResource("StandardMaterial3D_qay22"),
+"name": "Sign009_1K-JPG_Color",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("i+Rtvozkbb4AAACAiORtPozkbb4AAACAi+RtvpDkbT4AAACAiORtPpDkbT4AAACA/3//f////7//f/9/////v/9//3////+//3//f////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gvk3b")
+
+[node name="SmallElectricalBox" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="medium_electrical_box" parent="." instance=ExtResource("1_h6f87")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00128174, -0.00708008, -0.020874)
+shape = SubResource("BoxShape3D_twseh")
+
+[node name="Sign" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0.479165, 0.34251, 0.212512)
+mesh = SubResource("ArrayMesh_mrf31")
+surface_material_override/0 = ExtResource("2_cioaj")

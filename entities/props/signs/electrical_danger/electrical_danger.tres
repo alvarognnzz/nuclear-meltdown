@@ -1,0 +1,93 @@
+[gd_resource type="VisualShader" load_steps=14 format=3 uid="uid://dlumbnlvy1ml1"]
+
+[ext_resource type="Texture2D" uid="uid://dko6t154xabal" path="res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Opacity.jpg" id="1_g1rsa"]
+[ext_resource type="Texture2D" uid="uid://db435enn66481" path="res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Roughness.jpg" id="2_qu2g5"]
+[ext_resource type="Texture2D" uid="uid://b82wj3mgsm0oh" path="res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Color.jpg" id="3_bxxrh"]
+[ext_resource type="Texture2D" uid="uid://ljj0tpivsn5l" path="res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Metalness.jpg" id="4_gbnoy"]
+[ext_resource type="Texture2D" uid="uid://ch2vctig03wig" path="res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_NormalGL.jpg" id="5_bjcr6"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_tcnyf"]
+texture = ExtResource("1_g1rsa")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6jel0"]
+texture = ExtResource("2_qu2g5")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_c0irb"]
+texture = ExtResource("2_qu2g5")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ifj64"]
+texture = ExtResource("1_g1rsa")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_r7u56"]
+texture = ExtResource("2_qu2g5")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_i06jh"]
+texture = ExtResource("3_bxxrh")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ayhp1"]
+texture = ExtResource("4_gbnoy")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_arjpa"]
+texture = ExtResource("5_bjcr6")
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_7;
+uniform sampler2D tex_frg_5;
+uniform sampler2D tex_frg_8;
+uniform sampler2D tex_frg_12;
+uniform sampler2D tex_frg_9;
+
+
+
+void fragment() {
+// Texture2D:7
+	vec4 n_out7p0 = texture(tex_frg_7, UV);
+
+
+// Texture2D:5
+	vec4 n_out5p0 = texture(tex_frg_5, UV);
+
+
+// Texture2D:8
+	vec4 n_out8p0 = texture(tex_frg_8, UV);
+
+
+// Texture2D:12
+	vec4 n_out12p0 = texture(tex_frg_12, UV);
+
+
+// Texture2D:9
+	vec4 n_out9p0 = texture(tex_frg_9, UV);
+
+
+// Output:0
+	ALBEDO = vec3(n_out7p0.xyz);
+	ALPHA = n_out5p0.x;
+	METALLIC = n_out8p0.x;
+	ROUGHNESS = n_out12p0.x;
+	NORMAL_MAP = vec3(n_out9p0.xyz);
+
+
+}
+"
+nodes/fragment/0/position = Vector2(400, 160)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture_ifj64")
+nodes/fragment/5/position = Vector2(-220, 140)
+nodes/fragment/6/node = SubResource("VisualShaderNodeTexture_r7u56")
+nodes/fragment/6/position = Vector2(-290.282, 2435.68)
+nodes/fragment/7/node = SubResource("VisualShaderNodeTexture_i06jh")
+nodes/fragment/7/position = Vector2(-439.523, 524.358)
+nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_ayhp1")
+nodes/fragment/8/position = Vector2(-620, 300)
+nodes/fragment/9/node = SubResource("VisualShaderNodeTexture_arjpa")
+nodes/fragment/9/position = Vector2(-620, 40)
+nodes/fragment/10/node = SubResource("VisualShaderNodeTexture_tcnyf")
+nodes/fragment/10/position = Vector2(-439.523, 2344.71)
+nodes/fragment/11/node = SubResource("VisualShaderNodeTexture_6jel0")
+nodes/fragment/11/position = Vector2(-439.523, 2951.49)
+nodes/fragment/12/node = SubResource("VisualShaderNodeTexture_c0irb")
+nodes/fragment/12/position = Vector2(20, 580)
+nodes/fragment/connections = PackedInt32Array(12, 0, 0, 3, 5, 0, 0, 1, 7, 0, 0, 0, 8, 0, 0, 2, 9, 0, 0, 9)

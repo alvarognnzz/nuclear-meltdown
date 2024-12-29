@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dyeujf1r1rooy"]
+[gd_scene load_steps=19 format=3 uid="uid://dyeujf1r1rooy"]
 
 [ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_8o8ka"]
 [ext_resource type="Script" path="res://entities/game_manager/game_manager.gd" id="1_y2gij"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dbu0888muj1e7" path="res://stages/power_plant/power_plants.tscn" id="9_u2ib2"]
 [ext_resource type="PackedScene" uid="uid://dvk53cue5dtjy" path="res://entities/pickables/pickable_object/pickable_object.tscn" id="10_docjd"]
 [ext_resource type="VoxelGIData" uid="uid://bp8dcdbuv7akv" path="res://stages/world/world.VoxelGI_data.res" id="11_l5sjy"]
+[ext_resource type="PackedScene" uid="uid://cbqxbptau1v13" path="res://entities/props/electrical_boxes/medium/medium_electrical_box.tscn" id="12_kj3yo"]
+[ext_resource type="PackedScene" uid="uid://e7k12r3fvt5o" path="res://entities/props/electrical_boxes/big/big_electrical_box.tscn" id="13_gwk4v"]
+[ext_resource type="PackedScene" uid="uid://dxs4pt2g006lo" path="res://entities/props/electrical_boxes/small/small_electrical_box.tscn" id="13_kqxo8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oeq14"]
 sky_top_color = Color(0.321569, 0.356863, 0.266667, 1)
@@ -98,3 +101,14 @@ data = ExtResource("11_l5sjy")
 
 [node name="CanvasLayer" parent="." groups=["canvas_layer"] instance=ExtResource("4_t2dlb")]
 follow_viewport_enabled = true
+
+[node name="Props" type="Node3D" parent="."]
+
+[node name="SmallElectricalBox" parent="Props" instance=ExtResource("13_kqxo8")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.551694, 0.814209, -6.16509)
+
+[node name="BigElectricalBox" parent="Props" instance=ExtResource("13_gwk4v")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 3, 0.818115, -9)
+
+[node name="MediumElectricalBox" parent="." instance=ExtResource("12_kj3yo")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 6, 1.10533, -7)

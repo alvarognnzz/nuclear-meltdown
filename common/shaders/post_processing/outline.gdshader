@@ -41,7 +41,7 @@ uniform float normal_smoothing : hint_range(0.0, 1.0) = 0.25;
 group_uniforms thickness;
 uniform float max_thickness: hint_range(0.0, 5.0) = 1.3;
 uniform float min_thickness = 0.5;
-uniform float max_distance = 75.0;
+uniform float max_distance = 40.0;
 uniform float min_distance = 2.0;
 
 group_uniforms grazing_prevention;
