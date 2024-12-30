@@ -7,3 +7,10 @@ res://entities/character/character.tscn
 res://entities/props/wind_turbine/wind_trubine.tscn
 res://stages/world/world.VoxelGI_data.res
 res://credits.txt
+res://entities/character/character.gd
+res://entities/props/wind_turbine/wind_turbine.tscn
+res://entities/props/wind_turbine/wind_turbine.gd
+res://props/electrical_boxes/small/small_electrical_box.tscn
+res://props/electrical_boxes/big/big_electrical_box.tscn
+res://props/wind_turbine/wind_turbine.tscn
+res://entities/character/sub_viewport_container.gd

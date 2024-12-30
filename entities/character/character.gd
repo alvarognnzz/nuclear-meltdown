@@ -8,7 +8,7 @@ extends CharacterBody3D
 const walking_speed := 5.0
 const sprinting_speed := 6.5
 
-const jump_velocity := 4.5
+const jump_velocity := 4.5 
 
 const mouse_sensibility := 0.1
 
@@ -41,7 +41,7 @@ func _input(event: InputEvent) -> void:
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensibility))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(60))
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pickable_camera.global_transform = camera.global_transform
 
 func _physics_process(delta: float) -> void:
