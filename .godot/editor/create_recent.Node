@@ -1,4 +1,5 @@
+AnimationPlayer
 CollisionShape3D
-RigidBody3D
 StaticBody3D
+RigidBody3D
 Node3D

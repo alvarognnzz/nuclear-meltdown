@@ -1,6 +1,9 @@
-res://stages/world/world.tscn
-res://entities/props/signs/electrical_danger/electrical_danger.tres
 res://entities/props/electrical_boxes/medium/medium_electrical_box.tscn
+res://entities/props/signs/electrical_danger/electrical_danger.tres
+res://stages/world/world.tscn
 res://entities/props/electrical_boxes/small/small_electrical_box.tscn
 res://entities/props/electrical_boxes/big/big_electrical_box.tscn
 res://entities/character/character.tscn
+res://entities/props/wind_turbine/wind_trubine.tscn
+res://stages/world/world.VoxelGI_data.res
+res://credits.txt
