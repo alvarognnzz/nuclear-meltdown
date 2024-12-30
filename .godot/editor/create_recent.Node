@@ -1,6 +1,6 @@
-Timer
-AnimationPlayer
+Node3D
 CollisionShape3D
 StaticBody3D
+Timer
+AnimationPlayer
 RigidBody3D
-Node3D
