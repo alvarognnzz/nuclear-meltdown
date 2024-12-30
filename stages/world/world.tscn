@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dyeujf1r1rooy"]
+[gd_scene load_steps=22 format=3 uid="uid://dyeujf1r1rooy"]
 
 [ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_8o8ka"]
 [ext_resource type="Script" path="res://entities/game_manager/game_manager.gd" id="1_y2gij"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dxs4pt2g006lo" path="res://entities/props/electrical_boxes/small/small_electrical_box.tscn" id="13_kqxo8"]
 [ext_resource type="PackedScene" uid="uid://cd874eumlhbs5" path="res://entities/props/wind_turbine/wind_turbine.tscn" id="15_rwpl7"]
 [ext_resource type="PackedScene" uid="uid://cj1fr0pi4k4q2" path="res://entities/movables/bed/bed.tscn" id="16_o44w8"]
+[ext_resource type="PackedScene" uid="uid://k62l4u4xsveu" path="res://entities/props/electric_pole/electric_pole.tscn" id="17_h8cfl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oeq14"]
 sky_top_color = Color(0.321569, 0.356863, 0.266667, 1)
@@ -60,6 +61,7 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 light_energy = 0.2
 light_bake_mode = 1
 shadow_enabled = true
+shadow_opacity = 0.6
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 material = SubResource("ShaderMaterial_6o2bh")
@@ -126,6 +128,15 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="WindTurbine3" parent="Props" instance=ExtResource("15_rwpl7")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -26, 0, -38)
+
+[node name="Electric pole" parent="Props" instance=ExtResource("17_h8cfl")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 33, 0, -37)
+
+[node name="Electric pole3" parent="Props" instance=ExtResource("17_h8cfl")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 31, 0, -50)
+
+[node name="Electric pole2" parent="Props" instance=ExtResource("17_h8cfl")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 32, 0, -25)
 
 [node name="Movables" type="Node3D" parent="."]
 
