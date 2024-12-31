@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6e8b7dg6jye5"]
+[gd_scene load_steps=8 format=3 uid="uid://b6e8b7dg6jye5"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_05rf8"]
 [ext_resource type="Script" path="res://entities/character/interaction/interaction_raycast.gd" id="2_bi062"]
 [ext_resource type="Shader" path="res://common/shaders/post_processing/outline.gdshader" id="3_5dvfs"]
+[ext_resource type="Script" path="res://entities/character/interaction/placing_raycast.gd" id="3_aeuui"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h18ij"]
 
@@ -25,7 +26,7 @@ shader_parameter/grazing_fresnel_power = 5.0
 shader_parameter/grazing_angle_mask_power = 1.0
 shader_parameter/grazing_angle_modulation_factor = 50.0
 
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "picking_pivot", "pickable_camera") groups=["character"]]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "picking_pivot", "pickable_camera", "placing_raycast") groups=["character"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_05rf8")
@@ -33,6 +34,7 @@ head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
 picking_pivot = NodePath("Head/Camera3D/PickingPivot")
 pickable_camera = NodePath("SubViewportContainer/SubViewport/PickableCamera")
+placing_raycast = NodePath("Head/Camera3D/PlacingRaycast")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_h18ij")
@@ -43,11 +45,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 cull_mask = 1048573
 
-[node name="PickingPivot" type="Node3D" parent="Head/Camera3D"]
-
 [node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D"]
-target_position = Vector3(0, 0, -1.8)
+target_position = Vector3(0, 0, -2)
 script = ExtResource("2_bi062")
+
+[node name="PlacingRaycast" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -6)
+collision_mask = 4
+script = ExtResource("3_aeuui")
+
+[node name="PickingPivot" type="Node3D" parent="Head/Camera3D"]
 
 [node name="OutlineShader" type="MeshInstance3D" parent="Head/Camera3D"]
 layers = 3

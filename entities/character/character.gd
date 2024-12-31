@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var camera: Camera3D
 @export var picking_pivot: Node3D
 @export var pickable_camera: Camera3D
+@export var placing_raycast: RayCast3D
 
 const walking_speed := 5.0
 const sprinting_speed := 6.5

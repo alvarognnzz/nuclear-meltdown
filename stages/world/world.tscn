@@ -84,8 +84,8 @@ follow_viewport_enabled = true
 [node name="Floor" type="CSGBox3D" parent="."]
 material_override = ExtResource("1_8o8ka")
 use_collision = true
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 size = Vector3(200, 0, 200)
 
 [node name="Entrance" parent="." instance=ExtResource("5_ecndt")]
@@ -141,4 +141,4 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 [node name="Movables" type="Node3D" parent="."]
 
 [node name="Bed" parent="Movables" instance=ExtResource("16_o44w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.774964, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.000599504, -8)

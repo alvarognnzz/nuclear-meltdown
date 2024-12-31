@@ -5,4 +5,3 @@ extends "res://entities/pickables/pickable.gd"
 
 func _ready() -> void:
 	super()
-	meshes.append(mesh_instance_3d)

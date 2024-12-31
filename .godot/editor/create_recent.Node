@@ -1,7 +1,8 @@
-ShapeCast3D
-RayCast3D
-CollisionShape3D
 StaticBody3D
+Area3D
+RayCast3D
+ShapeCast3D
+CollisionShape3D
 Node3D
 Timer
 AnimationPlayer
