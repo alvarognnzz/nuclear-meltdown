@@ -26,6 +26,15 @@ Console="*res://addons/console/console.gd"
 
 enabled=PackedStringArray("res://addons/console/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://addons/": "pink",
+"res://common/": "gray",
+"res://entities/": "blue",
+"res://stages/": "orange"
+}
+
 [input]
 
 forward={

@@ -11,3 +11,5 @@ res://entities/pickables/pickable.gd
 res://entities/canvas_layer/ui/stamina/stamina.tscn
 res://entities/canvas_layer/ui/stamina/stamina.gd
 res://entities/canvas_layer/canvas_layer.tscn
+res://stages/power_plant/power_plants.tscn
+res://entities/props/power_plant/power_plant.tscn

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl6yq5aphtlrl"
-path.s3tc="res://.godot/imported/Concrete030_1K-JPG_Roughness.jpg-e17787d13aeaf758c91526c39265db25.s3tc.ctex"
+uid="uid://bwt55ch2i2goy"
+path.s3tc="res://.godot/imported/Concrete030_1K-JPG_NormalGL.jpg-9c8c4d28bdbd79a26a7570473aabe3e8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://stages/power_plant/textures/concrete/Concrete030_1K-JPG_Roughness.jpg"
-dest_files=["res://.godot/imported/Concrete030_1K-JPG_Roughness.jpg-e17787d13aeaf758c91526c39265db25.s3tc.ctex"]
+source_file="res://entities/props/power_plant/visuals/textures/concrete/Concrete030_1K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/Concrete030_1K-JPG_NormalGL.jpg-9c8c4d28bdbd79a26a7570473aabe3e8.s3tc.ctex"]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

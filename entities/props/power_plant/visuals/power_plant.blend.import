@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://lb2q3oimkbcv"
-path="res://.godot/imported/power_plant.blend-55ad3afde31838e86366fd823ee0b3fc.scn"
+path="res://.godot/imported/power_plant.blend-934adfd6c4d7a96b92f1e7b71083bf23.scn"
 
 [deps]
 
-source_file="res://stages/power_plant/power_plant.blend"
-dest_files=["res://.godot/imported/power_plant.blend-55ad3afde31838e86366fd823ee0b3fc.scn"]
+source_file="res://entities/props/power_plant/visuals/power_plant.blend"
+dest_files=["res://.godot/imported/power_plant.blend-934adfd6c4d7a96b92f1e7b71083bf23.scn"]
 
 [params]
 

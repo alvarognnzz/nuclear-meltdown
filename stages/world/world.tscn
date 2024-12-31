@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://cnxn2fjnxalp3" path="res://entities/canvas_layer/canvas_layer.tscn" id="4_t2dlb"]
 [ext_resource type="PackedScene" uid="uid://df1lwda447j8p" path="res://stages/entrance/entrance.tscn" id="5_ecndt"]
 [ext_resource type="PackedScene" uid="uid://dnxqe2gxeyl5t" path="res://entities/elevator/elevator.tscn" id="6_rw66e"]
-[ext_resource type="PackedScene" uid="uid://dbu0888muj1e7" path="res://stages/power_plant/power_plants.tscn" id="9_u2ib2"]
 [ext_resource type="PackedScene" uid="uid://dvk53cue5dtjy" path="res://entities/pickables/pickable_object/pickable_object.tscn" id="10_docjd"]
 [ext_resource type="VoxelGIData" uid="uid://bp8dcdbuv7akv" path="res://stages/world/world.VoxelGI_data.res" id="11_l5sjy"]
 [ext_resource type="PackedScene" uid="uid://cbqxbptau1v13" path="res://entities/props/electrical_boxes/medium/medium_electrical_box.tscn" id="12_kj3yo"]
 [ext_resource type="PackedScene" uid="uid://e7k12r3fvt5o" path="res://entities/props/electrical_boxes/big/big_electrical_box.tscn" id="13_gwk4v"]
 [ext_resource type="PackedScene" uid="uid://dxs4pt2g006lo" path="res://entities/props/electrical_boxes/small/small_electrical_box.tscn" id="13_kqxo8"]
 [ext_resource type="PackedScene" uid="uid://cd874eumlhbs5" path="res://entities/props/wind_turbine/wind_turbine.tscn" id="15_rwpl7"]
+[ext_resource type="PackedScene" uid="uid://dbjrsgbf7f3vn" path="res://entities/props/power_plant/power_plant.tscn" id="16_0adpq"]
 [ext_resource type="PackedScene" uid="uid://cj1fr0pi4k4q2" path="res://entities/movables/bed/bed.tscn" id="16_o44w8"]
 [ext_resource type="PackedScene" uid="uid://k62l4u4xsveu" path="res://entities/props/electric_pole/electric_pole.tscn" id="17_h8cfl"]
 
@@ -93,8 +93,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.8
 
 [node name="Elevator" parent="." instance=ExtResource("6_rw66e")]
 
-[node name="Power Plants" parent="." instance=ExtResource("9_u2ib2")]
-
 [node name="VoxelGI" type="VoxelGI" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 12, 8.5)
 size = Vector3(73, 44, 87)
@@ -137,6 +135,12 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 
 [node name="Electric pole2" parent="Props" instance=ExtResource("17_h8cfl")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 32, 0, -25)
+
+[node name="PowerPlant" parent="Props" instance=ExtResource("16_0adpq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 15, 2)
+
+[node name="PowerPlant2" parent="Props" instance=ExtResource("16_0adpq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 22, 12, 26)
 
 [node name="Movables" type="Node3D" parent="."]
 
