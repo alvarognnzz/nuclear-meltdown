@@ -1,8 +1,9 @@
-res://entities/props/wind_turbine/wind_turbine.tscn
+res://entities/character/character.tscn
 res://entities/props/signs/electrical_danger/electrical_danger.tres
 res://stages/world/world.tscn
 res://entities/props/electrical_boxes/small/small_electrical_box.tscn
 res://entities/props/electrical_boxes/big/big_electrical_box.tscn
-res://entities/character/character.tscn
+res://entities/props/wind_turbine/wind_turbine.tscn
 res://entities/movables/bed/bed.tscn
 res://entities/props/electric_pole/electric_pole.tscn
+res://entities/character/character.gd
