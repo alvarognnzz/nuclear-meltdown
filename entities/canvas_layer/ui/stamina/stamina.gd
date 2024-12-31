@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		character.can_sprint = true
 	
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint") and character.velocity.length() > 0.2:
 		progress_bar.value -= delta * 18
 	else:
 		if progress_bar.value != 100:

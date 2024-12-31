@@ -8,3 +8,6 @@ res://stages/world/world.tscn
 res://entities/character/character.tscn
 res://stages/entrance/entrance.tscn
 res://entities/pickables/pickable.gd
+res://entities/canvas_layer/ui/stamina/stamina.tscn
+res://entities/canvas_layer/ui/stamina/stamina.gd
+res://entities/canvas_layer/canvas_layer.tscn
