@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddy0wbvqdjujq"]
+
+[ext_resource type="PackedScene" uid="uid://biy6inwexq01p" path="res://entities/computer/visuals/computer.blend" id="1_e2ht4"]
+[ext_resource type="Material" uid="uid://du38yyuab8mvn" path="res://entities/computer/visuals/computer.tres" id="2_xepa3"]
+
+[node name="Computer" type="StaticBody3D"]
+
+[node name="computer" parent="." instance=ExtResource("1_e2ht4")]
+
+[node name="Key_Board_Low" parent="computer" index="0"]
+surface_material_override/0 = ExtResource("2_xepa3")
+
+[node name="Computer_Low" parent="computer" index="1"]
+surface_material_override/0 = ExtResource("2_xepa3")
+
+[node name="Vert_Low" parent="computer" index="2"]
+surface_material_override/0 = ExtResource("2_xepa3")
+
+[node name="Base_Low" parent="computer" index="3"]
+surface_material_override/0 = ExtResource("2_xepa3")
+
+[node name="Mouse_Low" parent="computer" index="4"]
+surface_material_override/0 = ExtResource("2_xepa3")
+
+[node name="Mouse_Wheel_Low" parent="computer" index="5"]
+surface_material_override/0 = ExtResource("2_xepa3")
+
+[editable path="computer"]

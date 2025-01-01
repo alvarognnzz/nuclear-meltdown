@@ -1,4 +1,5 @@
-res://entities/props/table
+res://entities/computer/visuals
+res://entities/computer
 res://entities/props/power_plant
 res://common/materials
 res://entities/character/interaction

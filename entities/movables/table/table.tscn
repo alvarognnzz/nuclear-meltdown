@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dxgmqpyljc75u"]
+[gd_scene load_steps=23 format=4 uid="uid://dxgmqpyljc75u"]
 
 [ext_resource type="Script" path="res://entities/movables/table/table.gd" id="1_gmp5v"]
 [ext_resource type="Material" uid="uid://dbc2eoo786k36" path="res://common/materials/black_metal.tres" id="2_0l5u8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c8d5wil6n0faq" path="res://entities/movables/table/chair/textures/Image_0.jpg" id="6_bw443"]
 [ext_resource type="Texture2D" uid="uid://cf3bxjsoi0er0" path="res://entities/movables/table/chair/textures/Image_1.png" id="7_4pmt2"]
 [ext_resource type="Texture2D" uid="uid://ckc6nwy2wnikx" path="res://entities/movables/table/chair/textures/Image_2.png" id="8_f7w1q"]
+[ext_resource type="PackedScene" uid="uid://biy6inwexq01p" path="res://entities/computer/visuals/computer.blend" id="9_kf1sm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6yga"]
 
@@ -220,3 +221,6 @@ shape = SubResource("BoxShape3D_hu1rm")
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -1.48022, 0.604736, 0.199207)
 shape = SubResource("BoxShape3D_88di5")
+
+[node name="computer" parent="." instance=ExtResource("9_kf1sm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.28976, 0)
