@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dyeujf1r1rooy"]
+[gd_scene load_steps=23 format=3 uid="uid://dyeujf1r1rooy"]
 
 [ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_8o8ka"]
 [ext_resource type="Script" path="res://entities/game_manager/game_manager.gd" id="1_y2gij"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dbjrsgbf7f3vn" path="res://entities/props/power_plant/power_plant.tscn" id="16_0adpq"]
 [ext_resource type="PackedScene" uid="uid://cj1fr0pi4k4q2" path="res://entities/movables/bed/bed.tscn" id="16_o44w8"]
 [ext_resource type="PackedScene" uid="uid://k62l4u4xsveu" path="res://entities/props/electric_pole/electric_pole.tscn" id="17_h8cfl"]
+[ext_resource type="PackedScene" uid="uid://dxgmqpyljc75u" path="res://entities/movables/table/table.tscn" id="18_vpanw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oeq14"]
 sky_top_color = Color(0.321569, 0.356863, 0.266667, 1)
@@ -146,3 +147,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 22, 12, 26)
 
 [node name="Bed" parent="Movables" instance=ExtResource("16_o44w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.000599504, -8)
+
+[node name="Table" parent="." instance=ExtResource("18_vpanw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)

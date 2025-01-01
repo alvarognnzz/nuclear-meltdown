@@ -25,7 +25,8 @@ const NORMAL_THRESHOLD = 0.8
 func _ready() -> void:
 	character = get_tree().get_first_node_in_group("character")
 	placing_raycast = character.placing_raycast
-	
+	area_3d.body_entered.connect(_on_area_3d_body_entered)
+	area_3d.body_exited.connect(_on_area_3d_body_exited)
 
 func _physics_process(delta: float) -> void:
 	if moving:
@@ -78,6 +79,7 @@ func interact() -> void:
 func can_interact() -> bool:
 	return not character.picking
 
+# body.get_collision_layer_value(3) detects whether the object is a usable floor or not 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body not in bodies_in_area and body != self and not body.get_collision_layer_value(3):
 		bodies_in_area.append(body)
