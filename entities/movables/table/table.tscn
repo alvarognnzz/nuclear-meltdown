@@ -225,4 +225,22 @@ shape = SubResource("BoxShape3D_88di5")
 [node name="Computer" parent="." instance=ExtResource("9_1tu8n")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.28695, 0)
 
+[node name="Key_Board_Low" parent="Computer/Visuals" index="0"]
+surface_material_override/0 = null
+
+[node name="Computer_Low" parent="Computer/Visuals" index="1"]
+surface_material_override/0 = null
+
+[node name="Vert_Low" parent="Computer/Visuals" index="2"]
+surface_material_override/0 = null
+
+[node name="Base_Low" parent="Computer/Visuals" index="3"]
+surface_material_override/0 = null
+
+[node name="Mouse_Low" parent="Computer/Visuals" index="4"]
+surface_material_override/0 = null
+
+[node name="Mouse_Wheel_Low" parent="Computer/Visuals" index="5"]
+surface_material_override/0 = null
+
 [editable path="Computer"]

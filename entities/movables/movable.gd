@@ -22,6 +22,8 @@ var placing_raycast: RayCast3D
 const SMOOTH_SPEED = 20.0
 const NORMAL_THRESHOLD = 0.8
 
+const ROTATION_SPEED = 3.0
+
 func _ready() -> void:
 	character = get_tree().get_first_node_in_group("character")
 	placing_raycast = character.placing_raycast
@@ -32,6 +34,12 @@ func _physics_process(delta: float) -> void:
 	if moving:
 		update_mesh_materials()
 		handle_placing_raycast(delta)
+		
+		if Input.is_action_pressed("rotate"):
+			if Input.is_action_pressed("rotate_backwards"):
+				rotation.y += delta * -ROTATION_SPEED
+			else:
+				rotation.y += delta * ROTATION_SPEED
 
 func update_mesh_materials() -> void:
 	var material : Material
