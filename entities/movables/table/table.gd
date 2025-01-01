@@ -3,4 +3,23 @@ extends "res://entities/movables/movable.gd"
 func _ready() -> void:
 	super()
 	meshes = [$Visuals/Table/Cube, $Visuals/Table/Cube_001, $Visuals/Chair/Chair]
-	collisions = [$CollisionShape3D, $CollisionShape3D2, $CollisionShape3D3, $CollisionShape3D4, $CollisionShape3D5, $CollisionShape3D6]
+	
+	for children in $Visuals/Table.get_children():
+		if children is MeshInstance3D:
+			meshes.append(children)
+	
+	for children in $Computer.get_children():
+		if children is CollisionShape3D:
+			collisions.append(children)
+	
+	for children in $Computer/Visuals.get_children():
+		if children is MeshInstance3D:
+			meshes.append(children)
+	
+	for children in get_children():
+		if children is CollisionShape3D:
+			collisions.append(children)
+	
+	for children in $Computer.get_children():
+		if children is CollisionShape3D:
+			collisions.append(children)
