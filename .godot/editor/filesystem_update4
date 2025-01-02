@@ -17,3 +17,8 @@ res://common/autoload/event_bus.gd
 res://entities/character/footsteps.gd
 res://entities/movables/bed/bed.gd
 res://version.txt
+res://entities/pickables/pickable_object/pickable_object.tscn
+res://entities/pickables/pickable.gd
+res://entities/interactables/button/button.tscn
+res://entities/interactables/button/button.gd
+res://entities/movables/movable.gd

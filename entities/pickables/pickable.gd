@@ -8,6 +8,8 @@ extends RigidBody3D
 @export var in_character_position: Vector3 = Vector3.ZERO
 @export var in_character_rotation: Vector3 = Vector3.ZERO
 
+@export var audio_stream_player: AudioStreamPlayer 
+
 var progress_speed = 1
 var picked: bool = false
 
@@ -22,6 +24,10 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("drop") and picked:
+		if audio_stream_player:
+			audio_stream_player.pitch_scale = randf_range(0.7, 0.8)
+			audio_stream_player.play()
+		
 		picked = false
 		character.picking = false
 		reparent(previous_parent)
@@ -30,6 +36,10 @@ func _input(event: InputEvent) -> void:
 		global_rotation = Vector3.ZERO
 
 func interact() -> void:
+	if audio_stream_player:
+		audio_stream_player.pitch_scale = randf_range(0.9, 1.1)
+		audio_stream_player.play()
+
 	previous_parent = get_parent()
 	picked = true
 	character.picking = true

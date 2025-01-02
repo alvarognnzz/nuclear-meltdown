@@ -10,7 +10,7 @@ const SPRINGS_STREAMS = [
 func _ready() -> void:
 	super()
 	meshes = [$Visuals/Bed]
-	collisions = [$StaticBody3D/CollisionShape3D, $CollisionShape3D2, $CollisionShape3D3]	
+	collisions = [$CollisionShape3D, $CollisionShape3D2, $CollisionShape3D3]	
 	EventBus.landed_on_jumpable.connect(landed_on_jumpable)
 
 func play_springs_audio() -> void:

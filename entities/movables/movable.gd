@@ -8,6 +8,9 @@ extends StaticBody3D
 
 @export var area_3d: Area3D
 
+@export var pick_audio: AudioStreamPlayer 
+@export var place_audio: AudioStreamPlayer 
+
 const GREEN_TRANSPARENT = preload("res://common/materials/green_transparent.tres")
 const RED_TRANSPARENT = preload("res://common/materials/red_transparent.tres")
 
@@ -70,6 +73,8 @@ func _input(event: InputEvent) -> void:
 		stop_moving()
 
 func stop_moving() -> void:
+	if place_audio:
+		place_audio.play()
 	character.picking = false
 	for mesh in meshes:
 		mesh.material_override = null
@@ -81,6 +86,8 @@ func enable_collisions() -> void:
 		collision.disabled = false
 
 func interact() -> void:
+	if pick_audio:
+		pick_audio.play()
 	character.picking = true
 	moving = true
 

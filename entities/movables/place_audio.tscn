@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dykc511xycqwo"]
+
+[ext_resource type="AudioStream" uid="uid://cn72ocgk6mn73" path="res://common/sounds/movables/place.ogg" id="1_6q3bu"]
+
+[node name="PlaceAudio" type="AudioStreamPlayer"]
+stream = ExtResource("1_6q3bu")
