@@ -148,7 +148,8 @@ func clamp_camera_rotation(delta: float) -> void:
 		if jumping_timer.is_stopped():
 			avoid_clamping = true
 			jumping_timer.start()
-	elif is_on_floor() and head.rotation.x > deg_to_rad(60):
+	
+	if is_on_floor() and head.rotation.x > deg_to_rad(61):
 		head.rotation.x = lerp(head.rotation.x, deg_to_rad(60), delta * 10.0)
 		if jumping_timer.is_stopped():
 			avoid_clamping = true
