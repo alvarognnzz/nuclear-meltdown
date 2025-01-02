@@ -94,6 +94,7 @@ func handle_jumping():
 			var collision = get_slide_collision(i)
 			if collision.get_collider().is_in_group("jumpable"):
 				landed_on_jumpable = true
+				EventBus.landed_on_jumpable.emit(collision.get_collider())
 				if Input.is_action_pressed("ui_accept"):
 					velocity.y = jump_velocity * jump_multiplier
 					jump_multiplier += 1

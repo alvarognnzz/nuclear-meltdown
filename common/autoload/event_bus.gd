@@ -8,3 +8,6 @@ signal toggle_elevator_door
 
 # resolution
 signal resolution_changed(width, height)
+
+# jumpable
+signal landed_on_jumpable(jumpable)

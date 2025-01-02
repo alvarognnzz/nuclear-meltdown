@@ -1,1 +1,1 @@
-prototype v0.5
+prototype v0.6

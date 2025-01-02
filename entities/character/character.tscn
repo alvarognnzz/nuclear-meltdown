@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6e8b7dg6jye5"]
+[gd_scene load_steps=10 format=3 uid="uid://b6e8b7dg6jye5"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_05rf8"]
 [ext_resource type="Script" path="res://entities/character/interaction/interaction_raycast.gd" id="2_bi062"]
 [ext_resource type="Shader" path="res://common/shaders/post_processing/outline.gdshader" id="3_5dvfs"]
 [ext_resource type="Script" path="res://entities/character/interaction/placing_raycast.gd" id="3_aeuui"]
+[ext_resource type="AudioStream" uid="uid://clmn37gomagjr" path="res://common/sounds/footsteps/concrete/footsteps_concrete1.ogg" id="5_dgjp4"]
+[ext_resource type="Script" path="res://entities/character/footsteps.gd" id="6_4edd4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h18ij"]
 
@@ -83,4 +85,14 @@ cull_mask = 2
 wait_time = 0.5
 one_shot = true
 
+[node name="Audio" type="Node" parent="."]
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_dgjp4")
+volume_db = -10.0
+script = ExtResource("6_4edd4")
+
+[node name="StepTimer" type="Timer" parent="Audio/Footsteps"]
+
 [connection signal="timeout" from="JumpingTimer" to="." method="_on_jumping_timer_timeout"]
+[connection signal="timeout" from="Audio/Footsteps/StepTimer" to="Audio/Footsteps" method="_on_step_timer_timeout"]

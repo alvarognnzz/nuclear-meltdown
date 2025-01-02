@@ -1,9 +1,13 @@
-Timer
-CollisionShape3D
 StaticBody3D
 Node3D
+AudioStreamPlayer
+AudioStreamPlayer3D
+Timer
+AnimationPlayer
+AnimationTree
+Node
+CollisionShape3D
 Area3D
 RayCast3D
 ShapeCast3D
-AnimationPlayer
 RigidBody3D

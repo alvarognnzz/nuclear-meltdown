@@ -13,3 +13,7 @@ res://entities/props/power_plant/power_plant.tscn
 res://entities/movables/table/table.tscn
 res://entities/props/electrical_boxes/small/small_electrical_box.tscn
 res://entities/character/character.gd
+res://common/autoload/event_bus.gd
+res://entities/character/footsteps.gd
+res://entities/movables/bed/bed.gd
+res://version.txt
