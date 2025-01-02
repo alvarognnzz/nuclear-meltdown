@@ -1,9 +1,9 @@
+Timer
 CollisionShape3D
 StaticBody3D
 Node3D
 Area3D
 RayCast3D
 ShapeCast3D
-Timer
 AnimationPlayer
 RigidBody3D

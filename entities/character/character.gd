@@ -6,6 +6,8 @@ extends CharacterBody3D
 @export var pickable_camera: Camera3D
 @export var placing_raycast: RayCast3D
 
+@onready var jumping_timer: Timer = $JumpingTimer
+
 const walking_speed := 5.0
 const sprinting_speed := 6.5
 
@@ -31,9 +33,10 @@ var reset_global_position: Vector3
 
 var picking: bool = false
 
-var was_on_floor = true
+var was_on_floor: bool = true
 var jump_multiplier = 1
 
+var avoid_clamping: bool = false
 
 func _ready() -> void:
 	reset_global_position = global_position
@@ -44,7 +47,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensibility))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensibility))
-		if jump_multiplier < 2:
+		if jump_multiplier < 2 and not avoid_clamping:
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(60))
 	
 	elif event.is_action_pressed("escape"):
@@ -59,6 +62,8 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta):
 	if movement_enabled:
+		clamp_camera_rotation(delta)
+		
 		handle_sprinting()
 		
 		handle_gravity(delta)
@@ -135,3 +140,18 @@ func handle_sprinting() -> void:
 
 func reset_position() -> void:
 	global_position = reset_global_position
+
+func clamp_camera_rotation(delta: float) -> void:
+	if is_on_floor() and head.rotation.x < deg_to_rad(-80):
+		head.rotation.x = lerp(head.rotation.x, deg_to_rad(-80), delta * 10.0)
+		if jumping_timer.is_stopped():
+			avoid_clamping = true
+			jumping_timer.start()
+	elif is_on_floor() and head.rotation.x > deg_to_rad(60):
+		head.rotation.x = lerp(head.rotation.x, deg_to_rad(60), delta * 10.0)
+		if jumping_timer.is_stopped():
+			avoid_clamping = true
+			jumping_timer.start()
+
+func _on_jumping_timer_timeout() -> void:
+	avoid_clamping = false
