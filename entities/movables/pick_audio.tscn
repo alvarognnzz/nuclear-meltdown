@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdlj583y4eoyy"]
+
+[ext_resource type="AudioStream" uid="uid://fwo3ghja6qqt" path="res://common/sounds/movables/pick.ogg" id="1_2p42y"]
+
+[node name="PickAudio" type="AudioStreamPlayer"]
+stream = ExtResource("1_2p42y")
+volume_db = -4.0

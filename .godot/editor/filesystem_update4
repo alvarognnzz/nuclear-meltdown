@@ -22,3 +22,5 @@ res://entities/pickables/pickable.gd
 res://entities/interactables/button/button.tscn
 res://entities/interactables/button/button.gd
 res://entities/movables/movable.gd
+res://entities/movables/pick_audio.tscn
+res://entities/props/wind_turbine/wind_turbine.tscn

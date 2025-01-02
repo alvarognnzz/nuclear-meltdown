@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://cd874eumlhbs5"]
+[gd_scene load_steps=13 format=4 uid="uid://cd874eumlhbs5"]
 
 [ext_resource type="Script" path="res://entities/props/wind_turbine/wind_turbine.gd" id="1_4mdk6"]
 [ext_resource type="Texture2D" uid="uid://c1dmj4qbt8jsj" path="res://entities/props/wind_turbine/visuals/textures/Windturbine.png" id="2_a3iex"]
+[ext_resource type="AudioStream" uid="uid://b2l75efhb5xux" path="res://common/sounds/wind_turbines/wind.ogg" id="3_i24hr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sehxo"]
 resource_name = "Windmill"
@@ -147,5 +148,11 @@ autoplay = "rotate"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 0)
+stream = ExtResource("3_i24hr")
+autoplay = true
+max_distance = 40.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
