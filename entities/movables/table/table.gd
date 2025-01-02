@@ -2,7 +2,7 @@ extends "res://entities/movables/movable.gd"
 
 func _ready() -> void:
 	super()
-	meshes = [$Visuals/Table/Cube, $Visuals/Table/Cube_001, $Visuals/Chair/Chair]
+	meshes = [$Visuals/Table/Cube, $Visuals/Table/Cube_001, $Visuals/Chair/Chair, $Computer/Sprite3D]
 	
 	for children in $Visuals/Table.get_children():
 		if children is MeshInstance3D:

@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1735822951
-credits.txt::TextFile::-1::1735733969::0::1::::<><>::
+::res://::1735847343
+credits.txt::TextFile::-1::1735837479::0::1::::<><>::
 icon.svg::CompressedTexture2D::4443891089115018866::1735397331::1735485247::1::::<><>::
 version.txt::TextFile::-1::1735820844::0::1::::<><>::
 ::res://addons/::1735397331
@@ -36,18 +36,18 @@ ChakraPetch-Bold.ttf::FontFile::6168362201759950293::1735397331::1735485247::1::
 ChakraPetch-Medium.ttf::FontFile::8943967472021822133::1735397331::1735485247::1::::<><>::
 ChakraPetch-Regular.ttf::FontFile::4138707377358843705::1735397331::1735485247::1::::<><>::
 ChakraPetch-SemiBold.ttf::FontFile::8650506236333012885::1735397331::1735485247::1::::<><>::
-::res://common/materials/::1735813847
+::res://common/materials/::1735839635
 base.tres::StandardMaterial3D::8869122041048614965::1735397331::0::1::::<><>::uid://dhbr3y52jd0aa::::res://common/textures/prototyping/base.png
 black_metal.tres::StandardMaterial3D::7235226910659196679::1735482608::0::1::::<><>::uid://cgplosv8s0sns::::res://common/models/entrance/textures/metal/Metal046B_1K-JPG_Color.jpg<>uid://bdvaq7n4m3jyc::::res://common/models/entrance/textures/metal/Metal046B_1K-JPG_Metalness.jpg<>uid://psrsyo4rvo0s::::res://common/models/entrance/textures/metal/Metal046B_1K-JPG_NormalGL.jpg<>uid://c6jcvstrcdyxc::::res://common/models/entrance/textures/metal/Metal046B_1K-JPG_Roughness.jpg
 diamond_plate.tres::StandardMaterial3D::1346985625410076799::1735482608::0::1::::<><>::uid://bb8gw625m7okv::::res://common/models/entrance/textures/diamond_plate/DiamondPlate007D_1K-JPG_Color.jpg<>uid://c1pwgb731ym37::::res://common/models/entrance/textures/diamond_plate/DiamondPlate007D_1K-JPG_Metalness.jpg<>uid://clohpwpbq8vwe::::res://common/models/entrance/textures/diamond_plate/DiamondPlate007D_1K-JPG_NormalGL.jpg<>uid://gbknk2g85n04::::res://common/models/entrance/textures/diamond_plate/DiamondPlate007D_1K-JPG_Roughness.jpg
 electrical_danger.tres::ShaderMaterial::3417446764403442317::1735562186::0::1::::<><>::uid://dlumbnlvy1ml1::::res://entities/props/signs/electrical_danger/electrical_danger.tres
-green_transparent.tres::StandardMaterial3D::9002490704928247370::1735813847::0::1::::<><>::
+green_transparent.tres::StandardMaterial3D::9002490704928247370::1735839635::0::1::::<><>::
 metal_light.tres::StandardMaterial3D::4497063534640834087::1735482608::0::1::::<><>::uid://c51x0j0n2faso::::res://entities/elevator/visuals/textures/metal/Metal024_1K-JPG_Color.jpg<>uid://cv3kmc6gydh5w::::res://entities/elevator/visuals/textures/metal/Metal024_1K-JPG_Metalness.jpg<>uid://dvp5hrqo1ws2n::::res://entities/elevator/visuals/textures/metal/Metal024_1K-JPG_NormalGL.jpg<>uid://bfdqb0xqmmo4::::res://entities/elevator/visuals/textures/metal/Metal024_1K-JPG_Roughness.jpg
 metal_plated.tres::StandardMaterial3D::8901800550039097268::1735562186::0::1::::<><>::uid://dvmv3eidmx8jg::::res://entities/props/lamps/circular_flat/textures/metal_plates/MetalPlates001_1K-JPG_Color.jpg<>uid://b8gegx3xcvf6j::::res://entities/props/lamps/circular_flat/textures/metal_plates/MetalPlates001_1K-JPG_Metalness.jpg<>uid://bnb4h4kw6kbom::::res://entities/props/lamps/circular_flat/textures/metal_plates/MetalPlates001_1K-JPG_NormalGL.jpg<>uid://b1p0ncs46vaiu::::res://entities/props/lamps/circular_flat/textures/metal_plates/MetalPlates001_1K-JPG_Roughness.jpg
 metal_red.tres::StandardMaterial3D::1179878620767540219::1735397331::0::1::::<><>::uid://bia1fl00urems::::res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Color.jpg<>uid://diyd511jlw7k4::::res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Metalness.jpg<>uid://bhrodmovtjhee::::res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_NormalGL.jpg<>uid://ctwwwuagx0cf7::::res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Roughness.jpg
 metal_rust.tres::StandardMaterial3D::4302937117421471077::1735482608::0::1::::<><>::uid://bdruj0xohjsx::::res://common/models/entrance/textures/metal_rust/Metal022_1K-JPG_Color.jpg<>uid://du74aogdkggjj::::res://common/models/entrance/textures/metal_rust/Metal022_1K-JPG_Metalness.jpg<>uid://b22poisgtgnld::::res://common/models/entrance/textures/metal_rust/Metal022_1K-JPG_NormalGL.jpg<>uid://dqqqbqj0nqhmt::::res://common/models/entrance/textures/metal_rust/Metal022_1K-JPG_Roughness.jpg
 red_metal.tres::StandardMaterial3D::5869478085139443942::1735482608::0::1::::<><>::uid://dla7qc1eu3ubt::::res://entities/interactables/button/visuals/textures/red_metal/PaintedMetal004_1K-JPG_Color.jpg<>uid://cqdl2kaxlevbh::::res://entities/interactables/button/visuals/textures/red_metal/PaintedMetal004_1K-JPG_Metalness.jpg<>uid://ddg2xyf4kg50l::::res://entities/interactables/button/visuals/textures/red_metal/PaintedMetal004_1K-JPG_NormalGL.jpg<>uid://be2qhov5lrkcs::::res://entities/interactables/button/visuals/textures/red_metal/PaintedMetal004_1K-JPG_Roughness.jpg
-red_transparent.tres::StandardMaterial3D::1745461839930301525::1735813847::0::1::::<><>::
+red_transparent.tres::StandardMaterial3D::1745461839930301525::1735839635::0::1::::<><>::
 striped_metal.tres::StandardMaterial3D::1673621829018420534::1735482608::0::1::::<><>::uid://dsf4a3wukox63::::res://entities/elevator/visuals/textures/striped_metal/Pipe002_1K-JPG_Color.jpg<>uid://d5jxmj2a2e8a::::res://entities/elevator/visuals/textures/striped_metal/Pipe002_1K-JPG_Metalness.jpg<>uid://blsurujmf6o1v::::res://entities/elevator/visuals/textures/striped_metal/Pipe002_1K-JPG_NormalGL.jpg<>uid://4hjmotsnqpve::::res://entities/elevator/visuals/textures/striped_metal/Pipe002_1K-JPG_Roughness.jpg
 yellow_metal_rust.tres::StandardMaterial3D::2987561116032894194::1735482608::0::1::::<><>::uid://bia1fl00urems::::res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Color.jpg<>uid://diyd511jlw7k4::::res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Metalness.jpg<>uid://bhrodmovtjhee::::res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_NormalGL.jpg<>uid://ctwwwuagx0cf7::::res://entities/interactables/button/visuals/textures/yellow_rust_metal/PaintedMetal009_1K-JPG_Roughness.jpg
 yellow_stripes.tres::StandardMaterial3D::3601609707426644392::1735397331::0::1::::<><>::uid://bavv0b4kxbgir::::res://common/models/entrance/textures/yellow_stripes_rust/PaintedMetal016_1K-JPG_Color.jpg<>uid://da75oykrbc7j2::::res://common/models/entrance/textures/yellow_stripes_rust/PaintedMetal016_1K-JPG_Metalness.jpg<>uid://bij813ao603r5::::res://common/models/entrance/textures/yellow_stripes_rust/PaintedMetal016_1K-JPG_NormalGL.jpg<>uid://c7h7txr55gr2n::::res://common/models/entrance/textures/yellow_stripes_rust/PaintedMetal016_1K-JPG_Roughness.jpg
@@ -109,8 +109,8 @@ pick.ogg::AudioStreamOggVorbis::397260895271432651::1735823548::1735823549::1:::
 place.ogg::AudioStreamOggVorbis::5753020897541694240::1735822947::1735822952::1::::<><>::
 ::res://common/sounds/picking/::1735820835
 picking.ogg::AudioStreamOggVorbis::3663678929567727174::1735820831::1735820835::1::::<><>::
-::res://common/sounds/wind_turbines/::1735824812
-wind.ogg::AudioStreamOggVorbis::4306224352938320059::1735824812::1735824814::1::::<><>::
+::res://common/sounds/wind_turbines/::1735835853
+wind.ogg::AudioStreamOggVorbis::4306224352938320059::1735824812::1735829358::1::::<><>::
 ::res://common/textures/::1735397331
 ::res://common/textures/enviroment/::1735397331
 ::res://common/textures/enviroment/dirt/::1735485247
@@ -126,8 +126,8 @@ orange.png::CompressedTexture2D::5329148976388759533::1735397331::1735485247::1:
 purple.png::CompressedTexture2D::6877863773519019948::1735397331::1735485247::1::::<><>::
 red.png::CompressedTexture2D::1530595350867589161::1735397331::1735485247::1::::<><>::
 ::res://entities/::1735733634
-::res://entities/canvas_layer/::1735824396
-canvas_layer.tscn::PackedScene::5733614837506794134::1735824396::0::1::::<><>::res://entities/canvas_layer/ui/canvas_layer.gd<>uid://bvtqn23kd743s::::res://entities/canvas_layer/ui/interaction/interaction_ui.tscn<>uid://c1qapi6ed7dtm::::res://entities/canvas_layer/ui/debug/debug_ui.tscn<>uid://cxvaidam2nkre::::res://entities/canvas_layer/ui/stamina/stamina.tscn
+::res://entities/canvas_layer/::1735829986
+canvas_layer.tscn::PackedScene::5733614837506794134::1735829986::0::1::::<><>::res://entities/canvas_layer/ui/canvas_layer.gd<>uid://bvtqn23kd743s::::res://entities/canvas_layer/ui/interaction/interaction_ui.tscn<>uid://c1qapi6ed7dtm::::res://entities/canvas_layer/ui/debug/debug_ui.tscn<>uid://cxvaidam2nkre::::res://entities/canvas_layer/ui/stamina/stamina.tscn
 ::res://entities/canvas_layer/ui/::1735397331
 canvas_layer.gd::GDScript::-1::1735397331::0::1::::<>CanvasLayer<>::
 ::res://entities/canvas_layer/ui/debug/::1735477251
@@ -142,19 +142,28 @@ progress_container.gd::GDScript::-1::1735397331::0::1::::<>MarginContainer<>::
 ::res://entities/canvas_layer/ui/stamina/::1735820722
 stamina.gd::GDScript::-1::1735659372::0::1::::<>Control<>::
 stamina.tscn::PackedScene::6430551148399321094::1735820722::0::1::::<><>::res://entities/canvas_layer/ui/stamina/stamina.gd
-::res://entities/character/::1735824396
+::res://entities/character/::1735840592
 character.gd::GDScript::-1::1735824304::0::1::::<>CharacterBody3D<>::
-character.tscn::PackedScene::4572539479739580734::1735824396::0::1::::<><>::res://entities/character/character.gd<>res://entities/character/interaction/interaction_raycast.gd<>res://common/shaders/post_processing/outline.gdshader<>res://entities/character/interaction/placing_raycast.gd<>uid://clmn37gomagjr::::res://common/sounds/footsteps/concrete/footsteps_concrete1.ogg<>res://entities/character/footsteps.gd
+character.tscn::PackedScene::4572539479739580734::1735840592::0::1::::<><>::res://entities/character/character.gd<>res://entities/character/interaction/interaction_raycast.gd<>res://common/shaders/post_processing/outline.gdshader<>res://entities/character/interaction/placing_raycast.gd<>uid://clmn37gomagjr::::res://common/sounds/footsteps/concrete/footsteps_concrete1.ogg<>res://entities/character/footsteps.gd
 footsteps.gd::GDScript::-1::1735819457::0::1::::<>AudioStreamPlayer<>::
 sub_viewport_container.gd::GDScript::-1::1735562690::0::1::::<>SubViewportContainer<>::
 ::res://entities/character/interaction/::1735643536
 interaction_raycast.gd::GDScript::-1::1735397331::0::1::::<>RayCast3D<>::
 placing_raycast.gd::GDScript::-1::1735643536::0::1::::<>RayCast3D<>::
-::res://entities/computer/::1735820722
-computer.tscn::PackedScene::7420930946071500106::1735820722::0::1::::<><>::uid://bkknsg2lqjmk6::::res://entities/computer/visuals/textures/01 - Default_albedo.jpg<>uid://du38yyuab8mvn::::res://entities/computer/visuals/computer.tres
-::res://entities/computer/visuals/::1735813847
+::res://entities/computer/::1735840592
+computer.tscn::PackedScene::7420930946071500106::1735840592::0::1::::<><>::uid://bkknsg2lqjmk6::::res://entities/computer/visuals/textures/01 - Default_albedo.jpg<>uid://du38yyuab8mvn::::res://entities/computer/visuals/computer.tres<>uid://jwgaer3dfdgw::::res://entities/computer/os/os.tscn<>res://entities/computer/screen.gd
+screen.gd::GDScript::-1::1735839766::0::1::::<>Sprite3D<>::
+::res://entities/computer/os/::1735840612
+os.tscn::PackedScene::677480442919682054::1735840612::0::1::::<><>::uid://dut7yau4jblnx::::res://entities/computer/os/assets/apps/zanazon/zanazon_logo.png<>uid://bunuuh04crlc8::::res://entities/computer/os/assets/wallpapers/grass.jpg
+::res://entities/computer/os/assets/::1735840117
+::res://entities/computer/os/assets/apps/::1735840526
+::res://entities/computer/os/assets/apps/zanazon/::1735840533
+zanazon_logo.png::CompressedTexture2D::8604247936215126069::1735840501::1735840533::1::::<><>::
+::res://entities/computer/os/assets/wallpapers/::1735835862
+grass.jpg::CompressedTexture2D::3818284930594495385::1735835824::1735835862::1::::<><>::
+::res://entities/computer/visuals/::1735839635
 computer.blend::PackedScene::2999373729024179415::1735734475::1735734666::1::::<><>::uid://bkknsg2lqjmk6::::res://entities/computer/visuals/textures/01 - Default_albedo.jpg
-computer.tres::StandardMaterial3D::8622889312227775135::1735813847::0::1::::<><>::uid://bkknsg2lqjmk6::::res://entities/computer/visuals/textures/01 - Default_albedo.jpg<>uid://dwg5i00402rbe::::res://entities/computer/visuals/textures/01 - Default_metallic.jpg<>uid://bhg7yk7sf4hrl::::res://entities/computer/visuals/textures/01 - Default_normal.png<>uid://cv4kf4lhbb2au::::res://entities/computer/visuals/textures/01 - Default_roughness.jpg
+computer.tres::StandardMaterial3D::8622889312227775135::1735839635::0::1::::<><>::uid://bkknsg2lqjmk6::::res://entities/computer/visuals/textures/01 - Default_albedo.jpg<>uid://dwg5i00402rbe::::res://entities/computer/visuals/textures/01 - Default_metallic.jpg<>uid://bhg7yk7sf4hrl::::res://entities/computer/visuals/textures/01 - Default_normal.png<>uid://cv4kf4lhbb2au::::res://entities/computer/visuals/textures/01 - Default_roughness.jpg
 ::res://entities/computer/visuals/textures/::1735734665
 01 - Default_albedo.jpg::CompressedTexture2D::3109774720181633931::1735733642::1735734665::1::::<><>::
 01 - Default_metallic.jpg::CompressedTexture2D::8717640026830587954::1735733642::1735734070::1::::<><>::
@@ -181,9 +190,9 @@ game_manager.gd::GDScript::-1::1735397331::0::1::::<>Node<>::
 ::res://entities/interactables/::1735397331
 ::res://entities/interactables/box/::1735397331
 csg_box_3d.gd::GDScript::-1::1735397331::0::1::::<>CSGBox3D<>::
-::res://entities/interactables/button/::1735824396
+::res://entities/interactables/button/::1735829986
 button.gd::GDScript::-1::1735822625::0::1::::<>StaticBody3D<>::
-button.tscn::PackedScene::3092768674888596867::1735824396::0::1::::<><>::uid://blirxjrtibuiq::::res://entities/interactables/button/visuals/button.blend<>res://entities/interactables/button/button.gd<>uid://bitgxvr6xspeo::::res://common/materials/yellow_metal_rust.tres<>uid://brkv8rpfcoqo3::::res://common/materials/yellow_stripes.tres<>uid://cpvhpggb1lthu::::res://common/materials/red_metal.tres<>uid://b34mfpeaiwp0y::::res://common/sounds/button/button.ogg
+button.tscn::PackedScene::3092768674888596867::1735829986::0::1::::<><>::uid://blirxjrtibuiq::::res://entities/interactables/button/visuals/button.blend<>res://entities/interactables/button/button.gd<>uid://bitgxvr6xspeo::::res://common/materials/yellow_metal_rust.tres<>uid://brkv8rpfcoqo3::::res://common/materials/yellow_stripes.tres<>uid://cpvhpggb1lthu::::res://common/materials/red_metal.tres<>uid://b34mfpeaiwp0y::::res://common/sounds/button/button.ogg
 ::res://entities/interactables/button/visuals/::1735485249
 button.blend::PackedScene::3176086747726630808::1735397331::1735485249::1::::<><>::
 ::res://entities/interactables/button/visuals/textures/::1735397331
@@ -197,12 +206,12 @@ PaintedMetal009_1K-JPG_Color.jpg::CompressedTexture2D::2949519621119060194::1735
 PaintedMetal009_1K-JPG_Metalness.jpg::CompressedTexture2D::7770554997272982257::1735397331::1735485247::1::::<><>::
 PaintedMetal009_1K-JPG_NormalGL.jpg::CompressedTexture2D::2913693059146148928::1735397331::1735485247::1::::<><>::
 PaintedMetal009_1K-JPG_Roughness.jpg::CompressedTexture2D::6153221819176238666::1735397331::1735485247::1::::<><>::
-::res://entities/movables/::1735824396
+::res://entities/movables/::1735829986
 movable.gd::GDScript::-1::1735823727::0::1::::<>StaticBody3D<>::
-pick_audio.tscn::PackedScene::2620297174308357360::1735824396::0::1::::<><>::uid://fwo3ghja6qqt::::res://common/sounds/movables/pick.ogg
-::res://entities/movables/bed/::1735824396
+pick_audio.tscn::PackedScene::2620297174308357360::1735829986::0::1::::<><>::uid://fwo3ghja6qqt::::res://common/sounds/movables/pick.ogg
+::res://entities/movables/bed/::1735829986
 bed.gd::GDScript::-1::1735821112::0::1::::Movable<>StaticBody3D<>::
-bed.tscn::PackedScene::5458550061852747407::1735824396::0::1::::<><>::res://entities/movables/bed/bed.gd<>uid://87kwb3p63awc::::res://entities/movables/bed/visuals/textures/albedo.png<>uid://sff6prv4fwol::::res://entities/movables/bed/visuals/textures/normal.png<>uid://nw1qf07oqmow::::res://entities/movables/bed/visuals/textures/Рама_roughness.png<>uid://r2w0i1savayt::::res://common/sounds/bed/springs1.ogg<>uid://bdlj583y4eoyy::::res://entities/movables/pick_audio.tscn
+bed.tscn::PackedScene::5458550061852747407::1735829986::0::1::::<><>::res://entities/movables/bed/bed.gd<>uid://87kwb3p63awc::::res://entities/movables/bed/visuals/textures/albedo.png<>uid://sff6prv4fwol::::res://entities/movables/bed/visuals/textures/normal.png<>uid://nw1qf07oqmow::::res://entities/movables/bed/visuals/textures/Рама_roughness.png<>uid://r2w0i1savayt::::res://common/sounds/bed/springs1.ogg<>uid://bdlj583y4eoyy::::res://entities/movables/pick_audio.tscn
 ::res://entities/movables/bed/visuals/::1735563320
 bed.blend::PackedScene::5436944998371932976::1735563318::1735563320::1::::<><>::
 untitled.blend::PackedScene::4612311956622537700::1735563210::1735563218::1::::<><>::
@@ -210,9 +219,9 @@ untitled.blend::PackedScene::4612311956622537700::1735563210::1735563218::1::::<
 albedo.png::CompressedTexture2D::2382938482080486686::1735562991::1735563134::1::::<><>::
 normal.png::CompressedTexture2D::1274080833934813207::1735562991::1735563142::1::::<><>::
 Рама_roughness.png::CompressedTexture2D::959478795108289090::1735562991::1735563147::1::::<><>::
-::res://entities/movables/table/::1735824396
-table.gd::GDScript::-1::1735737162::0::1::::<>StaticBody3D<>::
-table.tscn::PackedScene::8786749723331574032::1735824396::0::1::::<><>::res://entities/movables/table/table.gd<>uid://dbc2eoo786k36::::res://common/materials/black_metal.tres<>uid://cglhxwasss453::::res://entities/movables/table/visuals/textures/Chipboard004_1K-JPG/Chipboard004_1K-JPG_Color.jpg<>uid://cfqvshyg3matl::::res://entities/movables/table/visuals/textures/Chipboard004_1K-JPG/Chipboard004_1K-JPG_NormalGL.jpg<>uid://clnjcqvjpt8::::res://entities/movables/table/visuals/textures/Chipboard004_1K-JPG/Chipboard004_1K-JPG_Roughness.jpg<>uid://c8d5wil6n0faq::::res://entities/movables/table/chair/textures/Image_0.jpg<>uid://cf3bxjsoi0er0::::res://entities/movables/table/chair/textures/Image_1.png<>uid://ckc6nwy2wnikx::::res://entities/movables/table/chair/textures/Image_2.png<>uid://ddy0wbvqdjujq::::res://entities/computer/computer.tscn<>uid://bdlj583y4eoyy::::res://entities/movables/pick_audio.tscn
+::res://entities/movables/table/::1735840592
+table.gd::GDScript::-1::1735839635::0::1::::<>StaticBody3D<>::
+table.tscn::PackedScene::8786749723331574032::1735840592::0::1::::<><>::res://entities/movables/table/table.gd<>uid://dbc2eoo786k36::::res://common/materials/black_metal.tres<>uid://cglhxwasss453::::res://entities/movables/table/visuals/textures/Chipboard004_1K-JPG/Chipboard004_1K-JPG_Color.jpg<>uid://cfqvshyg3matl::::res://entities/movables/table/visuals/textures/Chipboard004_1K-JPG/Chipboard004_1K-JPG_NormalGL.jpg<>uid://clnjcqvjpt8::::res://entities/movables/table/visuals/textures/Chipboard004_1K-JPG/Chipboard004_1K-JPG_Roughness.jpg<>uid://c8d5wil6n0faq::::res://entities/movables/table/chair/textures/Image_0.jpg<>uid://cf3bxjsoi0er0::::res://entities/movables/table/chair/textures/Image_1.png<>uid://ckc6nwy2wnikx::::res://entities/movables/table/chair/textures/Image_2.png<>uid://ddy0wbvqdjujq::::res://entities/computer/computer.tscn<>uid://bdlj583y4eoyy::::res://entities/movables/pick_audio.tscn
 ::res://entities/movables/table/chair/::1735732334
 chair.blend::PackedScene::349508677204548097::1735732330::1735732334::1::::<><>::uid://c8d5wil6n0faq::::res://entities/movables/table/chair/textures/Image_0.jpg<>uid://cf3bxjsoi0er0::::res://entities/movables/table/chair/textures/Image_1.png<>uid://ckc6nwy2wnikx::::res://entities/movables/table/chair/textures/Image_2.png
 ::res://entities/movables/table/chair/textures/::1735732333
@@ -231,9 +240,9 @@ Chipboard004_1K-JPG_NormalGL.jpg::CompressedTexture2D::5158123235828963569::1735
 Chipboard004_1K-JPG_Roughness.jpg::CompressedTexture2D::4820334304476027::1735729946::1735731623::1::::<><>::
 ::res://entities/pickables/::1735821173
 pickable.gd::GDScript::-1::1735821173::0::1::::<>RigidBody3D<>::
-::res://entities/pickables/pickable_object/::1735824396
+::res://entities/pickables/pickable_object/::1735829986
 pickable_object.gd::GDScript::-1::1735643847::0::1::::Pickable<>RigidBody3D<>::
-pickable_object.tscn::PackedScene::8655743193195672590::1735824396::0::1::::<><>::uid://c48xn8w4ngw25::::res://common/textures/prototyping/purple.png<>res://entities/pickables/pickable_object/pickable_object.gd<>uid://bsgyiy0lf2dk5::::res://common/sounds/picking/picking.ogg
+pickable_object.tscn::PackedScene::8655743193195672590::1735829986::0::1::::<><>::uid://c48xn8w4ngw25::::res://common/textures/prototyping/purple.png<>res://entities/pickables/pickable_object/pickable_object.gd<>uid://bsgyiy0lf2dk5::::res://common/sounds/picking/picking.ogg
 ::res://entities/props/::1735731622
 ::res://entities/props/electrical_boxes/::1735487127
 ::res://entities/props/electrical_boxes/big/::1735644396
@@ -286,17 +295,17 @@ Concrete030_1K-JPG_Color.jpg::CompressedTexture2D::4898225658161721863::17353973
 Concrete030_1K-JPG_NormalGL.jpg::CompressedTexture2D::3971673621755937028::1735397331::1735659584::1::::<><>::
 Concrete030_1K-JPG_Roughness.jpg::CompressedTexture2D::5610401714701434977::1735397331::1735659584::1::::<><>::
 ::res://entities/props/signs/::1735485360
-::res://entities/props/signs/electrical_danger/::1735813847
-electrical_danger.tres::VisualShader::7973357976669609968::1735813847::0::1::::<><>::uid://dko6t154xabal::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Opacity.jpg<>uid://db435enn66481::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Roughness.jpg<>uid://b82wj3mgsm0oh::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Color.jpg<>uid://ljj0tpivsn5l::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Metalness.jpg<>uid://ch2vctig03wig::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_NormalGL.jpg
+::res://entities/props/signs/electrical_danger/::1735839635
+electrical_danger.tres::VisualShader::7973357976669609968::1735839635::0::1::::<><>::uid://dko6t154xabal::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Opacity.jpg<>uid://db435enn66481::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Roughness.jpg<>uid://b82wj3mgsm0oh::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Color.jpg<>uid://ljj0tpivsn5l::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_Metalness.jpg<>uid://ch2vctig03wig::::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/Sign009_1K-JPG_NormalGL.jpg
 ::res://entities/props/signs/electrical_danger/Sign009_1K-JPG/::1735562186
 Sign009_1K-JPG_Color.jpg::CompressedTexture2D::4759744058582414599::1735484870::1735562186::1::::<><>::
 Sign009_1K-JPG_Metalness.jpg::CompressedTexture2D::791248799095403739::1735484870::1735562186::1::::<><>::
 Sign009_1K-JPG_NormalGL.jpg::CompressedTexture2D::5321181111257183518::1735484870::1735562186::1::::<><>::
 Sign009_1K-JPG_Opacity.jpg::CompressedTexture2D::7891969346176017695::1735484870::1735562186::1::::<><>::
 Sign009_1K-JPG_Roughness.jpg::CompressedTexture2D::7291071730008874936::1735484870::1735562186::1::::<><>::
-::res://entities/props/wind_turbine/::1735644396
+::res://entities/props/wind_turbine/::1735829986
 wind_turbine.gd::GDScript::-1::1735562690::0::1::::<>StaticBody3D<>::
-wind_turbine.tscn::PackedScene::5053527337525731310::1735644396::0::1::::<><>::res://entities/props/wind_turbine/wind_turbine.gd<>uid://c1dmj4qbt8jsj::::res://entities/props/wind_turbine/visuals/textures/Windturbine.png
+wind_turbine.tscn::PackedScene::5053527337525731310::1735829986::0::1::::<><>::res://entities/props/wind_turbine/wind_turbine.gd<>uid://c1dmj4qbt8jsj::::res://entities/props/wind_turbine/visuals/textures/Windturbine.png<>uid://b2l75efhb5xux::::res://common/sounds/wind_turbines/wind.ogg
 ::res://entities/props/wind_turbine/visuals/::1735562188
 wind_turbine.blend::PackedScene::7462876840868713560::1735553685::1735562188::1::::<><>::uid://c1dmj4qbt8jsj::::res://entities/props/wind_turbine/visuals/textures/Windturbine.png
 ::res://entities/props/wind_turbine/visuals/textures/::1735562186
@@ -304,6 +313,6 @@ Windturbine.png::CompressedTexture2D::6604690659261723753::1735553177::173556218
 ::res://stages/::1735659557
 ::res://stages/entrance/::1735820722
 entrance.tscn::PackedScene::7564587424189058821::1735820722::0::1::::<><>::uid://dbc2eoo786k36::::res://common/materials/black_metal.tres<>uid://brkv8rpfcoqo3::::res://common/materials/yellow_stripes.tres<>uid://tgqwk4imo3ex::::res://common/materials/diamond_plate.tres<>uid://b2km0l8khyy34::::res://common/materials/metal_rust.tres<>uid://djm8pnd7tkn3c::::res://entities/props/lamps/circular_flat/circular_flat_lamp.tscn<>uid://bkcfpiexrw1sx::::res://entities/interactables/button/button.tscn
-::res://stages/world/::1735824396
-world.tscn::PackedScene::8853282524998290164::1735824396::0::1::::<><>::uid://dymje5yp45vu0::::res://common/materials/base.tres<>res://entities/game_manager/game_manager.gd<>uid://b6e8b7dg6jye5::::res://entities/character/character.tscn<>res://common/shaders/post_processing/psx.gdshader<>res://entities/character/sub_viewport_container.gd<>uid://cnxn2fjnxalp3::::res://entities/canvas_layer/canvas_layer.tscn<>uid://df1lwda447j8p::::res://stages/entrance/entrance.tscn<>uid://dnxqe2gxeyl5t::::res://entities/elevator/elevator.tscn<>uid://dvk53cue5dtjy::::res://entities/pickables/pickable_object/pickable_object.tscn<>uid://bp8dcdbuv7akv::::res://stages/world/world.VoxelGI_data.res<>uid://cbqxbptau1v13::::res://entities/props/electrical_boxes/medium/medium_electrical_box.tscn<>uid://e7k12r3fvt5o::::res://entities/props/electrical_boxes/big/big_electrical_box.tscn<>uid://dxs4pt2g006lo::::res://entities/props/electrical_boxes/small/small_electrical_box.tscn<>uid://cd874eumlhbs5::::res://entities/props/wind_turbine/wind_turbine.tscn<>uid://dbjrsgbf7f3vn::::res://entities/props/power_plant/power_plant.tscn<>uid://cj1fr0pi4k4q2::::res://entities/movables/bed/bed.tscn<>uid://k62l4u4xsveu::::res://entities/props/electric_pole/electric_pole.tscn<>uid://dxgmqpyljc75u::::res://entities/movables/table/table.tscn
+::res://stages/world/::1735840592
+world.tscn::PackedScene::8853282524998290164::1735840592::0::1::::<><>::uid://dymje5yp45vu0::::res://common/materials/base.tres<>res://entities/game_manager/game_manager.gd<>uid://b6e8b7dg6jye5::::res://entities/character/character.tscn<>res://common/shaders/post_processing/psx.gdshader<>res://entities/character/sub_viewport_container.gd<>uid://cnxn2fjnxalp3::::res://entities/canvas_layer/canvas_layer.tscn<>uid://df1lwda447j8p::::res://stages/entrance/entrance.tscn<>uid://dnxqe2gxeyl5t::::res://entities/elevator/elevator.tscn<>uid://dvk53cue5dtjy::::res://entities/pickables/pickable_object/pickable_object.tscn<>uid://bp8dcdbuv7akv::::res://stages/world/world.VoxelGI_data.res<>uid://cbqxbptau1v13::::res://entities/props/electrical_boxes/medium/medium_electrical_box.tscn<>uid://e7k12r3fvt5o::::res://entities/props/electrical_boxes/big/big_electrical_box.tscn<>uid://dxs4pt2g006lo::::res://entities/props/electrical_boxes/small/small_electrical_box.tscn<>uid://cd874eumlhbs5::::res://entities/props/wind_turbine/wind_turbine.tscn<>uid://dbjrsgbf7f3vn::::res://entities/props/power_plant/power_plant.tscn<>uid://cj1fr0pi4k4q2::::res://entities/movables/bed/bed.tscn<>uid://k62l4u4xsveu::::res://entities/props/electric_pole/electric_pole.tscn<>uid://dxgmqpyljc75u::::res://entities/movables/table/table.tscn
 world.VoxelGI_data.res::VoxelGIData::3507563686766553081::1735553947::0::1::::<><>::
