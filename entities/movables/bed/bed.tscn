@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://cj1fr0pi4k4q2"]
+[gd_scene load_steps=12 format=4 uid="uid://cj1fr0pi4k4q2"]
 
 [ext_resource type="Script" path="res://entities/movables/bed/bed.gd" id="1_fsoim"]
 [ext_resource type="Texture2D" uid="uid://87kwb3p63awc" path="res://entities/movables/bed/visuals/textures/albedo.png" id="2_3dige"]
 [ext_resource type="Texture2D" uid="uid://sff6prv4fwol" path="res://entities/movables/bed/visuals/textures/normal.png" id="3_383ef"]
 [ext_resource type="Texture2D" uid="uid://nw1qf07oqmow" path="res://entities/movables/bed/visuals/textures/Рама_roughness.png" id="4_e4t7m"]
 [ext_resource type="AudioStream" uid="uid://r2w0i1savayt" path="res://common/sounds/bed/springs1.ogg" id="5_d35nu"]
-[ext_resource type="PackedScene" uid="uid://dykc511xycqwo" path="res://entities/movables/place_audio.tscn" id="6_ygvya"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ul743"]
 resource_name = "Material"
@@ -57,7 +56,7 @@ size = Vector3(1.86401, 0.365137, 3.48596)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wcc0e"]
 size = Vector3(1.84998, 0.0990723, 1.50882)
 
-[node name="Bed" type="StaticBody3D" node_paths=PackedStringArray("area_3d", "place_audio") groups=["jumpable"]]
+[node name="Bed" type="StaticBody3D" node_paths=PackedStringArray("area_3d") groups=["jumpable"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_fsoim")
@@ -65,7 +64,6 @@ key = "LMB"
 input_action = "left_click"
 action_name = "Move bed"
 area_3d = NodePath("Area3D")
-place_audio = NodePath("PlaceAudio")
 
 [node name="Visuals" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.776012, 0)
@@ -106,5 +104,3 @@ shape = SubResource("BoxShape3D_wcc0e")
 [node name="SpringsAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_d35nu")
 volume_db = -10.0
-
-[node name="PlaceAudio" parent="." instance=ExtResource("6_ygvya")]

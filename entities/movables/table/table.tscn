@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cf3bxjsoi0er0" path="res://entities/movables/table/chair/textures/Image_1.png" id="7_4pmt2"]
 [ext_resource type="Texture2D" uid="uid://ckc6nwy2wnikx" path="res://entities/movables/table/chair/textures/Image_2.png" id="8_f7w1q"]
 [ext_resource type="PackedScene" uid="uid://ddy0wbvqdjujq" path="res://entities/computer/computer.tscn" id="9_1tu8n"]
-[ext_resource type="PackedScene" uid="uid://dykc511xycqwo" path="res://entities/movables/place_audio.tscn" id="10_nilxl"]
+[ext_resource type="AudioStream" uid="uid://fwo3ghja6qqt" path="res://common/sounds/movables/pick.ogg" id="11_jsx6p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6yga"]
 
@@ -139,7 +139,7 @@ size = Vector3(0.097168, 0.773193, 0.106323)
 [sub_resource type="BoxShape3D" id="BoxShape3D_88di5"]
 size = Vector3(0.907715, 1.20947, 0.81189)
 
-[node name="Table" type="StaticBody3D" node_paths=PackedStringArray("area_3d", "place_audio")]
+[node name="Table" type="StaticBody3D" node_paths=PackedStringArray("area_3d", "pick_audio")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_gmp5v")
@@ -147,7 +147,7 @@ key = "LMB"
 input_action = "left_click"
 action_name = "Move table"
 area_3d = NodePath("Area3D")
-place_audio = NodePath("PlaceAudio")
+pick_audio = NodePath("PickAudio")
 
 [node name="Visuals" type="Node3D" parent="."]
 
@@ -245,6 +245,8 @@ surface_material_override/0 = null
 [node name="Mouse_Wheel_Low" parent="Computer/Visuals" index="5"]
 surface_material_override/0 = null
 
-[node name="PlaceAudio" parent="." instance=ExtResource("10_nilxl")]
+[node name="PickAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_jsx6p")
+volume_db = -4.0
 
 [editable path="Computer"]
