@@ -3,22 +3,37 @@ extends RayCast3D
 var interaction_label: Label
 var progress_container: MarginContainer
 var progress_bar: ProgressBar
+var moving_ui
+
+var object_being_moved: bool
 
 func _ready() -> void:
 	var canvas_layer = get_tree().get_first_node_in_group("canvas_layer")
 	interaction_label = canvas_layer.interaction_label
 	progress_container = canvas_layer.progress_container
 	progress_bar = canvas_layer.progress_bar
+	moving_ui = canvas_layer.moving_ui
+	
+	EventBus.object_being_moved.connect(set_object_being_moved)
 
 func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var collider = get_collider()
 		if collider.is_in_group("interactable"):
+			interaction_label.visible = true
 			handle_interaction(collider)
+		else:
+			interaction_label.visible = false
 		
 		if collider.is_in_group("movable"):
+			moving_ui.visible = true
 			handle_movable(collider)
+		else:
+			if not object_being_moved:
+				moving_ui.visible = false
 	else:
+		if not object_being_moved:
+			moving_ui.visible = false
 		hide_interaction_ui()
 
 func handle_movable(collider) -> void:
@@ -82,8 +97,10 @@ func display_interaction_label(interactable: Interactable) -> void:
 		"key": interactable.key,
 		"name": interactable.action_name
 	})
-	interaction_label.visible = true
 
 func hide_interaction_ui() -> void:
 	interaction_label.visible = false
 	reset_progress()
+
+func set_object_being_moved(value) -> void:
+	object_being_moved = value

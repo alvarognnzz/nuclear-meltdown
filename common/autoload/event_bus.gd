@@ -2,6 +2,7 @@ extends Node
 
 # interaction
 signal change_interaction_progress(value)
+signal object_being_moved(value: bool)
 
 # elevator_door
 signal toggle_elevator_door

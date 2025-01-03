@@ -18,3 +18,9 @@ res://entities/character/interaction/interaction_raycast.gd
 res://entities/movables/bed/bed.gd
 res://entities/movables/table/table.gd
 res://entities/movables/bed/bed.tscn
+res://common/autoload/event_bus.gd
+res://entities/canvas_layer/ui/interaction/moving_ui.gd
+res://entities/pickables/pickable_object/pickable_object.gd
+res://entities/canvas_layer/ui/canvas_layer.gd
+res://entities/pickables/pickable.gd
+res://entities/interactables/interactable.gd

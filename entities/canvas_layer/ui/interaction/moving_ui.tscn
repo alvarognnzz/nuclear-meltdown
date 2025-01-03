@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://3m8nnlhj16d8"]
+[gd_scene load_steps=6 format=3 uid="uid://3m8nnlhj16d8"]
 
+[ext_resource type="Script" path="res://entities/canvas_layer/ui/interaction/moving_ui.gd" id="1_u3j36"]
 [ext_resource type="Texture2D" uid="uid://clat6f8jn4dt8" path="res://common/icons/Mouse_Left_Key_Dark.png" id="1_x8xwq"]
 [ext_resource type="LabelSettings" uid="uid://cbgpfna2i6k3b" path="res://common/fonts/label_settings.tres" id="2_086b6"]
 [ext_resource type="Texture2D" uid="uid://cef2qi32hjf1y" path="res://common/icons/Mouse_Right_Key_Dark.png" id="3_m77sn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_em8of"]
 
-[node name="PanelContainer" type="PanelContainer"]
+[node name="MovingUI" type="PanelContainer"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -17,6 +18,7 @@ offset_top = -95.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_em8of")
+script = ExtResource("1_u3j36")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

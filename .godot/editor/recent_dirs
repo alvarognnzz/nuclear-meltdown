@@ -1,7 +1,7 @@
+res://entities/canvas_layer/ui/interaction
 res://entities/pickables/pickable_object
 res://entities/interactables/box
 res://entities/interactables/button
-res://entities/canvas_layer/ui/interaction
 res://common/fonts
 res://entities/character/logic
 res://entities/computer/os

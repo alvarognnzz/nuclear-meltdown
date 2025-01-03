@@ -37,7 +37,7 @@ action_name = "Pick object"
 
 [node name="Pickable" type="Node" parent="." node_paths=PackedStringArray("audio_stream_player")]
 script = ExtResource("5_3ako1")
-audio_stream_player = NodePath("../AudioStreamPlayer")
 in_character_position = Vector3(0.79, -0.375, -1.275)
+audio_stream_player = NodePath("../AudioStreamPlayer")
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

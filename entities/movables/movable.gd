@@ -2,6 +2,7 @@ class_name Movable
 extends Node
 
 @export var area_3d: Area3D
+@export var can_interact: bool
 @export var pick_audio: AudioStreamPlayer 
 
 const GREEN_TRANSPARENT = preload("res://common/materials/green_transparent.tres")
@@ -37,6 +38,9 @@ func _ready() -> void:
 	collisions = get_all_collisions(parent)
 
 func _physics_process(delta: float) -> void:
+	if get_tree().get_first_node_in_group("character").picking:
+		can_interact = false
+	
 	if moving:
 		update_mesh_materials()
 		handle_placing_raycast(delta)
@@ -102,6 +106,7 @@ func stop_moving() -> void:
 	moving = false
 	enable_collisions()
 	set_moving.emit(false)
+	EventBus.object_being_moved.emit(false)
 
 func enable_collisions() -> void:
 	for collision in collisions:
@@ -114,6 +119,7 @@ func interact() -> void:
 	character.picking = true
 	moving = true
 	set_moving.emit(true)
+	EventBus.object_being_moved.emit(true)
 
 #func can_interact() -> bool:
 	#return not character.picking

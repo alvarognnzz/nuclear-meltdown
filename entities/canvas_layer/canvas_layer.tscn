@@ -5,11 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://c1qapi6ed7dtm" path="res://entities/canvas_layer/ui/debug/debug_ui.tscn" id="3_dh6pr"]
 [ext_resource type="PackedScene" uid="uid://cxvaidam2nkre" path="res://entities/canvas_layer/ui/stamina/stamina.tscn" id="4_vks5d"]
 
-[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("interaction_label", "progress_container", "progress_bar")]
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("interaction_label", "progress_container", "progress_bar", "moving_ui")]
 script = ExtResource("1_ldn76")
 interaction_label = NodePath("InteractionUI/InteractionLabel")
 progress_container = NodePath("InteractionUI/ProgressContainer")
 progress_bar = NodePath("InteractionUI/ProgressContainer/CenterContainer/ProgressBar")
+moving_ui = NodePath("InteractionUI/MovingUI")
 
 [node name="InteractionUI" parent="." instance=ExtResource("2_1tyk0")]
 

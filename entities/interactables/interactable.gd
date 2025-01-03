@@ -9,3 +9,7 @@ signal interacted
 @export var progress_speed: float = 1.0
 @export var action_name: String
 @export var can_interact: bool = true
+
+func _physics_process(delta: float) -> void:
+	can_interact = not get_tree().get_first_node_in_group("character").picking
+	

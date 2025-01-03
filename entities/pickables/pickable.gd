@@ -1,9 +1,10 @@
 class_name Pickable
 extends Node
 
-@export var audio_stream_player: AudioStreamPlayer 
 @export var in_character_position: Vector3
 @export var in_character_rotation: Vector3
+
+@export var audio_stream_player: AudioStreamPlayer 
 
 var progress_speed = 1
 var picked: bool = false
