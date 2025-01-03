@@ -16,3 +16,6 @@ res://entities/interactables/button/button.gd
 res://stages/entrance/entrance.tscn
 res://entities/interactables/button/button_test.gd
 res://entities/interactables/box/csg_box_3d.gd
+res://entities/pickables/pickable_object/pickable_object.tscn
+res://entities/pickables/pickable.gd
+res://entities/pickables/pickable_object/pickable_object.gd

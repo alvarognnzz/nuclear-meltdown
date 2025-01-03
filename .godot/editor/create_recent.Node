@@ -1,3 +1,4 @@
+Pickable
 Interactable
 CSGBox3D
 VBoxContainer
@@ -11,4 +12,3 @@ Marker3D
 Panel
 TextureButton
 Button
-Sprite3D

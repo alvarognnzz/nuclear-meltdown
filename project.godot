@@ -35,6 +35,10 @@ folder_colors={
 "res://stages/": "orange"
 }
 
+[global_group]
+
+interactable=""
+
 [input]
 
 forward={

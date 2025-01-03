@@ -161,9 +161,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.5, 2)
-layers = 3
 material_override = SubResource("StandardMaterial3D_pjgpp")
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("20_4ocos")
 
 [node name="Interactable" type="Node" parent="CSGBox3D"]

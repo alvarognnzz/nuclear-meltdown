@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvk53cue5dtjy"]
+[gd_scene load_steps=9 format=3 uid="uid://dvk53cue5dtjy"]
 
 [ext_resource type="Texture2D" uid="uid://c48xn8w4ngw25" path="res://common/textures/prototyping/purple.png" id="1_ioemf"]
 [ext_resource type="Script" path="res://entities/pickables/pickable_object/pickable_object.gd" id="1_k34es"]
+[ext_resource type="Script" path="res://entities/interactables/interactable.gd" id="3_egoxm"]
 [ext_resource type="AudioStream" uid="uid://bsgyiy0lf2dk5" path="res://common/sounds/picking/picking.ogg" id="3_r4vi0"]
+[ext_resource type="Script" path="res://entities/pickables/pickable.gd" id="5_3ako1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5cpvg"]
 size = Vector3(0.6, 0.6, 0.6)
@@ -14,13 +16,8 @@ uv1_triplanar = true
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uvow7"]
 points = PackedVector3Array(0.3, 0.3, 0.3, 0.3, 0.3, -0.3, -0.3, 0.3, 0.3, 0.3, -0.3, 0.3, 0.3, -0.3, -0.3, -0.3, 0.3, -0.3, -0.3, -0.3, 0.3, -0.3, -0.3, -0.3)
 
-[node name="PickableObject" type="RigidBody3D" node_paths=PackedStringArray("audio_stream_player")]
+[node name="PickableObject" type="RigidBody3D" groups=["interactable"]]
 script = ExtResource("1_k34es")
-key = "E"
-input_action = "interact"
-action_name = "Pick object"
-in_character_position = Vector3(0.79, -0.375, -1.275)
-audio_stream_player = NodePath("AudioStreamPlayer")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_5cpvg")
@@ -33,3 +30,14 @@ shape = SubResource("ConvexPolygonShape3D_uvow7")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_r4vi0")
 volume_db = -3.0
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("3_egoxm")
+action_name = "Pick object"
+
+[node name="Pickable" type="Node" parent="." node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("5_3ako1")
+audio_stream_player = NodePath("../AudioStreamPlayer")
+in_character_position = Vector3(0.79, -0.375, -1.275)
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
