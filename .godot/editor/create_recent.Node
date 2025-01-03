@@ -1,5 +1,6 @@
-Pickable
+Movable
 Interactable
+Pickable
 CSGBox3D
 VBoxContainer
 MarginContainer
@@ -11,4 +12,3 @@ Node
 Marker3D
 Panel
 TextureButton
-Button

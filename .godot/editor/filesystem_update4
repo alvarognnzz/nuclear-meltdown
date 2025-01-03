@@ -12,3 +12,9 @@ res://entities/canvas_layer/ui/interaction/interaction_ui.tscn
 res://entities/canvas_layer/ui/interaction/moving_ui.tscn
 res://entities/interactables/button/button.tscn
 res://stages/entrance/entrance.tscn
+res://entities/movables/movable.gd
+res://entities/movables/table/table.tscn
+res://entities/character/interaction/interaction_raycast.gd
+res://entities/movables/bed/bed.gd
+res://entities/movables/table/table.gd
+res://entities/movables/bed/bed.tscn

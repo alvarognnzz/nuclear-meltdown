@@ -38,6 +38,7 @@ folder_colors={
 [global_group]
 
 interactable=""
+movable=""
 
 [input]
 

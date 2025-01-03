@@ -1,17 +1,13 @@
-extends StaticBody3D
-
-@export var key: String
-@export var input_action: String
-@export var action_name: String
-
-@export var interaction_type: Global.InteractionTypes = Global.InteractionTypes.INSTANT
+class_name Movable
+extends Node
 
 @export var area_3d: Area3D
-
 @export var pick_audio: AudioStreamPlayer 
 
 const GREEN_TRANSPARENT = preload("res://common/materials/green_transparent.tres")
 const RED_TRANSPARENT = preload("res://common/materials/red_transparent.tres")
+
+signal set_moving(value: bool)
 
 var meshes = []
 var collisions = []
@@ -21,16 +17,24 @@ var moving: bool = false
 var character: CharacterBody3D
 var placing_raycast: RayCast3D
 
+var parent: StaticBody3D
+
 const SMOOTH_SPEED = 20.0
 const NORMAL_THRESHOLD = 0.8
 
 const ROTATION_SPEED = 3.0
 
 func _ready() -> void:
+	if not get_parent() is StaticBody3D:
+		push_error("Movable.gd: Parent must be a StaticBody3D")
+	 
+	parent = get_parent()
 	character = get_tree().get_first_node_in_group("character")
 	placing_raycast = character.placing_raycast
 	area_3d.body_entered.connect(_on_area_3d_body_entered)
 	area_3d.body_exited.connect(_on_area_3d_body_exited)
+	meshes = get_all_meshes(parent)
+	collisions = get_all_collisions(parent)
 
 func _physics_process(delta: float) -> void:
 	if moving:
@@ -39,9 +43,26 @@ func _physics_process(delta: float) -> void:
 		
 		if Input.is_action_pressed("rotate"):
 			if Input.is_action_pressed("rotate_backwards"):
-				rotation.y += delta * -ROTATION_SPEED
+				parent.rotation.y += delta * -ROTATION_SPEED
 			else:
-				rotation.y += delta * ROTATION_SPEED
+				parent.rotation.y += delta * ROTATION_SPEED
+
+func get_all_meshes(node: Node) -> Array:
+	var meshes = []
+	if node is MeshInstance3D:
+		meshes.append(node)
+	for child in node.get_children():
+		meshes += get_all_meshes(child)
+	return meshes
+
+func get_all_collisions(node: Node) -> Array:
+	var collisions = []
+	if node is CollisionShape3D:
+		collisions.append(node)
+	for child in node.get_children():
+		if child != area_3d:
+			collisions += get_all_collisions(child)
+	return collisions
 
 func update_mesh_materials() -> void:
 	var material : Material
@@ -65,7 +86,7 @@ func disable_collisions() -> void:
 		collision.disabled = true
 
 func move_toward_target(target_position: Vector3, delta: float) -> void:
-	global_position = global_position.move_toward(target_position, SMOOTH_SPEED * delta)
+	parent.global_position = parent.global_position.move_toward(target_position, SMOOTH_SPEED * delta)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("right_click") and moving and bodies_in_area.size() == 0:
@@ -80,6 +101,7 @@ func stop_moving() -> void:
 		mesh.material_override = null
 	moving = false
 	enable_collisions()
+	set_moving.emit(false)
 
 func enable_collisions() -> void:
 	for collision in collisions:
@@ -91,9 +113,10 @@ func interact() -> void:
 		pick_audio.play()
 	character.picking = true
 	moving = true
+	set_moving.emit(true)
 
-func can_interact() -> bool:
-	return not character.picking
+#func can_interact() -> bool:
+	#return not character.picking
 
 # body.get_collision_layer_value(3) detects whether the object is a usable floor or not 
 func _on_area_3d_body_entered(body: Node3D) -> void:

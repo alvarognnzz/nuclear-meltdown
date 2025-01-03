@@ -1,8 +1,10 @@
-[gd_scene load_steps=24 format=4 uid="uid://dxgmqpyljc75u"]
+[gd_scene load_steps=26 format=4 uid="uid://dxgmqpyljc75u"]
 
 [ext_resource type="Script" path="res://entities/movables/table/table.gd" id="1_gmp5v"]
 [ext_resource type="Material" uid="uid://dbc2eoo786k36" path="res://common/materials/black_metal.tres" id="2_0l5u8"]
 [ext_resource type="Texture2D" uid="uid://cglhxwasss453" path="res://entities/movables/table/visuals/textures/Chipboard004_1K-JPG/Chipboard004_1K-JPG_Color.jpg" id="2_3j76x"]
+[ext_resource type="Script" path="res://entities/movables/movable.gd" id="2_a140l"]
+[ext_resource type="Script" path="res://entities/interactables/interactable.gd" id="3_fehr5"]
 [ext_resource type="Texture2D" uid="uid://cfqvshyg3matl" path="res://entities/movables/table/visuals/textures/Chipboard004_1K-JPG/Chipboard004_1K-JPG_NormalGL.jpg" id="3_n8ckp"]
 [ext_resource type="Texture2D" uid="uid://clnjcqvjpt8" path="res://entities/movables/table/visuals/textures/Chipboard004_1K-JPG/Chipboard004_1K-JPG_Roughness.jpg" id="4_xnv86"]
 [ext_resource type="Texture2D" uid="uid://c8d5wil6n0faq" path="res://entities/movables/table/chair/textures/Image_0.jpg" id="6_bw443"]
@@ -139,11 +141,19 @@ size = Vector3(0.097168, 0.773193, 0.106323)
 [sub_resource type="BoxShape3D" id="BoxShape3D_88di5"]
 size = Vector3(0.907715, 1.20947, 0.81189)
 
-[node name="Table" type="StaticBody3D"]
+[node name="Table" type="StaticBody3D" groups=["interactable", "movable"]]
 transform = Transform3D(0.999999, -0.000942173, 0.00118626, 0.000941278, 0.999999, 0.000756358, -0.00118697, -0.000755243, 0.999999, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_gmp5v")
+
+[node name="Movable" type="Node" parent="." node_paths=PackedStringArray("area_3d", "pick_audio")]
+script = ExtResource("2_a140l")
+area_3d = NodePath("../Area3D")
+pick_audio = NodePath("../PickAudio")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("3_fehr5")
 action_name = "Use computer"
 
 [node name="Visuals" type="Node3D" parent="."]
@@ -246,5 +256,8 @@ surface_material_override/0 = null
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.508, 0.691, -0.106)
+
+[connection signal="set_moving" from="Movable" to="." method="_on_movable_set_moving"]
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 
 [editable path="Computer"]

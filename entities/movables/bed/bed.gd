@@ -1,6 +1,5 @@
-class_name Movable
-extends "res://entities/movables/movable.gd"
-
+#extends "res://entities/movables/movable.gd"
+extends  StaticBody3D
 @onready var springs_audio: AudioStreamPlayer = $SpringsAudio
 const SPRINGS_STREAMS = [
 	preload("res://common/sounds/bed/springs1.ogg"),
@@ -8,9 +7,9 @@ const SPRINGS_STREAMS = [
 ]
 
 func _ready() -> void:
-	super()
-	meshes = [$Visuals/Bed]
-	collisions = [$CollisionShape3D, $CollisionShape3D2, $CollisionShape3D3]	
+	#super()
+	#meshes = [$Visuals/Bed]
+	#collisions = [$CollisionShape3D, $CollisionShape3D2, $CollisionShape3D3]	
 	EventBus.landed_on_jumpable.connect(landed_on_jumpable)
 
 func play_springs_audio() -> void:

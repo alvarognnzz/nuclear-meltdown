@@ -15,14 +15,22 @@ func _physics_process(_delta: float) -> void:
 		var collider = get_collider()
 		if collider.is_in_group("interactable"):
 			handle_interaction(collider)
-		#if collider.has_method("interact") and collider.has_method("can_interact") and not collider.can_interact():
-			#hide_interaction_ui()
-		#elif collider.has_method("interact"):
-			#handle_interaction(collider)
-		#else:
-			#hide_interaction_ui()
+		
+		if collider.is_in_group("movable"):
+			handle_movable(collider)
 	else:
 		hide_interaction_ui()
+
+func handle_movable(collider) -> void:
+	var movable = get_movable(collider)
+	if Input.is_action_just_pressed("left_click"):
+		movable.interact()
+
+func get_movable(parent) -> Movable:
+	for child in parent.get_children():
+		if child is Movable:
+			return child
+	return null
 
 func get_interactable(parent) -> Interactable:
 	for child in parent.get_children():
@@ -40,18 +48,6 @@ func handle_interaction(collider: Node) -> void:
 			handle_instant_interaction(interactable)
 		Global.InteractionTypes.PROGRESS:
 			handle_progress_interaction(interactable)
-	
-	#if not "interaction_type" in collider:
-		#hide_interaction_ui()
-		#return
-#
-	#display_interaction_label(collider)
-#
-	#match collider.interaction_type:
-		#Global.InteractionTypes.INSTANT:
-			#handle_instant_interaction(collider)
-		#Global.InteractionTypes.PROGRESS:
-			#handle_progress_interaction(collider)
 
 func handle_instant_interaction(interactable: Interactable) -> void:
 	if not interactable.can_interact:
