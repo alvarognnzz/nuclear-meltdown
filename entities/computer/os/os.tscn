@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_y7bhb")
 expand_mode = 2
 
@@ -31,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
@@ -38,14 +41,17 @@ theme_override_constants/margin_bottom = 40
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(110, 110)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o8rv7")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/GridContainer/PanelContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -53,4 +59,5 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Button" type="TextureButton" parent="MarginContainer/GridContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 texture_normal = ExtResource("2_77u54")

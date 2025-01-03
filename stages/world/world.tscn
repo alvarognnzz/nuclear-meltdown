@@ -149,5 +149,5 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 22, 12, 26)
 [node name="Bed" parent="Movables" instance=ExtResource("16_o44w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.000599504, -8)
 
-[node name="Table" parent="." instance=ExtResource("18_vpanw")]
+[node name="Table" parent="Movables" instance=ExtResource("18_vpanw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)

@@ -1,6 +1,10 @@
-res://entities/computer/os/os.tscn
+res://entities/canvas_layer/ui/interaction/interaction_ui.tscn
 res://entities/props/signs/electrical_danger/electrical_danger.tres
 res://common/materials/green_transparent.tres
 res://common/materials/red_transparent.tres
 res://entities/computer/visuals/computer.tres
-res://version.txt
+res://stages/world/world.tscn
+res://entities/character/character.tscn
+res://entities/computer/os/os.tscn
+res://entities/movables/table/table.tscn
+res://entities/canvas_layer/canvas_layer.tscn

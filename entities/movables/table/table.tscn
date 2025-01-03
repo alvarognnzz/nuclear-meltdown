@@ -139,16 +139,12 @@ size = Vector3(0.097168, 0.773193, 0.106323)
 [sub_resource type="BoxShape3D" id="BoxShape3D_88di5"]
 size = Vector3(0.907715, 1.20947, 0.81189)
 
-[node name="Table" type="StaticBody3D" node_paths=PackedStringArray("area_3d", "pick_audio")]
+[node name="Table" type="StaticBody3D"]
 transform = Transform3D(0.999999, -0.000942173, 0.00118626, 0.000941278, 0.999999, 0.000756358, -0.00118697, -0.000755243, 0.999999, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_gmp5v")
-key = "LMB"
-input_action = "left_click"
-action_name = "Move table"
-area_3d = NodePath("Area3D")
-pick_audio = NodePath("PickAudio")
+action_name = "Use computer"
 
 [node name="Visuals" type="Node3D" parent="."]
 
@@ -247,5 +243,8 @@ surface_material_override/0 = null
 surface_material_override/0 = null
 
 [node name="PickAudio" parent="." instance=ExtResource("10_8ohpa")]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.508, 0.691, -0.106)
 
 [editable path="Computer"]

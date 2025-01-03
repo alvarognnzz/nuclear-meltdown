@@ -44,7 +44,7 @@ func _ready() -> void:
 	Console.add_command("reset", reset_position)
 	
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and movement_enabled:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensibility))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensibility))
 		if jump_multiplier < 2 and not avoid_clamping:

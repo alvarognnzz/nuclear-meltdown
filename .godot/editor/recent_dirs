@@ -1,3 +1,6 @@
+res://entities/canvas_layer/ui/interaction
+res://common/fonts
+res://entities/character/logic
 res://entities/computer/os
 res://entities/movables
 res://entities/computer/visuals

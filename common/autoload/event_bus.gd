@@ -11,3 +11,6 @@ signal resolution_changed(width, height)
 
 # jumpable
 signal landed_on_jumpable(jumpable)
+
+# using_computer
+signal using_computer(value, global_position)

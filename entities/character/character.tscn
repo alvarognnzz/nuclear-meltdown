@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6e8b7dg6jye5"]
+[gd_scene load_steps=11 format=3 uid="uid://b6e8b7dg6jye5"]
 
 [ext_resource type="Script" path="res://entities/character/character.gd" id="1_05rf8"]
 [ext_resource type="Script" path="res://entities/character/interaction/interaction_raycast.gd" id="2_bi062"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://entities/character/interaction/placing_raycast.gd" id="3_aeuui"]
 [ext_resource type="AudioStream" uid="uid://clmn37gomagjr" path="res://common/sounds/footsteps/concrete/footsteps_concrete1.ogg" id="5_dgjp4"]
 [ext_resource type="Script" path="res://entities/character/footsteps.gd" id="6_4edd4"]
+[ext_resource type="Script" path="res://entities/character/logic/using_computer.gd" id="7_h6nk1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h18ij"]
 
@@ -93,6 +94,11 @@ volume_db = -10.0
 script = ExtResource("6_4edd4")
 
 [node name="StepTimer" type="Timer" parent="Audio/Footsteps"]
+
+[node name="Logic" type="Node" parent="."]
+
+[node name="UsingComputer" type="Node" parent="Logic"]
+script = ExtResource("7_h6nk1")
 
 [connection signal="timeout" from="JumpingTimer" to="." method="_on_jumping_timer_timeout"]
 [connection signal="timeout" from="Audio/Footsteps/StepTimer" to="Audio/Footsteps" method="_on_step_timer_timeout"]
