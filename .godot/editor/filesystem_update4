@@ -1,4 +1,5 @@
-res://entities/canvas_layer/ui/interaction/interaction_ui.tscn
+res://entities/pickables/pickable_object/pickable_object.tscn
+res://common/fonts/label_settings.tres
 res://entities/props/signs/electrical_danger/electrical_danger.tres
 res://common/materials/green_transparent.tres
 res://common/materials/red_transparent.tres
@@ -6,16 +7,8 @@ res://entities/computer/visuals/computer.tres
 res://stages/world/world.tscn
 res://entities/character/character.tscn
 res://entities/computer/os/os.tscn
-res://entities/movables/table/table.tscn
 res://entities/canvas_layer/canvas_layer.tscn
+res://entities/canvas_layer/ui/interaction/interaction_ui.tscn
 res://entities/canvas_layer/ui/interaction/moving_ui.tscn
 res://entities/interactables/button/button.tscn
-res://entities/interactables/interactable.gd
-res://entities/character/interaction/interaction_raycast.gd
-res://entities/interactables/button/button.gd
 res://stages/entrance/entrance.tscn
-res://entities/interactables/button/button_test.gd
-res://entities/interactables/box/csg_box_3d.gd
-res://entities/pickables/pickable_object/pickable_object.tscn
-res://entities/pickables/pickable.gd
-res://entities/pickables/pickable_object/pickable_object.gd
