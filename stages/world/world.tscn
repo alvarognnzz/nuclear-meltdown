@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dyeujf1r1rooy"]
+[gd_scene load_steps=27 format=3 uid="uid://dyeujf1r1rooy"]
 
 [ext_resource type="Material" uid="uid://dymje5yp45vu0" path="res://common/materials/base.tres" id="1_8o8ka"]
 [ext_resource type="Script" path="res://entities/game_manager/game_manager.gd" id="1_y2gij"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://cj1fr0pi4k4q2" path="res://entities/movables/bed/bed.tscn" id="16_o44w8"]
 [ext_resource type="PackedScene" uid="uid://k62l4u4xsveu" path="res://entities/props/electric_pole/electric_pole.tscn" id="17_h8cfl"]
 [ext_resource type="PackedScene" uid="uid://dxgmqpyljc75u" path="res://entities/movables/table/table.tscn" id="18_vpanw"]
+[ext_resource type="Texture2D" uid="uid://v2oxgfx6e1tl" path="res://common/textures/prototyping/red.png" id="19_y6s1q"]
+[ext_resource type="Script" path="res://entities/interactables/box/csg_box_3d.gd" id="20_4ocos"]
+[ext_resource type="Script" path="res://entities/interactables/interactable.gd" id="20_ep8dk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oeq14"]
 sky_top_color = Color(0.321569, 0.356863, 0.266667, 1)
@@ -46,6 +49,10 @@ shader_parameter/enabled = true
 shader_parameter/dithering = true
 shader_parameter/colors = 12
 shader_parameter/dither_size = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjgpp"]
+albedo_texture = ExtResource("19_y6s1q")
+uv1_triplanar = true
 
 [node name="World" type="Node3D"]
 
@@ -151,3 +158,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.000599504, -8)
 
 [node name="Table" parent="Movables" instance=ExtResource("18_vpanw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.5, 2)
+layers = 3
+material_override = SubResource("StandardMaterial3D_pjgpp")
+use_collision = true
+script = ExtResource("20_4ocos")
+
+[node name="Interactable" type="Node" parent="CSGBox3D"]
+script = ExtResource("20_ep8dk")
+interaction_type = 0
+action_name = "Teleport"
+
+[connection signal="interacted" from="CSGBox3D/Interactable" to="CSGBox3D" method="_on_interactable_interacted"]

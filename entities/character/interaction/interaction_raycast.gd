@@ -13,48 +13,66 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var collider = get_collider()
-		if collider.has_method("interact") and collider.has_method("can_interact") and not collider.can_interact():
-			hide_interaction_ui()
-		elif collider.has_method("interact"):
+		if collider.is_in_group("interactable"):
 			handle_interaction(collider)
-		else:
-			hide_interaction_ui()
+		#if collider.has_method("interact") and collider.has_method("can_interact") and not collider.can_interact():
+			#hide_interaction_ui()
+		#elif collider.has_method("interact"):
+			#handle_interaction(collider)
+		#else:
+			#hide_interaction_ui()
 	else:
 		hide_interaction_ui()
 
+func get_interactable(parent) -> Interactable:
+	for child in parent.get_children():
+		if child is Interactable:
+			return child
+	return null
+
 func handle_interaction(collider: Node) -> void:
-	if not "interaction_type" in collider:
-		hide_interaction_ui()
-		return
+	var interactable = get_interactable(collider)
+	
+	display_interaction_label(interactable)
 
-	display_interaction_label(collider)
-
-	match collider.interaction_type:
+	match interactable.interaction_type:
 		Global.InteractionTypes.INSTANT:
-			handle_instant_interaction(collider)
+			handle_instant_interaction(interactable)
 		Global.InteractionTypes.PROGRESS:
-			handle_progress_interaction(collider)
+			handle_progress_interaction(interactable)
+	
+	#if not "interaction_type" in collider:
+		#hide_interaction_ui()
+		#return
+#
+	#display_interaction_label(collider)
+#
+	#match collider.interaction_type:
+		#Global.InteractionTypes.INSTANT:
+			#handle_instant_interaction(collider)
+		#Global.InteractionTypes.PROGRESS:
+			#handle_progress_interaction(collider)
 
-func handle_instant_interaction(collider: Node) -> void:
-	if collider.has_method("can_interact") and not collider.can_interact():
+func handle_instant_interaction(interactable: Interactable) -> void:
+	if not interactable.can_interact:
 		hide_interaction_ui()
 		return
 
-	if Input.is_action_just_pressed(collider.input_action):
-		collider.interact()
+	if Input.is_action_just_pressed(interactable.input_action):
+		interactable.interacted.emit()
 
-func handle_progress_interaction(collider: Node) -> void:
-	if collider.has_method("can_interact") and not collider.can_interact():
+func handle_progress_interaction(interactable: Interactable) -> void:
+	if not interactable.can_interact:
 		reset_progress()
 		hide_interaction_ui()
 		return
 
 	progress_container.visible = true
 
-	if Input.is_action_pressed(collider.input_action):
-		progress_bar.value += collider.progress_speed
+	if Input.is_action_pressed(interactable.input_action):
+		progress_bar.value += interactable.progress_speed
 		if progress_bar.value >= progress_bar.max_value:
-			collider.interact()
+			interactable.interacted.emit()
 			reset_progress()
 	else:
 		reset_progress()
@@ -63,10 +81,10 @@ func reset_progress() -> void:
 	progress_bar.value = 0
 	progress_container.visible = false
 
-func display_interaction_label(collider: Node) -> void:
+func display_interaction_label(interactable: Interactable) -> void:
 	interaction_label.text = "[{key}] {name}".format({
-		"key": collider.key,
-		"name": collider.action_name
+		"key": interactable.key,
+		"name": interactable.action_name
 	})
 	interaction_label.visible = true
 

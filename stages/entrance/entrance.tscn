@@ -407,4 +407,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
 
 [node name="Button" parent="." instance=ExtResource("6_bgee4")]
 transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -1.94396, -0.59, -15.7513)
-action_name = "Open doors"

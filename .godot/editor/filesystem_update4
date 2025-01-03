@@ -8,3 +8,11 @@ res://entities/character/character.tscn
 res://entities/computer/os/os.tscn
 res://entities/movables/table/table.tscn
 res://entities/canvas_layer/canvas_layer.tscn
+res://entities/canvas_layer/ui/interaction/moving_ui.tscn
+res://entities/interactables/button/button.tscn
+res://entities/interactables/interactable.gd
+res://entities/character/interaction/interaction_raycast.gd
+res://entities/interactables/button/button.gd
+res://stages/entrance/entrance.tscn
+res://entities/interactables/button/button_test.gd
+res://entities/interactables/box/csg_box_3d.gd

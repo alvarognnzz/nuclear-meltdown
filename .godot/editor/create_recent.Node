@@ -1,3 +1,5 @@
+Interactable
+CSGBox3D
 VBoxContainer
 MarginContainer
 PanelContainer
@@ -10,6 +12,3 @@ Panel
 TextureButton
 Button
 Sprite3D
-SubViewport
-SubViewportContainer
-Control

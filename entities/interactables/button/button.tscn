@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkcfpiexrw1sx"]
+[gd_scene load_steps=12 format=3 uid="uid://bkcfpiexrw1sx"]
 
 [ext_resource type="PackedScene" uid="uid://blirxjrtibuiq" path="res://entities/interactables/button/visuals/button.blend" id="1_gtm5v"]
 [ext_resource type="Script" path="res://entities/interactables/button/button.gd" id="1_rppsy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://brkv8rpfcoqo3" path="res://common/materials/yellow_stripes.tres" id="4_hupba"]
 [ext_resource type="Material" uid="uid://cpvhpggb1lthu" path="res://common/materials/red_metal.tres" id="5_di877"]
 [ext_resource type="AudioStream" uid="uid://b34mfpeaiwp0y" path="res://common/sounds/button/button.ogg" id="6_b2i37"]
+[ext_resource type="Script" path="res://entities/interactables/interactable.gd" id="6_m4gr3"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_prsbj"]
 points = PackedVector3Array(-0.11072, -0.045, -0.18, -0.11072, 0.0153647, -0.18, 0.110685, -0.045, -0.18, -0.159738, -0.045, -0.159738, -0.159738, 0.0153647, -0.159738, 0.110685, 0.0153647, -0.18, 0.159667, -0.045, -0.159738, -0.18, -0.045, -0.11072, -0.18, 0.0153647, -0.11072, 0.159667, 0.0153647, -0.159738, 0.18, -0.045, -0.11072, -0.18, -0.045, 0.110685, -0.18, 0.0153647, 0.110685, 0.18, 0.0153647, -0.11072, 0.18, -0.045, 0.110685, -0.159738, -0.045, 0.159667, -0.159738, 0.0153647, 0.159667, 0.18, 0.0153647, 0.110685, 0.159667, -0.045, 0.159667, -0.11072, -0.045, 0.18, -0.11072, 0.0153647, 0.18, 0.159667, 0.0153647, 0.159667, 0.110685, -0.045, 0.18, 0.110685, 0.0153647, 0.18)
@@ -85,10 +86,14 @@ _data = {
 "push_button": SubResource("Animation_crxhj")
 }
 
-[node name="Button" type="StaticBody3D"]
+[node name="Button" type="StaticBody3D" groups=["interactable"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_rppsy")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("6_m4gr3")
+action_name = "Open doors"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_prsbj")
@@ -117,5 +122,7 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_b2i37")
 pitch_scale = 1.4
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 
 [editable path="Visuals"]

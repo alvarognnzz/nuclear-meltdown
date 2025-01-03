@@ -43,5 +43,5 @@ layout_mode = 2
 show_percentage = false
 
 [node name="MovingUI" parent="." instance=ExtResource("3_d57ab")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
+offset_left = -138.0

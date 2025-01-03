@@ -1,3 +1,5 @@
+res://entities/interactables/box
+res://entities/interactables/button
 res://entities/canvas_layer/ui/interaction
 res://common/fonts
 res://entities/character/logic
